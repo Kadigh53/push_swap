@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:54 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/02/19 18:40:30 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/02/20 17:03:03 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ char    *parsing_f(int ac, char **av)
 	i = 1;
 	if (ac == 2)
 		p = ft_split(av[1], 32);
+	else
+		p = av;
 	while (i < ac)
-	{}
+	{
+		
+	}
 }
