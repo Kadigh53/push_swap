@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaoutem- <aaoutem-@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 18:09:01 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/02/19 18:38:24 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/02/22 04:32:27 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,18 @@ static int	valid_nbr(char *str)
 	int i;
 
 	i = 0;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
-			errors();
+			errors("\033[1;31mERROR:invalid argument\n");
 		i++;
 	}
 	return (1);
 }
 
-static int	is_space(const char *str)
+static int	is_space(char *str)
 {
 	int	i;
 
@@ -46,9 +48,9 @@ static int	is_space(const char *str)
 
 int	ft_atoi(char *str)
 {
-	int	i;
-	int	sign;
-	int	result;
+	int		i;
+	int		sign;
+	long	result;
 
 	i = 0;
 	sign = 1;
@@ -63,5 +65,8 @@ int	ft_atoi(char *str)
 	}
 	while ((str[i] >= '0' && str[i] <= '9') && str[i])
 		result = result * 10 + (str[i++] - 48);
-	return (result * sign);
+	result = result * sign;
+	if (result > INT32_MAX || result < INT32_MIN)
+		errors("\033[1;31mERROR:invalide argument (exceeds the int limit)");
+	return (result);
 }

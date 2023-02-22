@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/19 17:57:15 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/02/22 04:21:23 by aaoutem-         ###   ########.fr       */
+/*   Created: 2023/02/22 01:21:34 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/02/22 02:28:11 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <stdint.h>
-
-void    *parsing_f(int ac, char **av);
-
-char	*ft_substr(char *s, unsigned int start, size_t len);
-char	**ft_split(char *s, char c, int *n);
-size_t	ft_strlen(char *s);
-int     ft_atoi(char *str);
-void    errors(char *str);
-
-
-#endif
+// void errors(int x)
+// {
+// 	if (x == 0)
+// 		write(2,"\033[1;31mERROR:invalid argument\n",33);
+// 	exit(1);
+// }
+void errors(char *str)
+{
+	write(2, str, ft_strlen(str));
+	exit(1);
+}

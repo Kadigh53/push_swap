@@ -3,28 +3,77 @@
 /*                                                        :::      ::::::::   */
 /*   pars.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaoutem- <aaoutem-@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:54 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/02/20 17:03:03 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/02/22 05:19:26 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <limits.h>
+void	duplicate_check(int	*k, int n)
+{
+	int	i;
+	int	j;
+	
+	i = 0;
+	while (i < n)
+	{
+		j = i + 1;
+		while(j < n)
+		{
+			if (k[i] == k[j])
+				errors("\033[1;31mERROR:duplicate arguments\n");
+			j++;
+		}
+		i++;
+	}
+}
 
-char    *parsing_f(int ac, char **av)
+void    *parsing_f(int ac, char **av)
 {
 	int 	i;
+	int		n;
 	int		*k;
 	char	**p;
 
-	i = 1;
+	i = 0;
 	if (ac == 2)
-		p = ft_split(av[1], 32);
+		p = ft_split(av[1], 32, &n);
 	else
-		p = av;
-	while (i < ac)
 	{
-		
+		p = av + 1;
+		n = ac - 1;
 	}
+	k = malloc((n + 1) * sizeof(int));
+	if (!k)
+		return (NULL);
+	while (i < n)
+	{
+		k[i] = ft_atoi(p[i]);
+		i++;
+	}
+	k[i] = (int)NULL;
+	duplicate_check(k, n);
+	return (k);
 }
+
+// int main(int ac, char **av)
+// {
+// 	int *k = parsing_f(ac, av);
+// 	int i = 0;
+// 	if (ac < 2)
+// 		errors("\033[1;31mERROR:invalid argument\n");
+// 	// while (i < ac -1)
+// 	// 	printf("%d\n", k[i++]);
+// 	printf("%d\n", k[i++]);
+// 	printf("%d\n", k[i++]);
+// 	printf("%d\n", k[i++]);
+// 	printf("%d\n", k[i++]);
+// 	printf("%d\n", k[i++]);
+// 	printf("%d\n", k[i++]);
+// 	printf("%d\n", k[i++]);
+// 	printf("%d\n", k[i++]);
+// 	printf("%d\n", k[i++]);
+// }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaoutem- <aaoutem-@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 18:30:23 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/02/19 20:06:01 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/02/22 04:45:22 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ static char	**ft_free(char **p, int i)
 	return (NULL);
 }
 
-static int	return_value(char const *s, char c, int a, int i)
+static int	return_value(char *s, char c, int a, int i)
 {
 	if (s[i - 1] == c)
 		return (a);
 	return (a + 1);
 }
 
-static int	ft_strsnbr(char const *s, char c, int para, int mode)
+static int	ft_strsnbr(char *s, char c, int para, int mode)
 {
 	int		i;
 	int		a;
@@ -57,7 +57,7 @@ static int	ft_strsnbr(char const *s, char c, int para, int mode)
 	return (i - 1);
 }
 
-static char	*word_return(char const *s, char c, int para)
+static char	*word_return(char *s, char c, int para)
 {
 	int	i;
 	int	j;
@@ -73,20 +73,22 @@ static char	*word_return(char const *s, char c, int para)
 	return (ft_substr(s, j, i - j + 1));
 }
 
-char	**ft_split(char *s, char c)
+char	**ft_split(char *s, char c, int *n)
 {
 	char	**p;
 	int		i;
-	int		n;
+	// int		n;
 
+	if (!*s)
+		errors("\033[1;31mERROR:invalid argument\n");
 	if (!s)
 		return (NULL);
-	n = ft_strsnbr(s, c, ft_strlen(s), 1);
-	p = malloc((n + 1) * sizeof(char *));
+	*n = ft_strsnbr(s, c, ft_strlen(s), 1);
+	p = malloc((*n + 1) * sizeof(char *));
 	if (!p || !s)
 		return (NULL);
 	i = 1;
-	while (i <= n && *s)
+	while (i <= *n && *s)
 	{
 		p[i - 1] = word_return(s, c, i);
 		if (!p[i - 1])
