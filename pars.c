@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:54 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/02/22 05:19:26 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/02/23 06:39:55 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	duplicate_check(int	*k, int n)
 	}
 }
 
-void    *parsing_f(int ac, char **av)
+int	*parsing_f(int ac, char **av, int *l)
 {
 	int 	i;
 	int		n;
@@ -46,6 +46,7 @@ void    *parsing_f(int ac, char **av)
 		p = av + 1;
 		n = ac - 1;
 	}
+	*l = n;
 	k = malloc((n + 1) * sizeof(int));
 	if (!k)
 		return (NULL);

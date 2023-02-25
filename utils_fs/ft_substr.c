@@ -6,11 +6,11 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 22:58:45 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/02/22 00:07:34 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/02/23 01:16:24 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 char	*ft_substr(char *s, unsigned int start, size_t len)
 {	

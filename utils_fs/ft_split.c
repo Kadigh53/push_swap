@@ -6,11 +6,11 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 18:30:23 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/02/22 04:45:22 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/02/23 01:16:17 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static char	**ft_free(char **p, int i)
 {

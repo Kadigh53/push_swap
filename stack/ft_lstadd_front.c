@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/21 22:12:59 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/02/21 23:18:35 by aaoutem-         ###   ########.fr       */
+/*   Created: 2023/02/23 04:49:25 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/02/25 01:43:31 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-size_t	ft_strlen(char *s)
+t_stack    **ft_lstadd_front(t_stack **stack, t_stack *node)
 {
-	size_t	i;
+	t_stack	**head;
 
-	i = 0;
-    if (!s)
-        return (0);
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	if (*stack && node)
+		node->next = *stack;
+	if (node)
+	{
+		(*stack) = node;
+		head = &node;
+		return(head);
+	}
+	return (stack);
 }

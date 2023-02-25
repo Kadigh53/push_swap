@@ -6,11 +6,11 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 18:09:01 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/02/22 04:32:27 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/02/23 01:16:09 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_isdigit(int c)
 {
