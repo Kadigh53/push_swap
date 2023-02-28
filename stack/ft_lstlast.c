@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 04:42:44 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/02/24 04:47:04 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/02/25 02:52:59 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,14 @@ typedef struct s_stack
 	struct s_stack  *next;
 }	t_stack;
 
-t_stack ft_lstlast(t_stack *stack)
+t_stack	*ft_lstlast(t_stack *stack)
 {
-    t_stack *tmp;
-    
-    tmp = stack;
-    while(tmp->next)
-    {
-        tmp = 
-    }
+	t_stack	*tmp;
+
+	tmp = stack;
+	if (!stack)
+		return (NULL);
+	while (tmp->next)
+		tmp = tmp->next;
+	return (tmp);
 }

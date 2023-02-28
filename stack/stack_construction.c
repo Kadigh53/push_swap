@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   a.c                                                :+:      :+:    :+:   */
+/*   stack_construction.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 05:44:09 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/02/25 02:40:26 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/02/28 00:39:11 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
 int	is_empty(t_stack *stack)
 {
 	if (stack->size == 0 && !stack->next)
@@ -33,18 +34,21 @@ void	ft_lstiter(t_stack *stack, int s)
 	}
 }
 
-void    push_el(t_stack **stack, int data)
+void    push_el(t_stack **stack, int data, int min, int max)
 {
 	t_stack	*node;
 
 	if ((!(*stack)->next && (*stack)->size == 0 && (*stack)->x == 0))
 	{
 		(*stack)->x = data;
+		(*stack)->min = min;
+		(*stack)->max = max;
 		(*stack)->size = 1;
 		(*stack)->next = NULL;
 		return ;
 	}
-	node = ft_lstnew(data);
+	node = ft_lstnew(data, min, max);
+	// (*stack)->prev = node;
 	stack = ft_lstadd_front(stack,node);
 	(*stack)->size = ((*stack)->next)->size + 1;
 	ft_lstiter(*stack, (*stack)->size);
@@ -60,32 +64,59 @@ int	pop_el(t_stack **stack)
 	data = (*stack)->x;
 	tmp = (*stack);
 	((*stack)->next)->size = tmp->size - 1;
+	// (*stack)->prev = NULL;
 	*stack = ((*stack)->next);
 	free(tmp);
 	ft_lstiter(*stack, (*stack)->size);
 	return (data);
 }
 
-void	stack_init(int *k, t_stack **A, t_stack **B, int *l)
+void	init_init(int *k,  int *l, t_stack **stack)
 {
+	int min;
+	int max;
 	int i;
 
 	i = 0;
+	min = k[0];
+	max = k[0];
+	while (i < *l)
+	{
+		if (k[i] < min)
+			min = k[i];
+		if (k[i] > max)
+			max = k[i];
+		i++;
+	}
+	(*stack)->min = min;
+	(*stack)->max = max;
+	(*stack)->next = NULL;
+	// (*stack)->prev = NULL;
+	(*stack)->size = 0;
+	(*stack)->x = 0;	
+}
+
+void	stack_init(int *k, t_stack **A, t_stack **B, int *l)
+{
+	int i;
+	int	min;
+
+	i = 0;
+	min = k[0];
 	*A = malloc(sizeof(t_stack));
 	if (!*A)
 		exit(1);
 	*B = malloc(sizeof(t_stack));
 	if (!*B)
 		exit(1);
-	(*A)->next = NULL;
-	(*B)->next = NULL;
-	(*A)->size = 0;
-	(*B)->size = 0;
-	(*A)->x = 0;
-	(*B)->x = 0;
+	init_init(k, l, A);
+	init_init(k, l, B);
 	while(i < *l)
 	{
-		push_el(A,k[*l - i - 1]);
+		push_el(A,k[*l - i - 1], (*A)->min, (*A)->max);
 		i++;
 	}
+	// pb(A,B);
+	// pb(A,B);
+	// pb(A,B);
 }
