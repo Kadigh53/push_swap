@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:57:15 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/02/28 00:51:56 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/01 04:48:02 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_stack
 
 
 int	*parsing_f(int ac, char **av, int *l);
-void f(t_stack **a);
+void f(t_stack **a,t_stack **b);
 /*---------stack functions--------*/
 t_stack    **ft_lstadd_front(t_stack **stack, t_stack *node);
 void    ft_lstadd_back(t_stack  **stack, t_stack *node);
