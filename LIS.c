@@ -6,85 +6,51 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 22:35:53 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/01 08:56:03 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/02 01:06:28 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	clear_daStackAction(t_stack **a, t_stack **b, int Rnbr, int Pnbr, int r)
-{
-	int	i;
+// void	clear_daStackAction(t_stack **a, t_stack **b, int Rnbr, int Pnbr, int r)
+// {
+// 	int	i;
 
-	i = 0;
-	printf("clear_stackAction Rnbr : %d. Pnbr : %d\n", Rnbr, Pnbr);
-	while (i < Rnbr)
-	{
-		if (r == 0)
-			ra(a);
-		else if (r == 1)
-			rra(a);
-		i++;
-	}
-	i = 0;
-	while (i < Pnbr)
-	{
-		pb(a, b);
-		i++;
-	}
-}
+// 	i = 0;
+// 	while (i < Rnbr)
+// 	{
+// 		if (r == 0)
+// 			ra(a);
+// 		else if (r == 1)
+// 			rra(a);
+// 		i++;
+// 	}
+// 	i = 0;
+// 	while (i < Pnbr)
+// 	{
+// 		pb(a, b);
+// 		i++;
+// 	}
+// }
 
-void	clear_daStack(int *p, t_stack **a, t_stack **b, int l_max)
+void	clear_daStack(int *p, int *k, t_stack **a, t_stack **b)
 {
 	int		i;
-	int		rot;
-	int		push;
-	int 	t;
-	t_stack	*tmp1;
+	t_stack	*tmp;
 
-	i = 0;
-	rot = 0;
-	push = 0;
-	tmp1 = *a;
-	while (i < l_max)
+	i = 1;
+	ra(a);
+	tmp = *a;
+	while ((*a)->x != (*a)->min)
 	{
-		// printf("p[i]:%d\tp[i+1]:%d\t( - )%d\n", p[i], p[i + 1], p[i + 1]
-				// - p[i]);
-		t = rot + push;
-		if ((p[i + 1] - p[i]) > 1)
+		if (tmp->x == k[p[i]])
 		{
-			rot = p[i] + 1 - t;
-			push = p[i + 1] - p[i] - 1;
-			// printf("rot : %d\t push : %d\tt : %d\n",rot , push ,t);
-			// if ((p[i] + 1) > ((*a)->size - p[i + 1] - 1))
-			// 	clear_daStackAction(a, b, rot, push, 0);
-			// else
-			clear_daStackAction(a, b, rot, push, 0);
-			t = rot + push;
-			tmp1 = *a;
-			while (tmp1)
-			{
-				printf("a %d\t\n", tmp1->x);
-				tmp1 = tmp1->next;
-			}
+			ra(a);
+			i++;
 		}
-		i++;
-	}
-	tmp1 = *a;
-	printf("\n====5%d=======\n",t);
-	while (tmp1)
-	{
-		printf("a %d\t\n", tmp1->x);
-		tmp1 = tmp1->next;
-	}
-	// printf("\npi:%d\n",p[i-1]);
-	clear_daStackAction(a, b, (*a)->size - p[i - 1] + 1, 0, 0);
-	tmp1 = *a;
-	printf("\n====2=======\n");
-	while (tmp1)
-	{
-		printf("a %d\t\n", tmp1->x);
-		tmp1 = tmp1->next;
+		else
+			pb(a, b);
+		tmp = (*a);
 	}
 }
 
@@ -131,14 +97,7 @@ void	def_lis(t_stack **a, t_stack **b, int *k, int *length, int *kp, int l)
 		p[l_max - i - 1] = max_index;
 		i++;
 	}
-	// i = 0;
-	// j = 0;
-	// while (i < l_max)
-	// {
-	// 	if ((p[i + 1] - p[i]) > 1)
-	// 		clear_daStack(p,a, l_max);
-	// }
-	clear_daStack(p, a, b, l_max);
+	clear_daStack(p, k, a, b);
 }
 
 void	retrieve_lis(t_stack **a, t_stack **b)
@@ -171,7 +130,6 @@ void	f(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
 	int		i;
-	t_stack	*tmp1;
 
 	i = 0;
 	tmp = *a;
@@ -187,14 +145,5 @@ void	f(t_stack **a, t_stack **b)
 		else
 			ra(a);
 	}
-	tmp1 = *a;
-	i = 0;
-	while (tmp1)
-	{
-		printf("a %d\t %d\t\n", i, tmp1->x);
-		tmp1 = tmp1->next;
-		i++;
-	}
-	printf("\n");
 	retrieve_lis(a, b);
 }
