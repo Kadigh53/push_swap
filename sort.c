@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 02:27:28 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/05 02:11:34 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/05 02:41:18 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,6 @@ int	locate(int *stack_arr, int x, t_stack **a)
 		tmp = tmp->next;
 	}
 	// free(tmp);
-	free(tmp);
 	if (i > ((*a)->size / 2))
 		return (i - (*a)->size + 1);
 	return (i - 2);
@@ -153,6 +152,7 @@ void	a_indexing(int e_pos[][2], t_stack **a, t_stack **b)
 		tmp = tmp->next;
 		i++;
 	}
+	printf("\n");
 	// sort_action(e_pos,a,b);
 	// free(stack);
 	// free(tmp);
