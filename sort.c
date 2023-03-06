@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 02:27:28 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/05 02:41:18 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/06 00:55:58 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,10 +103,16 @@ int	locate(int *stack_arr, int x, t_stack **a)
 	tmp = *a;
 	while (tmp)
 	{
-		if ((x > stack_arr[i] && x < stack_arr[i + 1]) && (i <= ((*a)->size / 2)))
+		if (x > stack_arr[i] && x < stack_arr[i + 1] && (i+1 <= ((*a)->size / 2)))
+		{
+			printf("11  %d * %d size %d",x, i+1,((*a)->size / 2));
 			return (i + 1);
+		}
 		else if ((x > stack_arr[i] && x < stack_arr[i + 1]) && (i > ((*a)->size / 2)))
+		{
+			printf("22  %d * %d",x, i - (*a)->size + 1);
 			return (i - (*a)->size + 1);
+		}	
 		i++;
 		tmp = tmp->next;
 	}
@@ -148,11 +154,11 @@ void	a_indexing(int e_pos[][2], t_stack **a, t_stack **b)
 	{
 		k = locate(stack, tmp->x, a);
 		e_pos[i][0] = k;
-		printf("%d\t(%d,%d)\n",tmp->x,e_pos[i][0],e_pos[i][1]);
+		printf("\n");
+		// printf("%d\t(%d,%d)\n",tmp->x,e_pos[i][0],e_pos[i][1]);
 		tmp = tmp->next;
 		i++;
 	}
-	printf("\n");
 	// sort_action(e_pos,a,b);
 	// free(stack);
 	// free(tmp);
@@ -186,11 +192,11 @@ void	sort(t_stack **a, t_stack **b)
 {
 	int		e_pos[(*b)->size + 1][2];
 
-	b_indexing(e_pos, b);
 	// (void)(*a);
-	a_indexing(e_pos, a, b);
 	b_indexing(e_pos, b);
 	a_indexing(e_pos, a, b);
+	// b_indexing(e_pos, b);
+	// a_indexing(e_pos, a, b);
 	// b_indexing(e_pos, b);
 	// a_indexing(e_pos, a, b);
 	// b_indexing(e_pos, b);
