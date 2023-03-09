@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 02:27:28 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/09 11:15:45 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/09 11:26:46 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,16 @@ void	sort_action(int e_pos[][2], t_stack **a, t_stack **b)
 			min = mvs;
 			index = i;
 		}
+		// if (mvs <= min && i > ((*a)->size / 2)) Must to check this case where the updates of the minimums whith the same complexity
+		// {
+		// 	min = mvs;
+		// 	index = i;
+		// }
+		// else if (mvs < min && i <= ((*a)->size / 2))
+		// {
+		// 	min = mvs;
+		// 	index = i;
+		// }
 		i++;
 		tmp = tmp->next;
 	}
