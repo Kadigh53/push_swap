@@ -1,5 +1,9 @@
 int main(){
     int i =0;
-    printf("%d\n",i++);
-    printf("%d\n",i);
+    if (9 > 5 && 5 > 3){
+        printf("TR%d",1);
+        printf("ko");
+    }
+    else
+        printf("non%d",2);
 }

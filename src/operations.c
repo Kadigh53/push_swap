@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 08:14:17 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/02/28 00:37:56 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/08 16:11:57 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	pa(t_stack **a, t_stack **b)
 	if (data == 0 && !((*b)->next))
 		return ;
 	push_el(a, data, (*a)->min, (*a)->max);
+	printf("pa\n");
 	// ft_putstr_fd("pa\n",1);
 }
 
@@ -29,10 +30,11 @@ void	pb(t_stack **a, t_stack **b)
 	if (data == 0 && !((*a)->next))
 		return ;
 	push_el(b, data, (*b)->min, (*b)->max);
+	printf("pb\n");
 	// ft_putstr_fd("pb\n",1);
 }
 
-void	sa(t_stack  **a)
+void	sa(t_stack  **a, int mode)
 {
 	t_stack *first;
 	t_stack	*second;
@@ -44,10 +46,12 @@ void	sa(t_stack  **a)
 	first->next = second->next;
 	second->next = first;
 	*a = second;
+	if (mode == 1)
+		printf("as\n");
 	// ft_putstr_fd("sa\n",1);
 }
 
-void	sb(t_stack **b)
+void	sb(t_stack **b, int mode)
 {
 	t_stack *first;
 	t_stack *second;
@@ -59,17 +63,19 @@ void	sb(t_stack **b)
 	first->next = second->next;
 	second->next = first;
 	*b = second;
+	if (mode == 1)
+		printf("sb\n");
 	// ft_putstr_fd("sb\n",1);
 }
 
 void	ss(t_stack	**a, t_stack **b)
 {
-	sa(a);
-	sb(b);
+	sa(a, 0);
+	sb(b, 0);
 	// ft_putstr_fd("pa\n",1);
 }
 
-void	ra(t_stack **a)
+void	ra(t_stack **a, int mode)
 {
 	t_stack *first;
 	t_stack *last;
@@ -83,9 +89,11 @@ void	ra(t_stack **a)
 	(*a)->next = NULL;
     last->next = *a;
     *a = first;
+	if (mode == 1)
+		printf("ra\n");
 }
 
-void	rb(t_stack **b)
+void	rb(t_stack **b, int mode)
 {
 	t_stack	*first;
 	t_stack	*last;
@@ -99,15 +107,18 @@ void	rb(t_stack **b)
 	(*b)->next = NULL;
 	last->next = (*b);
 	(*b) = first;
+	if (mode == 1)
+		printf("rb\n");
 }
 
 void	rr(t_stack **a, t_stack **b)
 {
-	ra(a);
-	rb(b);
+	printf("rr\n");
+	ra(a, 0);
+	rb(b, 0);
 }
 
-void	rra(t_stack **a)
+void	rra(t_stack **a, int mode)
 {
 	t_stack *tmp;
 	t_stack	*head;
@@ -121,10 +132,11 @@ void	rra(t_stack **a)
 	head->next = (*a);
 	tmp->next = NULL;
 	(*a) = head;
-	
+	if (mode == 1)
+		printf("rra\n");
 }
 
-void	rrb(t_stack **b)
+void	rrb(t_stack **b, int mode)
 {
 	t_stack	*tmp;
 	t_stack	*head;
@@ -137,11 +149,14 @@ void	rrb(t_stack **b)
 	head = tmp->next;
 	head->next = (*b);
 	tmp->next = NULL;
-	(*b) = head;	
+	(*b) = head;
+	if (mode == 1)
+		printf("rrb\n");
 }
 
 void	rrr(t_stack **a, t_stack **b)
 {
-	rra(a);
-	rrb(b);
+	printf("rrr\n");
+	rra(a, 0);
+	rrb(b, 0);
 }

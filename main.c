@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:13 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/05 00:45:15 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/08 18:44:24 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,7 @@ int main(int ac, char **av)
 		exit(1);
 	stack_init(k, &a, &b, &l);
 	f(&a,&b);
-	sort(&a,&b);
 	t_stack *tmp = a;
-	printf("\n===========\n\n");
 	while (tmp)
 	{
 		printf("a  %d\t|| : min %d : max %d : size %d\n",tmp->x,tmp->min,tmp->max,tmp->size);
@@ -40,6 +38,29 @@ int main(int ac, char **av)
 	{
 		printf("b  %d\t|| : min %d : max %d : size %d\n",tmp->x,tmp->min,tmp->max,tmp->size);
 		tmp = tmp->next;
+	}
+	printf("\n");
+	sort(&a,&b);
+	tmp = a;
+	printf("\n===========\n\n");
+	int i =0;
+	while (tmp)
+	{
+		if (i <= (a->size)/2)
+			printf("a %d\t%d\t|| : max %d : size %d\n",i,tmp->x,tmp->max,tmp->size);
+		else
+			printf("a %d\t%d\t|| : max %d : size %d\n",i - a->size,tmp->x,tmp->max,tmp->size);
+		tmp = tmp->next;
+		i++;
+	}
+	i = 0;
+	tmp = b;
+	printf("\n===========\n\n");
+	while (tmp)
+	{
+		printf("b  %d\t%d\t|| : max %d : size %d\n",i,tmp->x,tmp->max,tmp->size);
+		tmp = tmp->next;
+		i++;
 	}
 	// while (tmp)
 	// {

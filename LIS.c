@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 22:35:53 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/02 01:06:28 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/08 07:52:23 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,13 @@ void	clear_daStack(int *p, int *k, t_stack **a, t_stack **b)
 	t_stack	*tmp;
 
 	i = 1;
-	ra(a);
+	ra(a, 1);
 	tmp = *a;
 	while ((*a)->x != (*a)->min)
 	{
 		if (tmp->x == k[p[i]])
 		{
-			ra(a);
+			ra(a, 1);
 			i++;
 		}
 		else
@@ -141,9 +141,9 @@ void	f(t_stack **a, t_stack **b)
 	while ((*a)->x != (*a)->min)
 	{
 		if (i > (*a)->size / 2)
-			rra(a);
+			rra(a, 1);
 		else
-			ra(a);
+			ra(a, 1);
 	}
 	retrieve_lis(a, b);
 }

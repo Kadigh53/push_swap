@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:57:15 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/04 04:48:02 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/08 07:51:53 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,29 @@ int		ft_atoi(char *str);
 void	ft_putstr_fd(char *s, int fd);
 void	errors(char *str);
 /*-----------operations----------*/
+
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);
-void	sa(t_stack  **a);
-void	sb(t_stack **b);
+void	sa(t_stack  **a, int mode);
+void	sb(t_stack **b, int mode);
 void	ss(t_stack	**a, t_stack **b);
-void	ra(t_stack **a);
-void	rb(t_stack **b);
+void	ra(t_stack **a, int mode);
+void	rb(t_stack **b, int mode);
 void	rr(t_stack **a, t_stack **b);
-void	rra(t_stack **a);
-void	rrb(t_stack **b);
+void	rra(t_stack **a, int mode);
+void	rrb(t_stack **b, int mode);
 void	rrr(t_stack **a, t_stack **b);
+
+// void	pa(t_stack **a, t_stack **b);
+// void	pb(t_stack **a, t_stack **b);
+// void	sa(t_stack  **a);
+// void	sb(t_stack **b);
+// void	ss(t_stack	**a, t_stack **b);
+// void	ra(t_stack **a);
+// void	rb(t_stack **b);
+// void	rr(t_stack **a, t_stack **b);
+// void	rra(t_stack **a);
+// void	rrb(t_stack **b);
+// void	rrr(t_stack **a, t_stack **b);
 
 #endif
