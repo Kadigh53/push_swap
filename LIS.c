@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 22:35:53 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/08 07:52:23 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/10 11:11:03 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,10 @@ void	clear_daStack(int *p, int *k, t_stack **a, t_stack **b)
 			i++;
 		}
 		else
+		{
 			pb(a, b);
+			// printf("%d | %d\n", (*b)->x, (*b)->size);
+		}
 		tmp = (*a);
 	}
 }

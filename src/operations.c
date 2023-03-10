@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 08:14:17 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/10 08:19:17 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/10 11:29:29 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,21 @@ void	pa(t_stack **a, t_stack **b)
 {
 	int data;
 	data = pop_el(b);
-	if (data == 0 && !((*b)->next))
+	printf("%d\n",data);
+	if (data == 0 && !((*b)->next) && ((*b)->size == 0))
 		return ;
-	// if (!(*b)->next && ((*b)->size) > 0)
-	// {
-	// }	// push b to a
 	push_el(a, data, (*a)->min, (*a)->max);
 	ft_putstr_fd("pa\n",1);
-	// printf("pa\n");
 }
 
 void	pb(t_stack **a, t_stack **b)
 {
 	int data;
 	data = pop_el(a);
-	if (data == 0 && !((*a)->next))
+	if (data == 0 && !((*a)->next) && ((*b)->size) == 0)
 		return ;
 	push_el(b, data, (*b)->min, (*b)->max);
 	ft_putstr_fd("pb\n",1);
-	// printf("pb\n");
 }
 
 void	sa(t_stack  **a, int mode)
@@ -51,7 +47,6 @@ void	sa(t_stack  **a, int mode)
 	*a = second;
 	if (mode == 1)
 		ft_putstr_fd("sa\n",1);
-		// printf("as\n");
 }
 
 void	sb(t_stack **b, int mode)
@@ -68,14 +63,13 @@ void	sb(t_stack **b, int mode)
 	*b = second;
 	if (mode == 1)
 		ft_putstr_fd("sb\n",1);
-		// printf("sb\n");
 }
 
 void	ss(t_stack	**a, t_stack **b)
 {
-	ft_putstr_fd("ss\n",1);
 	sa(a, 0);
 	sb(b, 0);
+	ft_putstr_fd("ss\n",1);
 }
 
 void	ra(t_stack **a, int mode)
@@ -116,9 +110,9 @@ void	rb(t_stack **b, int mode)
 
 void	rr(t_stack **a, t_stack **b)
 {
-	ft_putstr_fd("rr\n",1);
 	ra(a, 0);
 	rb(b, 0);
+	ft_putstr_fd("rr\n",1);
 }
 
 void	rra(t_stack **a, int mode)
@@ -159,7 +153,7 @@ void	rrb(t_stack **b, int mode)
 
 void	rrr(t_stack **a, t_stack **b)
 {
-	ft_putstr_fd("rrr\n",1);
 	rra(a, 0);
 	rrb(b, 0);
+	ft_putstr_fd("rrr\n",1);
 }

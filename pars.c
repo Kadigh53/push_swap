@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:54 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/10 09:47:40 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/10 10:37:43 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,11 @@ void	a_sorted(int *k, int *l)
 			break ;
 		i++;
 	}
-	if ( i == )
+	if ((i + 1) == *l)
+	{
+		ft_putstr_fd("\033[1;31malready sorted\n",1);
+		exit(0);
+	}
 }
 
 int	*parsing_f(int ac, char **av, int *l)

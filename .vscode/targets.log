@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Fri Mar 10 08:20:24 2023
+# Make data base, printed on Fri Mar 10 11:30:45 2023
 
 # Variables
 
@@ -30,6 +30,7 @@ CURDIR := /Users/aaoutem-/Desktop/projects/push_swap
 SHELL = /bin/sh
 # makefile (from `Makefile', line 15)
 RM = rm -rf
+ 
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{},"_languagePackSupport":true}
 # environment
@@ -145,7 +146,7 @@ SECURITYSESSIONID = 186a8
 # default
 SUFFIXES := 
 # makefile (from `Makefile', line 16)
-FLAGS = -Wall -Wextra -Werror 
+FLAGS = -Wall -Wextra -Werror -g
 # default
 .INCLUDE_DIRS = /usr/local/include
 # environment
@@ -184,7 +185,7 @@ VSCODE_PID = 10561
 # Not a target:
 LIS.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-03-08 07:52:23
+#  Last modified 2023-03-10 11:11:03
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -202,7 +203,7 @@ stack/ft_lstadd_back.c:
 src/operations.o: src/operations.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `src/operations'
-#  Last modified 2023-03-10 08:19:22
+#  Last modified 2023-03-10 11:30:32
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -223,7 +224,7 @@ all: push_swap
 stack/ft_lstnew.o: stack/ft_lstnew.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `stack/ft_lstnew'
-#  Last modified 2023-03-10 08:19:22
+#  Last modified 2023-03-10 11:30:31
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -235,7 +236,7 @@ stack/ft_lstnew.o: stack/ft_lstnew.c push_swap.h
 # Not a target:
 main.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-03-08 18:44:24
+#  Last modified 2023-03-10 10:39:56
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -262,7 +263,7 @@ push_swap.h:
 utils_fs/ft_atoi.o: utils_fs/ft_atoi.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `utils_fs/ft_atoi'
-#  Last modified 2023-03-10 08:19:22
+#  Last modified 2023-03-10 11:30:31
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -280,7 +281,7 @@ utils_fs/ft_atoi.o: utils_fs/ft_atoi.c push_swap.h
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2023-03-10 08:20:04
+#  Last modified 2023-03-10 11:30:17
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -289,7 +290,7 @@ Makefile:
 # Not a target:
 stack/stack_construction.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-03-10 08:17:59
+#  Last modified 2023-03-10 11:20:45
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -298,7 +299,7 @@ stack/stack_construction.c:
 sort.o: sort.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `sort'
-#  Last modified 2023-03-10 08:19:22
+#  Last modified 2023-03-10 11:30:32
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -310,10 +311,9 @@ sort.o: sort.c push_swap.h
 error.o: error.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `error'
-#  Last modified 2023-03-10 08:19:22
+#  Last modified 2023-03-10 11:30:31
 #  File has been updated.
 #  Successfully updated.
- 
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 #  commands to execute (from `Makefile', line 32):
@@ -323,16 +323,17 @@ error.o: error.c push_swap.h
 # Not a target:
 src/operations.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-03-10 08:19:17
+#  Last modified 2023-03-10 11:29:29
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 utils_fs/ft_strlen.o: utils_fs/ft_strlen.c push_swap.h
+ 
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `utils_fs/ft_strlen'
-#  Last modified 2023-03-10 08:19:22
+#  Last modified 2023-03-10 11:30:31
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -344,7 +345,7 @@ utils_fs/ft_strlen.o: utils_fs/ft_strlen.c push_swap.h
 stack/ft_lstadd_front.o: stack/ft_lstadd_front.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `stack/ft_lstadd_front'
-#  Last modified 2023-03-10 08:19:22
+#  Last modified 2023-03-10 11:30:31
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -373,7 +374,7 @@ fclean: clean
 utils_fs/ft_split.o: utils_fs/ft_split.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `utils_fs/ft_split'
-#  Last modified 2023-03-10 08:19:22
+#  Last modified 2023-03-10 11:30:31
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -385,7 +386,7 @@ utils_fs/ft_split.o: utils_fs/ft_split.c push_swap.h
 src/ft_putstr.o: src/ft_putstr.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `src/ft_putstr'
-#  Last modified 2023-03-10 08:20:06
+#  Last modified 2023-03-10 11:30:32
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -412,7 +413,7 @@ utils_fs/ft_atoi.c:
 pars.o: pars.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `pars'
-#  Last modified 2023-03-10 08:19:22
+#  Last modified 2023-03-10 11:30:31
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -429,7 +430,7 @@ re: fclean all
 # Not a target:
 sort.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-03-09 11:26:46
+#  Last modified 2023-03-10 11:06:58
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -438,7 +439,7 @@ sort.c:
 LIS.o: LIS.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `LIS'
-#  Last modified 2023-03-10 08:19:22
+#  Last modified 2023-03-10 11:30:31
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -458,7 +459,7 @@ clean:
 stack/ft_lstadd_back.o: stack/ft_lstadd_back.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `stack/ft_lstadd_back'
-#  Last modified 2023-03-10 08:19:22
+#  Last modified 2023-03-10 11:30:31
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -469,7 +470,7 @@ stack/ft_lstadd_back.o: stack/ft_lstadd_back.c push_swap.h
 
 push_swap: main.o pars.o utils_fs/ft_atoi.o utils_fs/ft_split.o utils_fs/ft_strlen.o utils_fs/ft_substr.o error.o stack/ft_lstadd_front.o stack/ft_lstnew.o stack/stack_construction.o stack/ft_lstadd_back.o LIS.o src/operations.o src/ft_putstr.o sort.o
 #  Implicit rule search has not been done.
-#  Last modified 2023-03-10 08:20:06
+#  Last modified 2023-03-10 11:30:32
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -508,7 +509,7 @@ stack/ft_lstadd_front.c:
 main.o: main.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `main'
-#  Last modified 2023-03-10 08:19:22
+#  Last modified 2023-03-10 11:30:31
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -520,7 +521,7 @@ main.o: main.c push_swap.h
 utils_fs/ft_substr.o: utils_fs/ft_substr.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `utils_fs/ft_substr'
-#  Last modified 2023-03-10 08:19:22
+#  Last modified 2023-03-10 11:30:31
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -550,7 +551,7 @@ src/ft_putstr.c:
 stack/stack_construction.o: stack/stack_construction.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `stack/stack_construction'
-#  Last modified 2023-03-10 08:19:22
+#  Last modified 2023-03-10 11:30:31
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -562,7 +563,7 @@ stack/stack_construction.o: stack/stack_construction.c push_swap.h
 # Not a target:
 pars.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-02-23 06:39:55
+#  Last modified 2023-03-10 10:37:43
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -581,6 +582,6 @@ pars.c:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri Mar 10 08:20:24 2023
+# Finished Make data base on Fri Mar 10 11:30:45 2023
 
  

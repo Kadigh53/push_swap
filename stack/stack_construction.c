@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 05:44:09 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/10 08:29:19 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/10 11:20:45 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,15 @@ int	pop_el(t_stack **stack)
 
 	if (is_empty(*stack))
 		return (0);
+	// printf("pop\n");
 	if (!(*stack)->next && ((*stack)->size == 1))
 	{
 		data = (*stack)->x;
 		(*stack)->x = 0;
 		(*stack)->size = 0;
 		// (*stack)->max = 0;
-		// (*stack)->min = 0;
+		// (*stack)->min = 0; 
+		printf("%d\n",data);
 		return (data);
 	}
 	data = (*stack)->x;
@@ -77,6 +79,7 @@ int	pop_el(t_stack **stack)
 	*stack = ((*stack)->next);
 	free(tmp);
 	ft_lstiter(*stack, (*stack)->size);
+	printf("%d\n",data);
 	return (data);
 }
 
