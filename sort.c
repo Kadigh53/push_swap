@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 02:27:28 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/09 11:26:46 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/10 09:17:21 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	b_to_a(int e_pos[2], t_stack **a, t_stack **b)
 
 	i = 0;
 	mr = 0;
-	printf("[%d,%d]\n",e_pos[0],e_pos[1]);
+	// printf("[%d,%d]\n",e_pos[0],e_pos[1]);
 	rot_a = ft_abs(e_pos[0]);
 	rot_b = ft_abs(e_pos[1]);
 	// printf("{\nrot_a : %d\nrot_b : %d\n",rot_a,rot_b);
@@ -141,7 +141,7 @@ int	locate(int *stack_arr, int x, t_stack **a)
 		tmp = tmp->next;
 	}
 	if (is_between(stack_arr, (*a)->size - 1, 0, x)){
-		printf("her > ");
+		// printf("her > ");
 		return (0);
 	}
 	tmp = *a;
@@ -150,7 +150,7 @@ int	locate(int *stack_arr, int x, t_stack **a)
 	{
 		// printf("\n\nam here\n");
 		if ((tmp->x == (*a)->min) && i <= ((*a)->size / 2)){
-			printf("fh ");
+			// printf("fh ");
 			return (i);
 		}
 		else if ((tmp->x == (*a)->min) && i > ((*a)->size / 2))
@@ -190,7 +190,7 @@ void	a_indexing(int e_pos[][2], t_stack **a, t_stack **b)
 	{
 		e_pos[i][0] = locate(stack, tmp->x, a);
 		// e_pos[i][0] = k;
-		printf("%d\t(%d,%d)\n",tmp->x,e_pos[i][0],e_pos[i][1]);
+		// printf("%d\t(%d,%d)\n",tmp->x,e_pos[i][0],e_pos[i][1]);
 		tmp = tmp->next;
 		i++;
 	}
@@ -210,14 +210,10 @@ void	b_indexing(int e_pos[][2], t_stack **b)
 
 	while (tmp)
 	{
-		if (i <= ((tmp->size / 2))){
+		if (i <= ((tmp->size / 2)))
 			e_pos[i][1] = i;
-			// e_pos[i][0] = 0;
-		}
-		else{
+		else
 			e_pos[i][1] = (tmp->size) * (-1) + i;
-			// e_pos[i][0] = 0;
-		}
 		i++;
 		tmp = tmp->next;
 	}
@@ -227,17 +223,11 @@ void	b_indexing(int e_pos[][2], t_stack **b)
 void	sort(t_stack **a, t_stack **b)
 {
 	int		e_pos[(*b)->size + 1][2];
-	// int		**e_pos;
-	// e_pos = molloc(((*b)->size + 1) * sizeof(int *));
 
-	// b_indexing(e_pos, b);
-	// a_indexing(e_pos, a, b);
-	// b_indexing(e_pos, b);
-	// a_indexing(e_pos, a, b);
-	// b_indexing(e_pos, b);
-	// a_indexing(e_pos, a, b);
 	while ((*b)->next){
 		b_indexing(e_pos, b);
 		a_indexing(e_pos, a, b);
 	}
+	b_indexing(e_pos, b);
+	a_indexing(e_pos, a, b);
 }

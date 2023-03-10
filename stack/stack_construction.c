@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 05:44:09 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/02/28 00:39:11 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/10 08:29:19 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,15 @@ int	pop_el(t_stack **stack)
 
 	if (is_empty(*stack))
 		return (0);
+	if (!(*stack)->next && ((*stack)->size == 1))
+	{
+		data = (*stack)->x;
+		(*stack)->x = 0;
+		(*stack)->size = 0;
+		// (*stack)->max = 0;
+		// (*stack)->min = 0;
+		return (data);
+	}
 	data = (*stack)->x;
 	tmp = (*stack);
 	((*stack)->next)->size = tmp->size - 1;
@@ -116,7 +125,4 @@ void	stack_init(int *k, t_stack **A, t_stack **B, int *l)
 		push_el(A,k[*l - i - 1], (*A)->min, (*A)->max);
 		i++;
 	}
-	// pb(A,B);
-	// pb(A,B);
-	// pb(A,B);
 }

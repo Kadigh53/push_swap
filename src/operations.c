@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 08:14:17 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/09 11:54:19 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/10 08:19:17 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@ void	pa(t_stack **a, t_stack **b)
 	data = pop_el(b);
 	if (data == 0 && !((*b)->next))
 		return ;
-	if (!(*b)->next && ((*b)->size) > 0)
-	{
-		
-	}	// push b to a
+	// if (!(*b)->next && ((*b)->size) > 0)
+	// {
+	// }	// push b to a
 	push_el(a, data, (*a)->min, (*a)->max);
 	ft_putstr_fd("pa\n",1);
 	// printf("pa\n");
