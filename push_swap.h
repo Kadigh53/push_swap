@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:57:15 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/08 07:51:53 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/10 11:57:30 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ void    ft_lstadd_back(t_stack  **stack, t_stack *node);
 t_stack *ft_lstnew(int data, int min, int max);
 // t_stack	*ft_lstnew(int data);
 void	stack_init(int *k, t_stack **A, t_stack **B, int *l);
-int		pop_el(t_stack **stack);
+int	pop_el(t_stack **stack, t_stack **a);
+// int		pop_el(t_stack **stack);
 void    push_el(t_stack **stack, int data, int min, int max);
 // void   	push_el(t_stack **stack, int data);
 /*---------utils functions--------*/
