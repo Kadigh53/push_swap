@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 02:27:28 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/10 11:06:58 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/11 10:26:52 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ void	sort_action(int e_pos[][2], t_stack **a, t_stack **b)
 	while(tmp->next)
 	{
 		mvs = ft_abs(e_pos[i][0]) + ft_abs(e_pos[i][1]);
-		if (mvs < min)
+		if (mvs <= min)
 		{
 			min = mvs;
 			index = i;

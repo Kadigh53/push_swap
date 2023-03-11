@@ -6,42 +6,25 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 22:35:53 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/10 11:11:03 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/11 10:26:46 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	clear_daStackAction(t_stack **a, t_stack **b, int Rnbr, int Pnbr, int r)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (i < Rnbr)
-// 	{
-// 		if (r == 0)
-// 			ra(a);
-// 		else if (r == 1)
-// 			rra(a);
-// 		i++;
-// 	}
-// 	i = 0;
-// 	while (i < Pnbr)
-// 	{
-// 		pb(a, b);
-// 		i++;
-// 	}
-// }
-
-void	clear_daStack(int *p, int *k, t_stack **a, t_stack **b)
+void	clear_daStack(int *p, int *k, t_stack **a, t_stack **b, int *l_max)
 {
 	int		i;
+	int 	j;
+	int		n;
 	t_stack	*tmp;
 
 	i = 1;
+	j = 0;
 	ra(a, 1);
 	tmp = *a;
-	while ((*a)->x != (*a)->min)
+	n = (*a)->size - *l_max;
+	while( j < *l_max && n)
 	{
 		if (tmp->x == k[p[i]])
 		{
@@ -51,8 +34,9 @@ void	clear_daStack(int *p, int *k, t_stack **a, t_stack **b)
 		else
 		{
 			pb(a, b);
-			// printf("%d | %d\n", (*b)->x, (*b)->size);
+			n--;
 		}
+		j++;
 		tmp = (*a);
 	}
 }
@@ -67,7 +51,7 @@ void	def_lis(t_stack **a, t_stack **b, int *k, int *length, int *kp, int l)
 
 	i = 1;
 	l_max = length[0];
-	while (i < l)
+	while (i <= l)
 	{
 		j = 0;
 		while (j < i)
@@ -100,7 +84,7 @@ void	def_lis(t_stack **a, t_stack **b, int *k, int *length, int *kp, int l)
 		p[l_max - i - 1] = max_index;
 		i++;
 	}
-	clear_daStack(p, k, a, b);
+	clear_daStack(p, k, a, b, &l_max);
 }
 
 void	retrieve_lis(t_stack **a, t_stack **b)
