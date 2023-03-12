@@ -72,7 +72,7 @@ int	*parsing_f(int ac, char **av, int *l)
 		k[i] = ft_atoi(p[i]);
 		i++;
 	}
-	k[i] = (int)NULL;
+	k[i] = 0;
 	a_sorted(k, l);
 	duplicate_check(k, n);
 	return (k);

@@ -80,8 +80,9 @@ void	ra(t_stack **a, int mode)
         return;
     first = (*a)->next;
     last = first;
-    while ((last->next) != NULL)
+    while ((last->next) != NULL){
         last = last->next;
+	}
 	(*a)->next = NULL;
     last->next = *a;
     *a = first;

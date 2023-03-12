@@ -38,6 +38,10 @@ void	clear_daStack(int *p, int *k, t_stack **a, t_stack **b, int *l_max)
 		}
 		j++;
 		tmp = (*a);
+		/*
+		comparaison between k[p[i]] and k[p[a->size - i]] look to the minumimum and then efectue the 
+		least movements of the stack then decide whether you gonna ra OR rra 
+		*/
 	}
 }
 
@@ -58,7 +62,7 @@ void	def_lis(t_stack **a, t_stack **b, int *k, int *length, int *kp, int l)
 		{
 			if (k[j] < k[i]) // && length[i] < length[j] + 1
 			{
-				if (length[i] < length[j] + 1)
+				if (length[i] < length[j] + 1) //length[i] <= length[j] + 1)
 				{
 					length[i] = length[j] + 1;
 					kp[i] = j;

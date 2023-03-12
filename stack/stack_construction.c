@@ -109,10 +109,10 @@ void	init_init(int *k,  int *l, t_stack **stack)
 void	stack_init(int *k, t_stack **A, t_stack **B, int *l)
 {
 	int i;
-	int	min;
+	// int	min;
 
 	i = 0;
-	min = k[0];
+	// min = k[0];
 	*A = malloc(sizeof(t_stack));
 	if (!*A)
 		exit(1);
