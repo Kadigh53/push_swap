@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:13 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/11 09:31:58 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/14 14:24:29 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ int main(int ac, char **av)
 	if (!k)
 		exit(1);
 	stack_init(k, &a, &b, &l);
-	f(&a,&b);
 	t_stack *tmp = a;
 	while (tmp)
 	{
 		printf("a  %d\t|| : min %d : max %d : size %d\n",tmp->x,tmp->min,tmp->max,tmp->size);
 		tmp = tmp->next;
 	}
+	f(&a,&b);
 	tmp = b;
 	printf("\n===========\n\n");
 	while (tmp)
@@ -77,6 +77,7 @@ int main(int ac, char **av)
 		else
 			ra(&a, 1);
 	}
+
 	tmp = a;
 	printf("\n===========\n\n");
 	i =0;
