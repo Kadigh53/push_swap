@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 02:27:28 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/11 10:26:52 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/15 18:57:19 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int	ft_min(int a, int b)
 
 int	is_between(int *stack, int start, int next, int x)
 {
-	// printf("stack[i]:%d\tx:%d\tstack[i+1]:%d\n",stack[i],x,stack[i+1]);
 	if (stack[start] < x && x < stack[next])
 		return (1);
 	else
@@ -44,13 +43,11 @@ void	b_to_a(int e_pos[2], t_stack **a, t_stack **b)
 
 	i = 0;
 	mr = 0;
-	// printf("[%d,%d]\n",e_pos[0],e_pos[1]);
+	printf("[%d,%d]",e_pos[0],e_pos[1]);
 	rot_a = ft_abs(e_pos[0]);
 	rot_b = ft_abs(e_pos[1]);
-	// printf("{\nrot_a : %d\nrot_b : %d\n",rot_a,rot_b);
 	if ((e_pos[1] * e_pos[0]) > 0){
-		mr = ft_min(rot_a, rot_b);
-		// printf("    mr : %d | rot_a:%d rot_b:%d",mr,rot_a,rot_b);	
+		mr = ft_min(rot_a, rot_b);	
 	}
 	while (mr)
 	{
@@ -59,12 +56,13 @@ void	b_to_a(int e_pos[2], t_stack **a, t_stack **b)
 		else
 			rrr(a,b);
 		mr--;
-		if (!mr)
-		{
-			mr = ft_min(rot_a, rot_b);
-			break ;
-		}
+		// if (!mr)
+		// {
+		// 	mr = ft_min(rot_a, rot_b);
+		// 	break ;
+		// }
 	}
+	mr = ft_min(rot_a, rot_b);
 	while (i < rot_a - mr)
 	{
 		if (e_pos[0] < 0)
@@ -82,7 +80,8 @@ void	b_to_a(int e_pos[2], t_stack **a, t_stack **b)
 			rb(b, 1);
 		i++;
 	}
-	// printf("%d\n", );
+	printf(" %d\n",(*b)->x);
+	// printf(" %d\n",(*a)->x);
 	pa(a,b);
 }
 
@@ -106,22 +105,10 @@ void	sort_action(int e_pos[][2], t_stack **a, t_stack **b)
 			min = mvs;
 			index = i;
 		}
-		// if (mvs <= min && i > ((*a)->size / 2)) Must to check this case where the updates of the minimums whith the same complexity
-		// {
-		// 	min = mvs;
-		// 	index = i;
-		// }
-		// else if (mvs < min && i <= ((*a)->size / 2))
-		// {
-		// 	min = mvs;
-		// 	index = i;
-		// }
 		i++;
 		tmp = tmp->next;
 	}
-	// printf("index: %d\n[%d,%d]\n",index, e_pos[index][0],e_pos[index][1]);
 	b_to_a(e_pos[index], a, b);
-	// free(tmp);
 }
 
 int	locate(int *stack_arr, int x, t_stack **a)
@@ -141,16 +128,13 @@ int	locate(int *stack_arr, int x, t_stack **a)
 		tmp = tmp->next;
 	}
 	if (is_between(stack_arr, (*a)->size - 1, 0, x)){
-		// printf("her > ");
 		return (0);
 	}
 	tmp = *a;
 	i = 0;
 	while (tmp) //tmp->x != (*a)->min)
 	{
-		// printf("\n\nam here\n");
 		if ((tmp->x == (*a)->min) && i <= ((*a)->size / 2)){
-			// printf("fh ");
 			return (i);
 		}
 		else if ((tmp->x == (*a)->min) && i > ((*a)->size / 2))
@@ -158,12 +142,6 @@ int	locate(int *stack_arr, int x, t_stack **a)
 		i++;
 		tmp = tmp->next;
 	}
-	// if (i <= ((*a)->size / 2)){
-	// 	printf("her2 > ");
-	// 	return (i - 1);
-	// }
-	// printf("h %d er3 > ",i);
-	// return (i - (*a)->size + 1);
 	return (13);
 }
 
@@ -172,7 +150,6 @@ void	a_indexing(int e_pos[][2], t_stack **a, t_stack **b)
 	t_stack	*tmp;
 	int		*stack;
 	int		i;
-	// int		k;
 
 	i = 0;
 	stack = malloc(((*a)->size + 1) * sizeof(int));
@@ -189,12 +166,9 @@ void	a_indexing(int e_pos[][2], t_stack **a, t_stack **b)
 	while (tmp)
 	{
 		e_pos[i][0] = locate(stack, tmp->x, a);
-		// e_pos[i][0] = k;
-		// printf("%d\t(%d,%d)\n",tmp->x,e_pos[i][0],e_pos[i][1]);
 		tmp = tmp->next;
 		i++;
 	}
-	// printf("\n");
 	sort_action(e_pos,a,b);
 	free(stack);
 	// free(tmp);
@@ -224,10 +198,28 @@ void	sort(t_stack **a, t_stack **b)
 {
 	int		e_pos[(*b)->size + 1][2];
 
-	while ((*b)->next){
-		b_indexing(e_pos, b);
-		a_indexing(e_pos, a, b);
-	}
 	b_indexing(e_pos, b);
 	a_indexing(e_pos, a, b);
+	b_indexing(e_pos, b);
+	a_indexing(e_pos, a, b);
+	// while ((*b)->next){
+	// 	b_indexing(e_pos, b);
+	// 	a_indexing(e_pos, a, b);
+	// }
+	b_indexing(e_pos, b);
+	a_indexing(e_pos, a, b);
+	// b_indexing(e_pos, b);
+	// a_indexing(e_pos, a, b);
+	t_stack *tmp = *a;
+	while (tmp){
+		printf("a  %d\n",tmp->x);
+		tmp  = tmp->next;
+	}
+	printf("\n");
+	tmp = *b;
+	while (tmp){
+		printf("b  %d\n",tmp->x);
+		tmp  = tmp->next;
+	}
+	printf("\n\n");
 }

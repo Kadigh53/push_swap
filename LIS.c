@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 22:35:53 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/14 13:47:55 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/15 19:53:29 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,24 @@ int	is_itTher(int *p, int *k, int x, int *lmax)
 	int	i;
 
 	i = 0;
-	while(i <= *lmax)
+	while(i < *lmax)
 	{
-		if (x == k[p[i]])
+		// printf("(%d)[%d]  ",k[p[i]],*lmax);
+		if (x == 200)
+			printf("lola     %d **",k[p[i]]);
+		if (x == k[p[i]]){
+			if (x == 200)
+				printf("hayi ghid ``\n");
 			return (1);
+		}
+		// printf("%d -",k[p[i]]);
 		i++;
 	}
+	if (x == 200)
+		printf("dkhelt hna*\n");
 	return (0);
 }
+
 void	a_to_b(t_stack **a, t_stack **b, int t, int i)
 {
 	int r_nbrs;
@@ -40,6 +50,7 @@ void	a_to_b(t_stack **a, t_stack **b, int t, int i)
 			rra(a, 1);
 		r_nbrs--;
 	}
+	printf("%d\n",(*a)->x);
 	pb(a,b);
 }
 
@@ -49,40 +60,51 @@ void	nqi_liya(int *p, int *k, t_stack **a, t_stack **b, int *l_max)
 	int		i;
 	int		j;
 	int		t;
+	int		l;
+	int		mov;
 
 	i = 0;
 	t = 0;
+	l = 1;
 	tmp = *a;
-	while (!is_itTher(p,k,tmp->x,l_max) && i <= ((*a)->size) / 2)
+	while (i <= ((*a)->size) / 2)
 	{
+		if (!is_itTher(p,k,tmp->x,l_max) && l)
+		{
+			l--;
+			mov = i;
+		}
 		i++;
+		// printf("Hay ghid : /* %d | mov:%d\n",tmp->x, mov);
 		tmp = tmp->next;
 	}
+	// printf("\n");
 	j = i;
-	while(j < ((*a)->size))
+	while(tmp)//j < ((*a)->size/2))
 	{
 		if (!is_itTher(p,k,tmp->x,l_max))
 		{
-			t = j;
-			i++;
+			t = ((*a)->size) - j;
+			// printf("/* %d : %d */ %d\n",t,tmp->x, ((*a)->size/2));
 		}
 		tmp = tmp->next;
 		j++;
 	}
-	a_to_b(a,b,t,i);
+	// printf("(mov:%d,t:%d)\n",mov,t);
+	a_to_b(a,b,t,mov);
 }
 
 void	clear_daStack(int *p, int *k, t_stack **a, t_stack **b, int *l_max)
 {
-	int		i;
-	int 	j;
+	// int		i;
+	// int 	j;
 	int		n;
-	t_stack	*tmp;
+	// t_stack	*tmp;
 
-	i = 1;
-	j = 0;
+	// i = 1;
+	// j = 0;
 	// ra(a, 1);
-	tmp = *a;
+	// tmp = *a;
 	n = (*a)->size - *l_max;
 	while(n)
 	{
