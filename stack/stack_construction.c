@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 05:44:09 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/11 09:34:23 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/16 10:59:20 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@ void    push_el(t_stack **stack, int data, int min, int max)
 		(*stack)->min = min;
 		(*stack)->max = max;
 		(*stack)->size = 1;
+		(*stack)->prev = NULL;
 		(*stack)->next = NULL;
 		return ;
 	}
 	node = ft_lstnew(data, min, max);
-	// (*stack)->prev = node;
 	stack = ft_lstadd_front(stack,node);
 	(*stack)->size = ((*stack)->next)->size + 1;
 	ft_lstiter(*stack, (*stack)->size);
@@ -66,6 +66,7 @@ int	pop_el(t_stack **stack, t_stack **a)
 	{
 		data = (*stack)->x;
 		(*stack)->x = 0;
+		(*stack)->prev = NULL;
 		(*stack)->size = 0;
 		if (data == 0)
 			push_el(a, data, (*a)->min, (*a)->max);
@@ -74,9 +75,9 @@ int	pop_el(t_stack **stack, t_stack **a)
 	data = (*stack)->x;
 	tmp = (*stack);
 	((*stack)->next)->size = tmp->size - 1;
-	// (*stack)->prev = NULL;
+	((*stack)->next)->prev = NULL;
 	*stack = ((*stack)->next);
-	free(tmp);
+	// free(tmp);
 	ft_lstiter(*stack, (*stack)->size);
 	return (data);
 }
@@ -101,9 +102,9 @@ void	init_init(int *k,  int *l, t_stack **stack)
 	(*stack)->min = min;
 	(*stack)->max = max;
 	(*stack)->next = NULL;
-	// (*stack)->prev = NULL;
+	(*stack)->prev = NULL;
 	(*stack)->size = 0;
-	(*stack)->x = 0;	
+	(*stack)->x = 0;
 }
 
 void	stack_init(int *k, t_stack **A, t_stack **B, int *l)

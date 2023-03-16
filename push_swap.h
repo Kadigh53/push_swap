@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:57:15 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/11 10:43:10 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/16 10:29:38 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_stack
 	int min;
 	int max;
 	int	size;
-	// struct s_stack  *prev;
+	struct s_stack  *prev;
 	struct s_stack  *next;
 }	t_stack;
 

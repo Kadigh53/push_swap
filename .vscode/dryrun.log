@@ -11,7 +11,6 @@ cc -Wall -Wextra -Werror  error.c -c -o error.o
 cc -Wall -Wextra -Werror  stack/ft_lstadd_front.c -c -o stack/ft_lstadd_front.o
 cc -Wall -Wextra -Werror  stack/ft_lstnew.c -c -o stack/ft_lstnew.o
 cc -Wall -Wextra -Werror  stack/stack_construction.c -c -o stack/stack_construction.o
- 
 cc -Wall -Wextra -Werror  stack/ft_lstadd_back.c -c -o stack/ft_lstadd_back.o
 cc -Wall -Wextra -Werror  LIS.c -c -o LIS.o
 cc -Wall -Wextra -Werror  src/operations.c -c -o src/operations.o
