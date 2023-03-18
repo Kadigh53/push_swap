@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 02:27:28 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/15 18:57:19 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/18 15:10:26 by kadigh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,16 +56,11 @@ void	b_to_a(int e_pos[2], t_stack **a, t_stack **b)
 		else
 			rrr(a,b);
 		mr--;
-		// if (!mr)
-		// {
-		// 	mr = ft_min(rot_a, rot_b);
-		// 	break ;
-		// }
 	}
 	mr = ft_min(rot_a, rot_b);
 	while (i < rot_a - mr)
 	{
-		if (e_pos[0] < 0)
+		if (e_pos[0] < 0) 
 			rra(a, 1);
 		else if (e_pos[0] > 0)
 			ra(a, 1);
@@ -81,8 +76,16 @@ void	b_to_a(int e_pos[2], t_stack **a, t_stack **b)
 		i++;
 	}
 	printf(" %d\n",(*b)->x);
-	// printf(" %d\n",(*a)->x);
 	pa(a,b);
+	printf("\n");
+	t_stack *tmp = *a;
+	while (tmp)
+	{
+		printf("a %d %d\t|| : min %d : max %d : size %d\n",i,tmp->x,tmp->min,tmp->max,tmp->size);
+		i++;
+		tmp = tmp->next;
+	}
+	// printf(" %d\n",(*a)->x);
 }
 
 void	sort_action(int e_pos[][2], t_stack **a, t_stack **b)
@@ -159,6 +162,7 @@ void	a_indexing(int e_pos[][2], t_stack **a, t_stack **b)
 	while(tmp)
 	{
 		stack[i++] = tmp->x;
+		// printf("%d   ",tmp->x);
 		tmp = tmp->next;
 	}
 	i = 0;
@@ -198,28 +202,11 @@ void	sort(t_stack **a, t_stack **b)
 {
 	int		e_pos[(*b)->size + 1][2];
 
-	b_indexing(e_pos, b);
-	a_indexing(e_pos, a, b);
-	b_indexing(e_pos, b);
-	a_indexing(e_pos, a, b);
-	// while ((*b)->next){
-	// 	b_indexing(e_pos, b);
-	// 	a_indexing(e_pos, a, b);
-	// }
-	b_indexing(e_pos, b);
-	a_indexing(e_pos, a, b);
-	// b_indexing(e_pos, b);
-	// a_indexing(e_pos, a, b);
-	t_stack *tmp = *a;
-	while (tmp){
-		printf("a  %d\n",tmp->x);
-		tmp  = tmp->next;
+
+	while ((*b)->next){
+		b_indexing(e_pos, b);
+		a_indexing(e_pos, a, b);
 	}
-	printf("\n");
-	tmp = *b;
-	while (tmp){
-		printf("b  %d\n",tmp->x);
-		tmp  = tmp->next;
-	}
-	printf("\n\n");
+	b_indexing(e_pos, b);
+	a_indexing(e_pos, a, b);
 }

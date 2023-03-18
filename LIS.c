@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   LIS.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 22:35:53 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/16 11:46:55 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/17 18:15:19 by kadigh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,11 @@ int	is_itTher(int *p, int *k, int x, int *lmax)
 	i = 0;
 	while(i < *lmax)
 	{
-		// printf("(%d)[%d]  ",k[p[i]],*lmax);
-		// if (x == 200)
-		// 	printf("lola     %d **",k[p[i]]);
 		if (x == k[p[i]]){
-			// if (x == 200)
-			// 	printf("hayi ghid ``\n");
 			return (1);
 		}
-		// printf("%d -",k[p[i]]);
 		i++;
 	}
-	// if (x == 200)
-	// 	printf("dkhelt hna*\n");
 	return (0);
 }
 
@@ -75,17 +67,15 @@ void	nqi_liya(int *p, int *k, t_stack **a, t_stack **b, int *l_max)
 			mov = i;
 		}
 		i++;
-		// printf("Hay ghid : /* %d | mov:%d\n",tmp->x, mov);
 		tmp = tmp->next;
 	}
-	// printf("\n");
 	j = i;
 	while(tmp)//j < ((*a)->size/2))
 	{
 		if (!is_itTher(p,k,tmp->x,l_max))
 		{
-			if (tmp->x == 200)
-				printf("hatid ghid  %d\n",tmp->x);
+			// if (tmp->x == 200)
+			// 	printf("hatid ghid  %d\n",tmp->x);
 			t = ((*a)->size) - j;
 			// printf("/* %d : %d */ %d\n",t,tmp->x, ((*a)->size/2));
 		}
@@ -210,22 +200,5 @@ void	f(t_stack **a, t_stack **b)
 		else
 			ra(a, 1);
 	}
-	tmp = *a;
-	while (tmp->next){
-		printf("a  %d\t\t",tmp->x);
-		if (tmp->prev)
-			printf("prv %d\n",tmp->prev->x);
-		tmp = tmp->next;
-	}
-	printf("a  %d\t\t",tmp->x);
-	printf("prv %d\n",tmp->prev->x);
-	printf("\n");
-	// while(tmp)
-	// {
-	// 	printf("a  %d\n",tmp->x);
-	// 	tmp = tmp->prev;
-	// }
-	// printf("\n");
-	tmp = *b;
-	// retrieve_lis(a, b);
+	retrieve_lis(a, b);
 }

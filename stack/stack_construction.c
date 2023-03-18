@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_construction.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 05:44:09 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/16 10:59:20 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/17 17:10:38 by kadigh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void    push_el(t_stack **stack, int data, int min, int max)
 		(*stack)->min = min;
 		(*stack)->max = max;
 		(*stack)->size = 1;
-		(*stack)->prev = NULL;
+		// (*stack)->prev = NULL;
 		(*stack)->next = NULL;
 		return ;
 	}
@@ -66,7 +66,7 @@ int	pop_el(t_stack **stack, t_stack **a)
 	{
 		data = (*stack)->x;
 		(*stack)->x = 0;
-		(*stack)->prev = NULL;
+		// (*stack)->prev = NULL;
 		(*stack)->size = 0;
 		if (data == 0)
 			push_el(a, data, (*a)->min, (*a)->max);
@@ -75,7 +75,7 @@ int	pop_el(t_stack **stack, t_stack **a)
 	data = (*stack)->x;
 	tmp = (*stack);
 	((*stack)->next)->size = tmp->size - 1;
-	((*stack)->next)->prev = NULL;
+	// ((*stack)->next)->prev = NULL;
 	*stack = ((*stack)->next);
 	// free(tmp);
 	ft_lstiter(*stack, (*stack)->size);
@@ -102,7 +102,7 @@ void	init_init(int *k,  int *l, t_stack **stack)
 	(*stack)->min = min;
 	(*stack)->max = max;
 	(*stack)->next = NULL;
-	(*stack)->prev = NULL;
+	// (*stack)->prev = NULL;
 	(*stack)->size = 0;
 	(*stack)->x = 0;
 }

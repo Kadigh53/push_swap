@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:13 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/16 11:13:56 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/18 15:09:01 by kadigh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,51 +27,48 @@ int main(int ac, char **av)
 	stack_init(k, &a, &b, &l);
 	int i=0;
 	t_stack *tmp = a;
-	// while (tmp)
-	// {
-	// 	printf("a %d %d\t|| : min %d : max %d : size %d\n",i,tmp->x,tmp->min,tmp->max,tmp->size);
-	// 	i++;
-	// 	tmp = tmp->next;
-	// }
+	while (tmp)
+	{
+		printf("a %d %d\t|| : min %d : max %d : size %d\n",i,tmp->x,tmp->min,tmp->max,tmp->size);
+		i++;
+		tmp = tmp->next;
+	}
 	f(&a,&b);
-	// tmp = a;
-	// while (tmp)
-	// {
-	// 	printf("a %d %d\t|| : min %d : max %d : size %d\n",i,tmp->x,tmp->min,tmp->max,tmp->size);
-	// 	i++;
-	// 	tmp = tmp->next;
-	// }
-	// tmp = b;
-	// printf("\n===========\n\n");
-	// while (tmp)
-	// {
-	// 	printf("b  %d\t|| : min %d : max %d : size %d\n",tmp->x,tmp->min,tmp->max,tmp->size);
-	// 	tmp = tmp->next;
-	// }
-	// printf("\n");
-	// sort(&a,&b);
+	tmp = a;
+	while (tmp)
+	{
+		printf("a %d %d\t|| : min %d : max %d : size %d\n",i,tmp->x,tmp->min,tmp->max,tmp->size);
+		i++;
+		tmp = tmp->next;
+	}
+	tmp = b;
+	printf("\n===========\n\n");
+	while (tmp)
+	{
+		printf("b  %d\t|| : min %d : max %d : size %d\n",tmp->x,tmp->min,tmp->max,tmp->size);
+		tmp = tmp->next;
+	}
+	printf("\n");
+	/**/
+	/**/
+	/*hna aybda sorty*/
+	/**/
+	/**/
+	sort(&a,&b);
 
-	
+	// tmp = a;	
 	// while (tmp)
 	// {
 	// 	printf("a  %d\t|| : min %d : max %d : size %d\n",tmp->x,tmp->min,tmp->max,tmp->size);
 	// 	tmp = tmp->next;
 	// }
 	// printf("\n===========\n\n");
-	// tmp = a;
-	// while (tmp)
-	// {
-	// 	printf("a  %d\t|| : min %d : max %d : size %d\n",tmp->x,tmp->min,tmp->max,tmp->size);
-	// 	tmp = tmp->next;
-	// }
 	// tmp = b;
-	// printf("\n===========\n\n");
 	// while (tmp)
 	// {
-	// 	printf("b  %d\t|| : min %d : max %d : size %d\n",tmp->x,tmp->min,tmp->max,tmp->size);
+	// 	printf("a  %d\t|| : min %d : max %d : size %d\n",tmp->x,tmp->min,tmp->max,tmp->size);
 	// 	tmp = tmp->next;
 	// }
-	// printf("\n");
 	i = 0;
 	tmp = a;
 	while(tmp->x != tmp->min){
@@ -86,27 +83,27 @@ int main(int ac, char **av)
 			ra(&a, 1);
 	}
 
-	// tmp = a;
-	// printf("\n===========\n\n");
-	// i =0;
-	// while (tmp)
-	// {
-	// 	if (i <= (a->size)/2)
-	// 		printf("a %d\t%d\t|| : max %d : size %d\n",i,tmp->x,tmp->max,tmp->size);
-	// 	else
-	// 		printf("a %d\t%d\t|| : max %d : size %d\n",i - a->size,tmp->x,tmp->max,tmp->size);
-	// 	tmp = tmp->next;
-	// 	i++;
-	// }
-	// i = 0;
-	// tmp = b;
-	// printf("\n===========\n\n");
-	// while (tmp)
-	// {
-	// 	printf("b  %d\t%d\t|| : min %d : size %d max : %d \n",i,tmp->x,tmp->min,tmp->size,tmp->max);
-	// 	tmp = tmp->next;
-	// 	i++;
-	// }
+	tmp = a;
+	printf("\n===========\n\n");
+	i =0;
+	while (tmp)
+	{
+		if (i <= (a->size)/2)
+			printf("a %d\t%d\t|| : max %d : size %d\n",i,tmp->x,tmp->max,tmp->size);
+		else
+			printf("a %d\t%d\t|| : max %d : size %d\n",i - a->size,tmp->x,tmp->max,tmp->size);
+		tmp = tmp->next;
+		i++;
+	}
+	i = 0;
+	tmp = b;
+	printf("\n===========\n\n");
+	while (tmp)
+	{
+		printf("b  %d\t%d\t|| : min %d : size %d max : %d \n",i,tmp->x,tmp->min,tmp->size,tmp->max);
+		tmp = tmp->next;
+		i++;
+	}
 }
 
 // 78  { 78 89 100 300 400 500 600 900} 
