@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 02:27:28 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/18 15:10:26 by kadigh           ###   ########.fr       */
+/*   Updated: 2023/03/19 21:44:31 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,7 +145,7 @@ int	locate(int *stack_arr, int x, t_stack **a)
 		i++;
 		tmp = tmp->next;
 	}
-	return (13);
+	// return (13);
 }
 
 void	a_indexing(int e_pos[][2], t_stack **a, t_stack **b)
