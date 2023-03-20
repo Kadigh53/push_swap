@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:57:15 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/17 17:08:57 by kadigh           ###   ########.fr       */
+/*   Updated: 2023/03/20 22:35:48 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_stack
 int	*parsing_f(int ac, char **av, int *l);
 void f(t_stack **a,t_stack **b);
 void    sort(t_stack **a, t_stack **b);
+int	ft_abs(int a);
 /*---------stack functions--------*/
 t_stack    **ft_lstadd_front(t_stack **stack, t_stack *node);
 void    ft_lstadd_back(t_stack  **stack, t_stack *node);

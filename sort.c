@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 02:27:28 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/20 11:18:20 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/20 23:47:08 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,22 +130,21 @@ int	locate(int *stack_arr, int x, t_stack **a)
 		i++;
 		tmp = tmp->next;
 	}
-	if (is_between(stack_arr, (*a)->size - 1, 0, x)){
+	if (is_between(stack_arr, (*a)->size - 1, 0, x))
 		return (0);
-	}
 	tmp = *a;
 	i = 0;
-	while (tmp) //tmp->x != (*a)->min)
+	while (tmp)
 	{
-		if ((tmp->x == (*a)->min) && i <= ((*a)->size / 2)){
+		if ((tmp->x == (*a)->min) && i <= ((*a)->size / 2))
 			return (i);
-		}
 		else if ((tmp->x == (*a)->min) && i > ((*a)->size / 2))
 			return (i - (*a)->size + 1);
 		i++;
 		tmp = tmp->next;
 	}
-	return (13);
+	return((*a)->size);
+	// return (13);
 }
 
 void	a_indexing(int e_pos[][2], t_stack **a, t_stack **b)
@@ -213,14 +212,14 @@ void	sort(t_stack **a, t_stack **b)
 	int		e_pos[(*b)->size + 1][2];
 
 
-	// while ((*b)->next){
-	// 	b_indexing(e_pos, b);
-	// 	a_indexing(e_pos, a, b);
-	// }
-	b_indexing(e_pos, b);
-	a_indexing(e_pos, a, b);
-	b_indexing(e_pos, b);
-	a_indexing(e_pos, a, b);
+	while ((*b)->next){
+		b_indexing(e_pos, b);
+		a_indexing(e_pos, a, b);
+	}
+	// b_indexing(e_pos, b);
+	// a_indexing(e_pos, a, b);
+	// b_indexing(e_pos, b);
+	// a_indexing(e_pos, a, b);
 	b_indexing(e_pos, b);
 	a_indexing(e_pos, a, b);
 }

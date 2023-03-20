@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 22:35:53 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/20 12:35:06 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/20 22:58:27 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@ int	is_itTher(int *p, int *k, int x, int *lmax)
 	while(i < *lmax)
 	{
 		if (x == k[p[i]]){
+			printf("%d kayn\n",x);
 			return (1);
 		}
 		i++;
 	}
+	printf("%d makaynch\n",x);
 	return (0);
 }
 
@@ -36,27 +38,33 @@ void	a_to_b(t_stack **a, t_stack **b, int t, int i)
 		r_nbrs = t;
 	while (r_nbrs)
 	{
-		if (i < t)
+		if (i <= t)
 			ra(a, 1);
 		else
 			rra(a, 1);
 		r_nbrs--;
 	}
+	t_stack *tmp = *a;
+	while (tmp)
+	{
+		printf("a    %d\n", tmp->x);
+		tmp = tmp->next;
+	}
 	printf("%d\n",(*a)->x);
 	pb(a,b);
+	printf("\n");
 }
 
 void	nqi_liya(int *p, int *k, t_stack **a, t_stack **b, int *l_max)
 {
 	t_stack	*tmp;
 	int		i;
-	int		j;
 	int		t;
 	int		l;
 	int		mov;
 
 	i = 0;
-	t = 0;
+	// t = 0;
 	l = 1;
 	tmp = *a;
 	while (i <= ((*a)->size) / 2)
@@ -69,38 +77,27 @@ void	nqi_liya(int *p, int *k, t_stack **a, t_stack **b, int *l_max)
 		i++;
 		tmp = tmp->next;
 	}
-	j = i;
-	while(tmp)//j < ((*a)->size/2))
+	if (l == 1)
+		mov = ((*a)->size) / 2;
+	t = (*a)->size;
+	while(tmp)
 	{
 		if (!is_itTher(p,k,tmp->x,l_max))
 		{
-			// if (tmp->x == 200)
-			// 	printf("hatid ghid  %d\n",tmp->x);
-			t = ((*a)->size) - j;
+			t = ((*a)->size) - i;
 			// printf("/* %d : %d */ %d\n",t,tmp->x, ((*a)->size/2));
 		}
 		tmp = tmp->next;
-		j++;
+		i++;
 	}
-	// printf("(mov:%d,t:%d)\n",mov,t);
+	printf("\n(mov:%d,t:%d)\n\n",mov,t);
 	a_to_b(a,b,t,mov);
 }
 
 void	clear_daStack(int *p, int *k, t_stack **a, t_stack **b, int *l_max)
 {
 	int		n;
-	// t_stack *tmp;
 
-	// tmp = *a;
-	// while (tmp->next)
-	// 	tmp = tmp->next;
-	// // printf("a   %d",tmp->x);
-	// while(tmp->prev)
-	// {
-	// 	printf("a  %d\n",tmp->x);
-	// 	tmp = tmp->prev;
-	// }
-	// printf("\n");
 	n = (*a)->size - *l_max;
 	// printf(">>>>>>%d   %d  %d \n\n",(*a)->size,*l_max ,n);
 	while(n)
@@ -153,6 +150,12 @@ void	def_lis(t_stack **a, t_stack **b, int *k, int *length, int *kp, int l)
 		p[l_max - i - 1] = max_index;
 		i++;
 	}
+	i =0;
+	while (i < l_max){
+		printf("%d  ",k[p[i]]);
+		i ++;
+	}
+	printf("\n\n");
 	clear_daStack(p, k, a, b, &l_max);
 }
 
