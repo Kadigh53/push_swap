@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_construction.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 05:44:09 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/17 17:10:38 by kadigh           ###   ########.fr       */
+/*   Updated: 2023/03/20 11:07:26 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ int	pop_el(t_stack **stack, t_stack **a)
 
 	if (is_empty(*stack))
 		return (0);
-	// printf("pop\n");
 	if (!(*stack)->next && ((*stack)->size == 1))
 	{
 		data = (*stack)->x;

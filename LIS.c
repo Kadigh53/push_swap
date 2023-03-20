@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   LIS.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 22:35:53 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/17 18:15:19 by kadigh           ###   ########.fr       */
+/*   Updated: 2023/03/20 12:35:06 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,8 @@ void	clear_daStack(int *p, int *k, t_stack **a, t_stack **b, int *l_max)
 	// 	tmp = tmp->prev;
 	// }
 	// printf("\n");
-	n = (*a)->size - *l_max + 1;
+	n = (*a)->size - *l_max;
+	// printf(">>>>>>%d   %d  %d \n\n",(*a)->size,*l_max ,n);
 	while(n)
 	{
 		nqi_liya(p,k,a,b,l_max);

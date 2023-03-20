@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 02:27:28 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/19 21:44:31 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/20 11:18:20 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,7 +145,7 @@ int	locate(int *stack_arr, int x, t_stack **a)
 		i++;
 		tmp = tmp->next;
 	}
-	// return (13);
+	return (13);
 }
 
 void	a_indexing(int e_pos[][2], t_stack **a, t_stack **b)
@@ -167,12 +167,22 @@ void	a_indexing(int e_pos[][2], t_stack **a, t_stack **b)
 	}
 	i = 0;
 	tmp = *b;
+	
 	while (tmp)
 	{
 		e_pos[i][0] = locate(stack, tmp->x, a);
 		tmp = tmp->next;
 		i++;
 	}
+	tmp = *b;
+	i =0;
+	while (tmp)
+	{
+		printf(" %d [%d,%d]\n",tmp->x,e_pos[i][0],e_pos[i][1]);
+		i++;
+		tmp = tmp->next;
+	}
+	printf("\n");
 	sort_action(e_pos,a,b);
 	free(stack);
 	// free(tmp);
@@ -203,10 +213,14 @@ void	sort(t_stack **a, t_stack **b)
 	int		e_pos[(*b)->size + 1][2];
 
 
-	while ((*b)->next){
-		b_indexing(e_pos, b);
-		a_indexing(e_pos, a, b);
-	}
+	// while ((*b)->next){
+	// 	b_indexing(e_pos, b);
+	// 	a_indexing(e_pos, a, b);
+	// }
+	b_indexing(e_pos, b);
+	a_indexing(e_pos, a, b);
+	b_indexing(e_pos, b);
+	a_indexing(e_pos, a, b);
 	b_indexing(e_pos, b);
 	a_indexing(e_pos, a, b);
 }
