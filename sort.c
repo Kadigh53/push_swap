@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 02:27:28 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/20 23:47:08 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/21 20:28:14 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,18 @@ void	b_to_a(int e_pos[2], t_stack **a, t_stack **b)
 	int	i;
 	int rot_a;
 	int	rot_b;
+	int	k;
 	int mr;
 
 	i = 0;
 	mr = 0;
+	k = 0;
 	printf("[%d,%d]",e_pos[0],e_pos[1]);
 	rot_a = ft_abs(e_pos[0]);
 	rot_b = ft_abs(e_pos[1]);
 	if ((e_pos[1] * e_pos[0]) > 0){
-		mr = ft_min(rot_a, rot_b);	
+		mr = ft_min(rot_a, rot_b);
+		k = ft_min(rot_a, rot_b);
 	}
 	while (mr)
 	{
@@ -57,7 +60,8 @@ void	b_to_a(int e_pos[2], t_stack **a, t_stack **b)
 			rrr(a,b);
 		mr--;
 	}
-	mr = ft_min(rot_a, rot_b);
+	// mr = ft_min(rot_a, rot_b);
+	mr = k;
 	while (i < rot_a - mr)
 	{
 		if (e_pos[0] < 0) 
@@ -75,16 +79,17 @@ void	b_to_a(int e_pos[2], t_stack **a, t_stack **b)
 			rb(b, 1);
 		i++;
 	}
-	printf(" %d\n",(*b)->x);
+	printf("  %d\n",(*b)->x);
 	pa(a,b);
 	printf("\n");
 	t_stack *tmp = *a;
 	while (tmp)
 	{
-		printf("a %d %d\t|| : min %d : max %d : size %d\n",i,tmp->x,tmp->min,tmp->max,tmp->size);
+		printf("a %d %d  \t size %d\n",i,tmp->x,tmp->size);
 		i++;
 		tmp = tmp->next;
 	}
+	printf("\n");
 	// printf(" %d\n",(*a)->x);
 }
 
@@ -100,7 +105,7 @@ void	sort_action(int e_pos[][2], t_stack **a, t_stack **b)
 	tmp = *b;
 	min = ft_abs(e_pos[0][0]) + ft_abs(e_pos[0][1]);
 	index = 0;
-	while(tmp->next)
+	while(tmp)
 	{
 		mvs = ft_abs(e_pos[i][0]) + ft_abs(e_pos[i][1]);
 		if (mvs <= min)
@@ -111,7 +116,10 @@ void	sort_action(int e_pos[][2], t_stack **a, t_stack **b)
 		i++;
 		tmp = tmp->next;
 	}
+	if (index == (*b)->size)
+		index--;
 	b_to_a(e_pos[index], a, b);
+	// printf("i : %d    index : %d size(b):%d\n",i,index,(*b)->size);
 }
 
 int	locate(int *stack_arr, int x, t_stack **a)
@@ -161,12 +169,10 @@ void	a_indexing(int e_pos[][2], t_stack **a, t_stack **b)
 	while(tmp)
 	{
 		stack[i++] = tmp->x;
-		// printf("%d   ",tmp->x);
 		tmp = tmp->next;
 	}
 	i = 0;
 	tmp = *b;
-	
 	while (tmp)
 	{
 		e_pos[i][0] = locate(stack, tmp->x, a);
@@ -211,15 +217,10 @@ void	sort(t_stack **a, t_stack **b)
 {
 	int		e_pos[(*b)->size + 1][2];
 
-
-	while ((*b)->next){
+	while ((*b)->next && (*b)->size){
 		b_indexing(e_pos, b);
 		a_indexing(e_pos, a, b);
 	}
-	// b_indexing(e_pos, b);
-	// a_indexing(e_pos, a, b);
-	// b_indexing(e_pos, b);
-	// a_indexing(e_pos, a, b);
 	b_indexing(e_pos, b);
 	a_indexing(e_pos, a, b);
 }

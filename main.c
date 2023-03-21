@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:13 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/18 15:09:01 by kadigh           ###   ########.fr       */
+/*   Updated: 2023/03/21 18:21:22 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,33 +27,28 @@ int main(int ac, char **av)
 	stack_init(k, &a, &b, &l);
 	int i=0;
 	t_stack *tmp = a;
-	while (tmp)
-	{
-		printf("a %d %d\t|| : min %d : max %d : size %d\n",i,tmp->x,tmp->min,tmp->max,tmp->size);
-		i++;
-		tmp = tmp->next;
-	}
+	// while (tmp)
+	// {
+	// 	printf("a %d %d\t|| : min %d : max %d : size %d\n",i,tmp->x,tmp->min,tmp->max,tmp->size);
+	// 	i++;
+	// 	tmp = tmp->next;
+	// }
 	f(&a,&b);
-	tmp = a;
-	while (tmp)
-	{
-		printf("a %d %d\t|| : min %d : max %d : size %d\n",i,tmp->x,tmp->min,tmp->max,tmp->size);
-		i++;
-		tmp = tmp->next;
-	}
-	tmp = b;
-	printf("\n===========\n\n");
-	while (tmp)
-	{
-		printf("b  %d\t|| : min %d : max %d : size %d\n",tmp->x,tmp->min,tmp->max,tmp->size);
-		tmp = tmp->next;
-	}
-	printf("\n");
-	/**/
-	/**/
-	/*hna aybda sorty*/
-	/**/
-	/**/
+	// tmp = a;
+	// while (tmp)
+	// {
+	// 	printf("a %d %d\t|| : min %d : max %d : size %d\n",i,tmp->x,tmp->min,tmp->max,tmp->size);
+	// 	i++;
+	// 	tmp = tmp->next;
+	// }
+	// tmp = b;
+	// printf("\n===========\n\n");
+	// while (tmp)
+	// {
+	// 	printf("b  %d\t|| : min %d : max %d : size %d\n",tmp->x,tmp->min,tmp->max,tmp->size);
+	// 	tmp = tmp->next;
+	// }
+	// printf("\n");
 	sort(&a,&b);
 
 	// tmp = a;	
@@ -82,7 +77,6 @@ int main(int ac, char **av)
 		else
 			ra(&a, 1);
 	}
-
 	tmp = a;
 	printf("\n===========\n\n");
 	i =0;

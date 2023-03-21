@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 22:35:53 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/20 22:58:27 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/21 18:33:29 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ int	is_itTher(int *p, int *k, int x, int *lmax)
 	while(i < *lmax)
 	{
 		if (x == k[p[i]]){
-			printf("%d kayn\n",x);
+			// printf("%d kayn\n",x);
 			return (1);
 		}
 		i++;
 	}
-	printf("%d makaynch\n",x);
+	// printf("%d makaynch\n",x);
 	return (0);
 }
 
@@ -44,15 +44,15 @@ void	a_to_b(t_stack **a, t_stack **b, int t, int i)
 			rra(a, 1);
 		r_nbrs--;
 	}
-	t_stack *tmp = *a;
-	while (tmp)
-	{
-		printf("a    %d\n", tmp->x);
-		tmp = tmp->next;
-	}
-	printf("%d\n",(*a)->x);
+	// t_stack *tmp = *a;
+	// while (tmp)
+	// {
+	// 	printf("a    %d\n", tmp->x);
+	// 	tmp = tmp->next;
+	// }
+	// printf("%d\n",(*a)->x);
 	pb(a,b);
-	printf("\n");
+	// printf("\n");
 }
 
 void	nqi_liya(int *p, int *k, t_stack **a, t_stack **b, int *l_max)
@@ -78,7 +78,7 @@ void	nqi_liya(int *p, int *k, t_stack **a, t_stack **b, int *l_max)
 		tmp = tmp->next;
 	}
 	if (l == 1)
-		mov = ((*a)->size) / 2;
+		mov = ((*a)->size);
 	t = (*a)->size;
 	while(tmp)
 	{
@@ -90,7 +90,7 @@ void	nqi_liya(int *p, int *k, t_stack **a, t_stack **b, int *l_max)
 		tmp = tmp->next;
 		i++;
 	}
-	printf("\n(mov:%d,t:%d)\n\n",mov,t);
+	// printf("\n(mov:%d,t:%d)\n\n",mov,t);
 	a_to_b(a,b,t,mov);
 }
 
@@ -150,12 +150,12 @@ void	def_lis(t_stack **a, t_stack **b, int *k, int *length, int *kp, int l)
 		p[l_max - i - 1] = max_index;
 		i++;
 	}
-	i =0;
-	while (i < l_max){
-		printf("%d  ",k[p[i]]);
-		i ++;
-	}
-	printf("\n\n");
+	// i =0;
+	// while (i < l_max){
+	// 	printf("%d  ",k[p[i]]);
+	// 	i ++;
+	// }
+	// printf("\n\n");
 	clear_daStack(p, k, a, b, &l_max);
 }
 
@@ -205,4 +205,11 @@ void	f(t_stack **a, t_stack **b)
 			ra(a, 1);
 	}
 	retrieve_lis(a, b);
+	// tmp = *a;
+	// printf("after a_to_b\n");
+	// while (tmp){
+	// 	printf("a %d\n",tmp->x);
+	// 	tmp = tmp->next;
+	// }
+	// printf("\n");
 }

@@ -1,22 +1,6 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/aaoutem-/Desktop/ps_op'
-cc -Wall -Wextra -Werror  main.c -c -o main.o
- 
-cc -Wall -Wextra -Werror  pars.c -c -o pars.o
-cc -Wall -Wextra -Werror  utils_fs/ft_atoi.c -c -o utils_fs/ft_atoi.o
-cc -Wall -Wextra -Werror  utils_fs/ft_split.c -c -o utils_fs/ft_split.o
-cc -Wall -Wextra -Werror  utils_fs/ft_strlen.c -c -o utils_fs/ft_strlen.o
-cc -Wall -Wextra -Werror  utils_fs/ft_substr.c -c -o utils_fs/ft_substr.o
-cc -Wall -Wextra -Werror  error.c -c -o error.o
- 
-cc -Wall -Wextra -Werror  stack/ft_lstadd_front.c -c -o stack/ft_lstadd_front.o
-cc -Wall -Wextra -Werror  stack/ft_lstnew.c -c -o stack/ft_lstnew.o
-cc -Wall -Wextra -Werror  stack/stack_construction.c -c -o stack/stack_construction.o
-cc -Wall -Wextra -Werror  stack/ft_lstadd_back.c -c -o stack/ft_lstadd_back.o
-cc -Wall -Wextra -Werror  LIS.c -c -o LIS.o
-cc -Wall -Wextra -Werror  src/operations.c -c -o src/operations.o
-cc -Wall -Wextra -Werror  src/ft_putstr.c -c -o src/ft_putstr.o
-cc -Wall -Wextra -Werror  sort.c -c -o sort.o
-cc -Wall -Wextra -Werror  main.o pars.o utils_fs/ft_atoi.o utils_fs/ft_split.o utils_fs/ft_strlen.o utils_fs/ft_substr.o error.o stack/ft_lstadd_front.o stack/ft_lstnew.o stack/stack_construction.o stack/ft_lstadd_back.o LIS.o src/operations.o src/ft_putstr.o sort.o -o push_swap
+cc -Wall -Wextra -Werror -g sort.c -c -o sort.o
+cc -Wall -Wextra -Werror -g main.o pars.o utils_fs/ft_atoi.o utils_fs/ft_split.o utils_fs/ft_strlen.o utils_fs/ft_substr.o error.o stack/ft_lstadd_front.o stack/ft_lstnew.o stack/stack_construction.o stack/ft_lstadd_back.o LIS.o src/operations.o src/ft_putstr.o sort.o -o push_swap
 make: Leaving directory `/Users/aaoutem-/Desktop/ps_op'
  
