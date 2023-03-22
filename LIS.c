@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 22:35:53 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/22 13:52:11 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/22 17:41:44 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,30 +153,42 @@ void	def_lis(t_stack **a, t_stack **b, int *k, int *length, int *kp, int l)
 	clear_daStack(p, k, a, b, &l_max);
 }
 
-void	retrieve_lis(t_stack **a, t_stack **b)
+void	retrieve_lis(t_stack **a, t_stack **b, int *k)
 {
 	t_stack	*tmp;
-	int		*k;
+	// int		*k;
 	int		*length;
-	int		*kp;
+	int		*L;
 	int		i;
+	int		j;
 
+	// i = 0;
+	// while (i < 18){
+	// 	printf(">>%d  ",k[i]);
+	// 	i++;
+	// }
 	i = 0;
 	tmp = *a;
-	k = malloc((tmp->size + 1) * sizeof(int));
-	kp = malloc((tmp->size + 1) * sizeof(int));
+	L = malloc((tmp->size + 1) * sizeof(int));
 	length = malloc((tmp->size + 1) * sizeof(int));
 	// if (!k || !kp || !length)
 	// 	errors ;
 	while (tmp)
 	{
-		k[i] = tmp->x;
 		length[i] = 1;
-		kp[i] = 0;
+		L[i] = 0;
 		tmp = tmp->next;
 		i++;
 	}
-	def_lis(a, b, k, length, kp, i);
+	j = 0;
+	// printf("\n");
+	// while (j<17){
+	// 	printf("%d  >>",k[j]);
+	// 	j++;
+	// }
+	// printf("\n");
+	// printf("\n%D",(*b)->size);
+	def_lis(a, b, k, length, L, i);
 }
 
 void	f(t_stack **a, t_stack **b)
@@ -184,27 +196,54 @@ void	f(t_stack **a, t_stack **b)
 	t_stack	*tmp;
 	int		*k;
 	int		i;
+	int 	j;
 
 	i = 0;
+	j = 0;
+	// printf("\nsize : %d\t",(*a)->size);
 	tmp = *a;
-	k = malloc((*a)->size + 1)
-	if (!k)
+	k = malloc(((*a)->size + 1) * sizeof(int));
+	// if (!k)
+	// 	error()
 	while (tmp->x != tmp->min)
 	{
 		i++;
 		tmp = tmp->next;
 	}
 	while(tmp)
-	{}
-	
-	while ((*a)->x != (*a)->min)
 	{
-		if (i > (*a)->size / 2)
-			rra(a, 1);
-		else
-			ra(a, 1);
+		k[j] = tmp->x;
+		j++;
+		tmp = tmp->next;
 	}
-	retrieve_lis(a, b);
+	tmp = *a;
+	while (i)
+	{
+		k[j] = tmp->x;
+		// printf("%d  ",tmp->x);
+		j++;
+		i--;
+		tmp = tmp->next;
+	}
+	k[j] = 0;
+	retrieve_lis(a, b, k);
+	// while (i <17)
+	// {
+	// 	printf("%d  ",k[i++]);
+	// }
+	// printf("\n");
+	
+	// tmp = *b;
+	// while ((*a)->x != (*a)->min)
+	// {
+	// 	if (i > (*a)->size / 2)
+	// 		rra(a, 1);
+	// 	else
+	// 		ra(a, 1);
+	// }
+
+
+	
 	// tmp = *a;
 	// printf("after a_to_b\n");
 	// while (tmp){

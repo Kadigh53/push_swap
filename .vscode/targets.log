@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Wed Mar 22 09:34:34 2023
+# Make data base, printed on Wed Mar 22 19:47:58 2023
 
 # Variables
 
@@ -39,7 +39,7 @@ MAKEFILE_LIST :=  Makefile
 # environment
 VSCODE_CWD = /
 # environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.ZFeeHw9wVw/Render
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.SlDF56LGLK/Render
 # environment
 PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
 # environment
@@ -53,7 +53,7 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 LS_COLORS = di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.jKuP9ub72K/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.9ESywQMYpe/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -72,7 +72,6 @@ VSCODE_CODE_CACHE_PATH = /Users/aaoutem-/Library/Application Support/Code/Cached
 LOGNAME = aaoutem-
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
- 
 # environment
 ZSH = /Users/aaoutem-/.oh-my-zsh
 # environment
@@ -94,6 +93,7 @@ CC = cc
 # default
 MAKE_VERSION := 3.81
 # environment
+ 
 USER = aaoutem-
 # makefile
 .DEFAULT_GOAL := all
@@ -122,7 +122,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000002.Electron
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000003.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -148,7 +148,7 @@ SECURITYSESSIONID = 186a8
 # default
 SUFFIXES := 
 # makefile (from `Makefile', line 16)
-FLAGS = -Wall -Wextra -Werror -g
+FLAGS = -Wall -Wextra -Werror 
 # default
 .INCLUDE_DIRS = /usr/local/include
 # environment
@@ -156,7 +156,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 12579
+VSCODE_PID = 3071
 # variable set hash-table stats:
 # Load=72/1024=7%, Rehash=0, Collisions=1/101=1%
 
@@ -167,11 +167,11 @@ VSCODE_PID = 12579
 # Directories
 
 # utils_fs (device 16777227, inode 5087420): 9 files, no impossibilities so far.
-# . (device 16777227, inode 5087330): 24 files, no impossibilities.
+# . (device 16777227, inode 5087330): 25 files, no impossibilities.
 # stack (device 16777227, inode 5087412): 11 files, no impossibilities so far.
 # src (device 16777227, inode 5087409): 5 files, no impossibilities so far.
 
-# 49 files, no impossibilities in 4 directories.
+# 50 files, no impossibilities in 4 directories.
 
 # Implicit Rules
 
@@ -187,7 +187,7 @@ VSCODE_PID = 12579
 # Not a target:
 LIS.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-03-21 18:33:29
+#  Last modified 2023-03-22 17:41:44
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -205,7 +205,7 @@ stack/ft_lstadd_back.c:
 src/operations.o: src/operations.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `src/operations'
-#  Last modified 2023-03-21 20:30:04
+#  Last modified 2023-03-22 15:35:41
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -226,7 +226,7 @@ all: push_swap
 stack/ft_lstnew.o: stack/ft_lstnew.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `stack/ft_lstnew'
-#  Last modified 2023-03-21 20:30:04
+#  Last modified 2023-03-22 15:35:41
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -238,7 +238,7 @@ stack/ft_lstnew.o: stack/ft_lstnew.c push_swap.h
 # Not a target:
 main.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-03-21 18:21:22
+#  Last modified 2023-03-22 17:40:56
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -265,7 +265,7 @@ push_swap.h:
 utils_fs/ft_atoi.o: utils_fs/ft_atoi.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `utils_fs/ft_atoi'
-#  Last modified 2023-03-21 20:30:04
+#  Last modified 2023-03-22 15:35:41
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -283,7 +283,7 @@ utils_fs/ft_atoi.o: utils_fs/ft_atoi.c push_swap.h
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2023-03-21 20:29:44
+#  Last modified 2023-03-22 15:36:33
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -301,7 +301,7 @@ stack/stack_construction.c:
 sort.o: sort.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `sort'
-#  Last modified 2023-03-21 20:30:04
+#  Last modified 2023-03-22 18:46:28
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -313,7 +313,7 @@ sort.o: sort.c push_swap.h
 error.o: error.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `error'
-#  Last modified 2023-03-21 20:30:04
+#  Last modified 2023-03-22 15:35:41
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -325,7 +325,7 @@ error.o: error.c push_swap.h
 # Not a target:
 src/operations.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-03-19 12:37:38
+#  Last modified 2023-03-22 13:25:36
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -334,8 +334,7 @@ src/operations.c:
 utils_fs/ft_strlen.o: utils_fs/ft_strlen.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `utils_fs/ft_strlen'
-#  Last modified 2023-03-21 20:30:04
- 
+#  Last modified 2023-03-22 15:35:41
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -347,7 +346,7 @@ utils_fs/ft_strlen.o: utils_fs/ft_strlen.c push_swap.h
 stack/ft_lstadd_front.o: stack/ft_lstadd_front.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `stack/ft_lstadd_front'
-#  Last modified 2023-03-21 20:30:04
+#  Last modified 2023-03-22 15:35:41
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -376,7 +375,7 @@ fclean: clean
 utils_fs/ft_split.o: utils_fs/ft_split.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `utils_fs/ft_split'
-#  Last modified 2023-03-21 20:30:04
+#  Last modified 2023-03-22 15:35:41
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -388,7 +387,7 @@ utils_fs/ft_split.o: utils_fs/ft_split.c push_swap.h
 src/ft_putstr.o: src/ft_putstr.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `src/ft_putstr'
-#  Last modified 2023-03-21 20:30:04
+#  Last modified 2023-03-22 15:35:41
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -399,6 +398,7 @@ src/ft_putstr.o: src/ft_putstr.c push_swap.h
 
 # Not a target:
 .DEFAULT:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -415,7 +415,7 @@ utils_fs/ft_atoi.c:
 pars.o: pars.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `pars'
-#  Last modified 2023-03-21 20:30:04
+#  Last modified 2023-03-22 15:35:41
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -432,7 +432,7 @@ re: fclean all
 # Not a target:
 sort.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-03-21 20:28:14
+#  Last modified 2023-03-22 18:43:55
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -441,7 +441,7 @@ sort.c:
 LIS.o: LIS.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `LIS'
-#  Last modified 2023-03-21 20:30:04
+#  Last modified 2023-03-22 17:41:46
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -461,7 +461,7 @@ clean:
 stack/ft_lstadd_back.o: stack/ft_lstadd_back.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `stack/ft_lstadd_back'
-#  Last modified 2023-03-21 20:30:04
+#  Last modified 2023-03-22 15:35:41
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -472,7 +472,7 @@ stack/ft_lstadd_back.o: stack/ft_lstadd_back.c push_swap.h
 
 push_swap: main.o pars.o utils_fs/ft_atoi.o utils_fs/ft_split.o utils_fs/ft_strlen.o utils_fs/ft_substr.o error.o stack/ft_lstadd_front.o stack/ft_lstnew.o stack/stack_construction.o stack/ft_lstadd_back.o LIS.o src/operations.o src/ft_putstr.o sort.o
 #  Implicit rule search has not been done.
-#  Last modified 2023-03-21 20:30:04
+#  Last modified 2023-03-22 18:46:28
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -511,7 +511,7 @@ stack/ft_lstadd_front.c:
 main.o: main.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `main'
-#  Last modified 2023-03-21 20:30:03
+#  Last modified 2023-03-22 17:40:58
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -523,7 +523,7 @@ main.o: main.c push_swap.h
 utils_fs/ft_substr.o: utils_fs/ft_substr.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `utils_fs/ft_substr'
-#  Last modified 2023-03-21 20:30:04
+#  Last modified 2023-03-22 15:35:41
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -553,7 +553,7 @@ src/ft_putstr.c:
 stack/stack_construction.o: stack/stack_construction.c push_swap.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `stack/stack_construction'
-#  Last modified 2023-03-21 20:30:04
+#  Last modified 2023-03-22 15:35:41
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -584,6 +584,6 @@ pars.c:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed Mar 22 09:34:34 2023
+# Finished Make data base on Wed Mar 22 19:47:58 2023
 
  

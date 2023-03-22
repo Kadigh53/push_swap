@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:57:15 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/21 18:30:11 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/22 21:55:57 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_stack
 // } t_vars;
 
 int		*parsing_f(int ac, char **av, int *l);
+void    three_sort(t_stack **a, t_stack **b);
 void	sort(t_stack **a, t_stack **b);
 void	f(t_stack **a,t_stack **b);
 int		ft_abs(int a);

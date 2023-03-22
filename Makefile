@@ -6,14 +6,14 @@
 #    By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/23 01:02:26 by aaoutem-          #+#    #+#              #
-#    Updated: 2023/03/21 20:29:44 by aaoutem-         ###   ########.fr        #
+#    Updated: 2023/03/22 15:36:33 by aaoutem-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc
 RM = rm -rf
-FLAGS = -Wall -Wextra -Werror -g
+FLAGS = -Wall -Wextra -Werror 
 HEADER = push_swap.h
 
 SRCS = main.c pars.c utils_fs/ft_atoi.c utils_fs/ft_split.c utils_fs/ft_strlen.c \
