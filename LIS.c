@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 22:35:53 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/21 18:33:29 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/22 13:52:11 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ void	def_lis(t_stack **a, t_stack **b, int *k, int *length, int *kp, int l)
 		{
 			if (k[j] < k[i]) // && length[i] < length[j] + 1
 			{
-				if (length[i] < length[j] + 1) //length[i] <= length[j] + 1)
+				if (length[i] <= length[j] + 1) //length[i] <= length[j] + 1)
 				{
 					length[i] = length[j] + 1;
 					kp[i] = j;
@@ -150,12 +150,6 @@ void	def_lis(t_stack **a, t_stack **b, int *k, int *length, int *kp, int l)
 		p[l_max - i - 1] = max_index;
 		i++;
 	}
-	// i =0;
-	// while (i < l_max){
-	// 	printf("%d  ",k[p[i]]);
-	// 	i ++;
-	// }
-	// printf("\n\n");
 	clear_daStack(p, k, a, b, &l_max);
 }
 
@@ -188,15 +182,21 @@ void	retrieve_lis(t_stack **a, t_stack **b)
 void	f(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
+	int		*k;
 	int		i;
 
 	i = 0;
 	tmp = *a;
+	k = malloc((*a)->size + 1)
+	if (!k)
 	while (tmp->x != tmp->min)
 	{
 		i++;
 		tmp = tmp->next;
 	}
+	while(tmp)
+	{}
+	
 	while ((*a)->x != (*a)->min)
 	{
 		if (i > (*a)->size / 2)

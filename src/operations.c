@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 08:14:17 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/11 09:34:09 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/22 13:25:36 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 void	pa(t_stack **a, t_stack **b)
 {
+	// printf("pa\n");
+	ft_putstr_fd("pa\n",1);
 	int data;
 	data = pop_el(b,a);
 	if (data == 0 && !((*b)->next) && ((*b)->size == 0))
 		return ;
 	push_el(a, data, (*a)->min, (*a)->max);
-	ft_putstr_fd("pa\n",1);
 }
 
 void	pb(t_stack **a, t_stack **b)

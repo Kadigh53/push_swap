@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:13 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/21 18:21:22 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/22 13:24:13 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,26 +78,26 @@ int main(int ac, char **av)
 			ra(&a, 1);
 	}
 	tmp = a;
-	printf("\n===========\n\n");
-	i =0;
-	while (tmp)
-	{
-		if (i <= (a->size)/2)
-			printf("a %d\t%d\t|| : max %d : size %d\n",i,tmp->x,tmp->max,tmp->size);
-		else
-			printf("a %d\t%d\t|| : max %d : size %d\n",i - a->size,tmp->x,tmp->max,tmp->size);
-		tmp = tmp->next;
-		i++;
-	}
-	i = 0;
-	tmp = b;
-	printf("\n===========\n\n");
-	while (tmp)
-	{
-		printf("b  %d\t%d\t|| : min %d : size %d max : %d \n",i,tmp->x,tmp->min,tmp->size,tmp->max);
-		tmp = tmp->next;
-		i++;
-	}
+	// printf("\n===========\n\n");
+	// i =0;
+	// while (tmp)
+	// {
+	// 	if (i <= (a->size)/2)
+	// 		printf("a %d\t%d\t|| : max %d : size %d\n",i,tmp->x,tmp->max,tmp->size);
+	// 	else
+	// 		printf("a %d\t%d\t|| : max %d : size %d\n",i - a->size,tmp->x,tmp->max,tmp->size);
+	// 	tmp = tmp->next;
+	// 	i++;
+	// }
+	// i = 0;
+	// tmp = b;
+	// printf("\n===========\n\n");
+	// while (tmp)
+	// {
+	// 	printf("b  %d\t%d\t|| : min %d : size %d max : %d \n",i,tmp->x,tmp->min,tmp->size,tmp->max);
+	// 	tmp = tmp->next;
+	// 	i++;
+	// }
 }
 
 // 78  { 78 89 100 300 400 500 600 900} 
