@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:57:15 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/22 21:55:57 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/23 16:50:58 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdint.h>
+#include <limits.h>
 
 typedef struct s_stack
 {
@@ -37,7 +38,7 @@ typedef struct s_stack
 // } t_vars;
 
 int		*parsing_f(int ac, char **av, int *l);
-void    three_sort(t_stack **a, t_stack **b);
+void    three_sort(t_stack **a);
 void	sort(t_stack **a, t_stack **b);
 void	f(t_stack **a,t_stack **b);
 int		ft_abs(int a);

@@ -6,7 +6,7 @@
 #    By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/23 01:02:26 by aaoutem-          #+#    #+#              #
-#    Updated: 2023/03/22 15:36:33 by aaoutem-         ###   ########.fr        #
+#    Updated: 2023/03/23 13:53:44 by aaoutem-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ HEADER = push_swap.h
 SRCS = main.c pars.c utils_fs/ft_atoi.c utils_fs/ft_split.c utils_fs/ft_strlen.c \
 		utils_fs/ft_substr.c error.c stack/ft_lstadd_front.c stack/ft_lstnew.c \
 		stack/stack_construction.c stack/ft_lstadd_back.c LIS.c src/operations.c \
-		src/ft_putstr.c sort.c 
+		src/ft_putstr.c sort.c three_case.c
 
 OBJ_F = ${SRCS:.c=.o}
 

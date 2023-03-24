@@ -6,17 +6,17 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:54 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/10 10:37:43 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/23 22:18:38 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <limits.h>
+
 void	duplicate_check(int	*k, int n)
 {
 	int	i;
 	int	j;
-	
+
 	i = 0;
 	while (i < n)
 	{
@@ -30,6 +30,7 @@ void	duplicate_check(int	*k, int n)
 		i++;
 	}
 }
+
 void	a_sorted(int *k, int *l)
 {
 	int	i;
@@ -43,7 +44,7 @@ void	a_sorted(int *k, int *l)
 	}
 	if ((i + 1) == *l)
 	{
-		ft_putstr_fd("\033[1;31malready sorted\n",1);
+		ft_putstr_fd("\033[1;31mAlready sorted\n",1);
 		exit(0);
 	}
 }
