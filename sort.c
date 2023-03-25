@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 02:27:28 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/25 21:16:00 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/25 21:39:52 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	is_between(int *stack, int start, int next, int x)
 	else
 		return (0);
 }
+
 void	rotate(int r_nbr, int e_pos, t_stack **stack)
 {
 	int	i;
@@ -47,23 +48,24 @@ void	rotate(int r_nbr, int e_pos, t_stack **stack)
 		i++;
 	}
 }
+
 void	b_to_a(int e_pos[2], t_stack **a, t_stack **b)
 {
+	// int rot_a;
+	// int	rot_b;
 	int	i;
-	int rot_a;
-	int	rot_b;
 	int	k;
 	int mr;
 
+	// printf("[%d,%d]",e_pos[0],e_pos[1]);
+	// rot_a = ft_abs(e_pos[0]);
+	// rot_b = ft_abs(e_pos[1]);
 	i = 0;
 	mr = 0;
 	k = 0;
-	// printf("[%d,%d]",e_pos[0],e_pos[1]);
-	rot_a = ft_abs(e_pos[0]);
-	rot_b = ft_abs(e_pos[1]);
 	if ((e_pos[1] * e_pos[0]) > 0){
-		mr = ft_min(rot_a, rot_b);
-		k = ft_min(rot_a, rot_b);
+		mr = ft_min(ft_abs(e_pos[0]), ft_abs(e_pos[1]));
+		k = ft_min(ft_abs(e_pos[0]), ft_abs(e_pos[1]));
 	}
 	while (mr)
 	{
@@ -91,8 +93,8 @@ void	b_to_a(int e_pos[2], t_stack **a, t_stack **b)
 	// 		rb(b, 1);
 	// 	i++;
 	// }
-	rotate(rot_a - k, e_pos[0], a);
-	rotate(rot_b - k, e_pos[1], b);
+	rotate(ft_abs(e_pos[0]) - k, e_pos[0], a);
+	rotate(ft_abs(e_pos[1]) - k, e_pos[1], b);
 	pa(a,b);
 }
 
@@ -124,7 +126,6 @@ void	sort_action(int e_pos[][2], t_stack **a, t_stack **b)
 			index = i;
 		}
 	}
-	// printf("\n");
 	mvs = ft_abs(e_pos[i][0]) + ft_abs(e_pos[i][1]);
 	if (mvs <= min)
 		index = i;

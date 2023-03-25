@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:13 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/24 22:02:23 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/25 21:39:21 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,19 +48,19 @@ int main(int ac, char **av)
 				ra(&a, 1);
 		}
 	}
+	tmp = a;
+	printf("\n===========\n\n");
+	i =0;
+	while (tmp)
+	{
+		if (i <= (a->size)/2)
+			printf("a %d\t%d\t|| : max %d : size %d\n",i,tmp->x,tmp->max,tmp->size);
+		else
+			printf("a %d\t%d\t|| : max %d : size %d\n",i - a->size,tmp->x,tmp->max,tmp->size);
+		tmp = tmp->next;
+		i++;
+	}
 }
-	// tmp = a;
-	// printf("\n===========\n\n");
-	// i =0;
-	// while (tmp)
-	// {
-	// 	if (i <= (a->size)/2)
-	// 		printf("a %d\t%d\t|| : max %d : size %d\n",i,tmp->x,tmp->max,tmp->size);
-	// 	else
-	// 		printf("a %d\t%d\t|| : max %d : size %d\n",i - a->size,tmp->x,tmp->max,tmp->size);
-	// 	tmp = tmp->next;
-	// 	i++;
-	// }
 
 // 78  { 78 89 100 300 400 500 600 900} 
 // 89 
