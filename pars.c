@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:54 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/23 22:18:38 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/24 21:13:33 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	duplicate_check(int	*k, int n)
 		while(j < n)
 		{
 			if (k[i] == k[j])
-				errors("\033[1;31mERROR:duplicate arguments\n");
+				errors("Error\n");
 			j++;
 		}
 		i++;
@@ -44,7 +44,7 @@ void	a_sorted(int *k, int *l)
 	}
 	if ((i + 1) == *l)
 	{
-		ft_putstr_fd("\033[1;31mAlready sorted\n",1);
+		ft_putstr_fd("Error\n",1);
 		exit(0);
 	}
 }

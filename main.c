@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:13 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/23 23:57:14 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/24 22:02:23 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int main(int ac, char **av)
 	int	*k;
 	int	l;
 	t_stack	*tmp ;
-	int i =0;
+	int i;
 
-	if (ac <= 2)
+	if (ac < 2)
 		exit(0);
 	k = parsing_f(ac,av,&l);
 	if (!k)
@@ -35,7 +35,8 @@ int main(int ac, char **av)
 		sort(&a,&b);
 		i = 0;
 		tmp = a;
-		while(tmp->x != tmp->min){
+		while(tmp->x != tmp->min)
+		{
 			i++;
 			tmp = tmp->next;
 		}
@@ -47,6 +48,7 @@ int main(int ac, char **av)
 				ra(&a, 1);
 		}
 	}
+}
 	// tmp = a;
 	// printf("\n===========\n\n");
 	// i =0;
@@ -59,7 +61,6 @@ int main(int ac, char **av)
 	// 	tmp = tmp->next;
 	// 	i++;
 	// }
-}
 
 // 78  { 78 89 100 300 400 500 600 900} 
 // 89 

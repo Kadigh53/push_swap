@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:57:15 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/23 16:50:58 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/25 21:01:42 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void    three_sort(t_stack **a);
 void	sort(t_stack **a, t_stack **b);
 void	f(t_stack **a,t_stack **b);
 int		ft_abs(int a);
+void	*ft_malloc(int size);
 
 /*---------stack functions--------*/
 t_stack	**ft_lstadd_front(t_stack **stack, t_stack *node);

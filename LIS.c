@@ -6,11 +6,21 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 22:35:53 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/23 23:48:08 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/25 20:49:54 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	*ft_malloc(int size)
+{
+	void *buff;
+
+	buff = malloc(size);
+	if (!buff)
+		errors("Malloc failed");
+	return (buff);
+}
 
 int	is_itTher(int *p, int *k, int x, int *lmax)
 {
@@ -122,9 +132,7 @@ void	def_lis(t_stack **a, t_stack **b, int *k, int *length, int *kp, int l)
 		}
 		i++;
 	}
-	p = malloc((l_max + 1) * sizeof(int));
-	if (!p)
-		errors("Malloc failed");
+	p = ft_malloc((l_max + 1) * sizeof(int));
 	i = 1;
 	p[l_max - 1] = max_index;
 	while (i < l_max)
@@ -142,14 +150,11 @@ void	retrieve_lis(t_stack **a, t_stack **b, int *k)
 	int		*length;
 	int		*L;
 	int		i;
-	// int		j;
 
 	i = 0;
 	tmp = *a;
-	L = malloc((tmp->size + 1) * sizeof(int));
-	length = malloc((tmp->size + 1) * sizeof(int));
-	if (!L || !length)
-		errors("Malloc failed ") ;
+	L = ft_malloc((tmp->size + 1) * sizeof(int));
+	length = ft_malloc((tmp->size + 1) * sizeof(int));
 	while (tmp)
 	{
 		length[i] = 1;
@@ -170,9 +175,7 @@ void	f(t_stack **a, t_stack **b)
 	i = 0;
 	j = 0;
 	tmp = *a;
-	k = malloc(((*a)->size + 1) * sizeof(int));
-	if (!k)
-		errors("Malloc failed ");
+	k = ft_malloc(((*a)->size + 1) * sizeof(int));
 	while (tmp->x != tmp->min)
 	{
 		i++;
@@ -180,27 +183,15 @@ void	f(t_stack **a, t_stack **b)
 	}
 	while(tmp)
 	{
-		k[j] = tmp->x;
-		j++;
+		k[j++] = tmp->x;
 		tmp = tmp->next;
 	}
 	tmp = *a;
-	while (i)
+	while (i--)
 	{
 		k[j++] = tmp->x;
-		// j++;
-		i--;
 		tmp = tmp->next;
 	}
 	k[j] = 0;
 	retrieve_lis(a, b, k);
 }
-
-// void *ft_malloc(int size) {
-// 	void *buff = malloc(size);
-// 	if (!buff) {
-// 		errorss("mele;m");
-// 		exit(EXIT_FAILURE);
-// 	}
-// 	return buff
-// }

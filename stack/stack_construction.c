@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 05:44:09 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/20 11:07:26 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/24 21:15:34 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,6 @@ void	init_init(int *k,  int *l, t_stack **stack)
 	(*stack)->min = min;
 	(*stack)->max = max;
 	(*stack)->next = NULL;
-	// (*stack)->prev = NULL;
 	(*stack)->size = 0;
 	(*stack)->x = 0;
 }
@@ -109,10 +108,8 @@ void	init_init(int *k,  int *l, t_stack **stack)
 void	stack_init(int *k, t_stack **A, t_stack **B, int *l)
 {
 	int i;
-	// int	min;
 
 	i = 0;
-	// min = k[0];
 	*A = malloc(sizeof(t_stack));
 	if (!*A)
 		exit(1);
