@@ -3,179 +3,107 @@
 /*                                                        :::      ::::::::   */
 /*   LIS.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 22:35:53 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/25 20:49:54 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/29 13:58:03 by kadigh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	*ft_malloc(int size)
-{
-	void *buff;
-
-	buff = malloc(size);
-	if (!buff)
-		errors("Malloc failed");
-	return (buff);
-}
-
-int	is_itTher(int *p, int *k, int x, int *lmax)
-{
-	int	i;
-
-	i = 0;
-	while(i < *lmax)
-	{
-		if (x == k[p[i]])
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-void	a_to_b(t_stack **a, t_stack **b, int t, int i)
-{
-	int r_nbrs;
-
-	r_nbrs = i;
-	if (i > t)
-		r_nbrs = t;
-	while (r_nbrs)
-	{
-		if (i <= t)
-			ra(a, 1);
-		else
-			rra(a, 1);
-		r_nbrs--;
-	}
-	pb(a,b);
-}
-
-void	nqi_liya(int *p, int *k, t_stack **a, t_stack **b, int *l_max)
-{
-	t_stack	*tmp;
-	int		i;
-	int		t;
-	int		l;
-	int		mov;
-
-	i = 0;
-	l = 1;
-	tmp = *a;
-	while (i <= ((*a)->size) / 2)
-	{
-		if (!is_itTher(p,k,tmp->x,l_max) && l)
-		{
-			l--;
-			mov = i;
-		}
-		i++;
-		tmp = tmp->next;
-	}
-	if (l == 1)
-		mov = ((*a)->size);
-	t = (*a)->size;
-	while(tmp)
-	{
-		if (!is_itTher(p,k,tmp->x,l_max))
-			t = ((*a)->size) - i;
-		tmp = tmp->next;
-		i++;
-	}
-	a_to_b(a,b,t,mov);
-}
-
-void	clear_daStack(int *p, int *k, t_stack **a, t_stack **b, int *l_max)
+void	clear_daStack(t_stack **a, t_stack **b, t_vars *variables, int *l_max)
 {
 	int		n;
 
 	n = (*a)->size - *l_max;
 	while(n)
 	{
-		nqi_liya(p,k,a,b,l_max);
+		nqi_liya(a ,b , variables,l_max);
 		n--;
 	}
 }
-
-void	def_lis(t_stack **a, t_stack **b, int *k, int *length, int *kp, int l)
+void	remplir(t_vars *variables, int *l_max, int *max_index, int l)
 {
 	int	i;
 	int	j;
-	int	l_max;
-	int	max_index;
-	int	*p;
 
 	i = 1;
-	l_max = length[0];
 	while (i <= l)
 	{
 		j = 0;
 		while (j < i)
 		{
-			if (k[j] < k[i])
+			if (variables->O_k[j] < variables->O_k[i])
 			{
-				if (length[i] <= length[j] + 1)
+				if (variables->length[i] <= variables->length[j] + 1)
 				{
-					length[i] = length[j] + 1;
-					kp[i] = j;
+					variables->length[i] = variables->length[j] + 1;
+					variables->L[i] = j;
 				}
 			}
-			if (length[j] >= l_max)
+			if (variables->length[j] >= *l_max)
 			{
-				l_max = length[j];
-				max_index = j;
+				*l_max = variables->length[j];
+				*max_index = j;
 			}
 			j++;
 		}
 		i++;
 	}
-	p = ft_malloc((l_max + 1) * sizeof(int));
-	i = 1;
-	p[l_max - 1] = max_index;
-	while (i < l_max)
-	{
-		max_index = kp[max_index];
-		p[l_max - i - 1] = max_index;
-		i++;
-	}
-	clear_daStack(p, k, a, b, &l_max);
 }
 
-void	retrieve_lis(t_stack **a, t_stack **b, int *k)
+void	def_lis(t_stack **a, t_stack **b, t_vars *variables, int l)
 {
+	int	max_index;
+	int	l_max;
+	int	i;
+
+	i = 1;
+	l_max = variables->length[0];
+	remplir(variables, &l_max, &max_index, l);
+	variables->p = ft_malloc((l_max + 1) * sizeof(int));
+	variables->p[l_max - 1] = max_index;
+	while (i < l_max)
+	{
+		max_index = variables->L[max_index];
+		variables->p[l_max - i - 1] = max_index;
+		i++;
+	}
+	clear_daStack(a, b, variables, &l_max);
+}
+
+void	retrieve_lis(t_stack **a, t_stack **b, t_vars *variables)
+{
+	// t_vars	variables;
 	t_stack	*tmp;
-	int		*length;
-	int		*L;
 	int		i;
 
 	i = 0;
 	tmp = *a;
-	L = ft_malloc((tmp->size + 1) * sizeof(int));
-	length = ft_malloc((tmp->size + 1) * sizeof(int));
+	variables->L = ft_malloc((tmp->size + 1) * sizeof(int));
+	variables->length = ft_malloc((tmp->size + 1) * sizeof(int));
 	while (tmp)
 	{
-		length[i] = 1;
-		L[i] = 0;
+		variables->length[i] = 1;
+		variables->L[i] = 0;
 		tmp = tmp->next;
 		i++;
 	}
-	def_lis(a, b, k, length, L, i);
+	def_lis(a, b, variables, i);
 }
 
 void	f(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
-	int		*k;
+	t_vars	variables;
 	int		i;
 	int 	j;
 
 	i = 0;
 	j = 0;
 	tmp = *a;
-	k = ft_malloc(((*a)->size + 1) * sizeof(int));
+	variables.O_k = ft_malloc(((*a)->size + 1) * sizeof(int));
 	while (tmp->x != tmp->min)
 	{
 		i++;
@@ -183,15 +111,15 @@ void	f(t_stack **a, t_stack **b)
 	}
 	while(tmp)
 	{
-		k[j++] = tmp->x;
+		variables.O_k[j++] = tmp->x;
 		tmp = tmp->next;
 	}
 	tmp = *a;
 	while (i--)
 	{
-		k[j++] = tmp->x;
+		variables.O_k[j++] = tmp->x;
 		tmp = tmp->next;
 	}
-	k[j] = 0;
-	retrieve_lis(a, b, k);
+	variables.O_k[j] = 0;
+	retrieve_lis(a, b, &variables);
 }

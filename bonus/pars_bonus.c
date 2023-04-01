@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pars.c                                             :+:      :+:    :+:   */
+/*   pars_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/19 17:56:54 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/29 15:53:25 by kadigh           ###   ########.fr       */
+/*   Created: 2023/03/29 15:58:46 by kadigh            #+#    #+#             */
+/*   Updated: 2023/03/31 15:35:26 by kadigh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	a_sorted(int *k, int *l)
 	}
 }
 
-int	*parsing_f(int ac, char **av, int *l)
+int	*pars_check(int ac, char **av)
 {
 	int 	i;
 	int		n;
@@ -64,7 +64,6 @@ int	*parsing_f(int ac, char **av, int *l)
 		p = av + 1;
 		n = ac - 1;
 	}
-	*l = n;
 	k = malloc((n + 1) * sizeof(int));
 	if (!k)
 		return (NULL);
@@ -74,7 +73,7 @@ int	*parsing_f(int ac, char **av, int *l)
 		i++;
 	}
 	k[i] = 0;
-	a_sorted(k, l);
+	a_sorted(k, n);
 	duplicate_check(k, n);
 	return (k);
 }

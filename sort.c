@@ -3,133 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 02:27:28 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/25 21:39:52 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/03/29 14:24:54 by kadigh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_abs(int a)
+
+
+int	locate_damax(t_stack **a)
 {
-	if (a < 0)
-		a = a * (-1);
-	return (a);
-}
-
-int	ft_min(int a, int b)
-{
-	if (a < b)
-		return (a);
-	return (b);
-}
-
-int	is_between(int *stack, int start, int next, int x)
-{
-	if (stack[start] < x && x < stack[next])
-		return (1);
-	else
-		return (0);
-}
-
-void	rotate(int r_nbr, int e_pos, t_stack **stack)
-{
-	int	i;
-
-	i = 0;
-	while (i < r_nbr)
-	{
-		if (e_pos < 0) 
-			rra(stack, 1);
-		else if (e_pos > 0)
-			ra(stack, 1);
-		i++;
-	}
-}
-
-void	b_to_a(int e_pos[2], t_stack **a, t_stack **b)
-{
-	// int rot_a;
-	// int	rot_b;
-	int	i;
-	int	k;
-	int mr;
-
-	// printf("[%d,%d]",e_pos[0],e_pos[1]);
-	// rot_a = ft_abs(e_pos[0]);
-	// rot_b = ft_abs(e_pos[1]);
-	i = 0;
-	mr = 0;
-	k = 0;
-	if ((e_pos[1] * e_pos[0]) > 0){
-		mr = ft_min(ft_abs(e_pos[0]), ft_abs(e_pos[1]));
-		k = ft_min(ft_abs(e_pos[0]), ft_abs(e_pos[1]));
-	}
-	while (mr)
-	{
-		if ((e_pos[0] > 0) && (e_pos[1] > 0))
-			rr(a, b);
-		else
-			rrr(a,b);
-		mr--;
-	}
-	// mr = k;
-	// while (i < rot_a - mr)
-	// {
-	// 	if (e_pos[0] < 0) 
-	// 		rra(a, 1);
-	// 	else if (e_pos[0] > 0)
-	// 		ra(a, 1);
-	// 	i++;
-	// }
-	// i = 0;
-	// while (i < rot_b - mr)
-	// {
-	// 	if (e_pos[1] < 0)
-	// 		rrb(b, 1);
-	// 	else if (e_pos[1] > 0)
-	// 		rb(b, 1);
-	// 	i++;
-	// }
-	rotate(ft_abs(e_pos[0]) - k, e_pos[0], a);
-	rotate(ft_abs(e_pos[1]) - k, e_pos[1], b);
-	pa(a,b);
-}
-
-void	sort_action(int e_pos[][2], t_stack **a, t_stack **b)
-{
-	int		i;
-	int		min;
-	int		mvs;
-	int		index;
+	int 	i;
 	t_stack	*tmp;
 
 	i = 0;
-	tmp = *b;
-	min = ft_abs(e_pos[0][0]) + ft_abs(e_pos[0][1]);
-	index = 0;
-	while(tmp->next)
+	tmp = *a;
+	while (tmp)
 	{
-		tmp = tmp->next;
+		if ((tmp->x == (*a)->min) && i <= ((*a)->size / 2))
+			return (i);
+		else if ((tmp->x == (*a)->min) && i > ((*a)->size / 2))
+			return (i - (*a)->size );
 		i++;
-		mvs = ft_abs(e_pos[i][0]) + ft_abs(e_pos[i][1]);
-		if (mvs < min && i <= ((*b)->size / 2))
-		{
-			min = mvs;
-			index = i;
-		}
-		else if (mvs <= min && i > ((*b)->size / 2))
-		{
-			min = mvs;
-			index = i;
-		}
+		tmp = tmp->next;
 	}
-	mvs = ft_abs(e_pos[i][0]) + ft_abs(e_pos[i][1]);
-	if (mvs <= min)
-		index = i;
-	b_to_a(e_pos[index], a, b);
+	return((*a)->size);
 }
 
 int	locate(int *stack_arr, int x, t_stack **a)
@@ -149,20 +50,8 @@ int	locate(int *stack_arr, int x, t_stack **a)
 		tmp = tmp->next;
 	}
 	if (is_between(stack_arr, (*a)->size - 1, 0, x)){
-		return (0);
-	}
-	tmp = *a;
-	i = 0;
-	while (tmp)
-	{
-		if ((tmp->x == (*a)->min) && i <= ((*a)->size / 2))
-			return (i);
-		else if ((tmp->x == (*a)->min) && i > ((*a)->size / 2))
-			return (i - (*a)->size );
-		i++;
-		tmp = tmp->next;
-	}
-	return((*a)->size);
+		return (0);}
+	return (locate_damax(a));
 }
 
 void	a_indexing(int e_pos[][2], t_stack **a, t_stack **b)
@@ -213,11 +102,28 @@ void	b_indexing(int e_pos[][2], t_stack **b)
 void	sort(t_stack **a, t_stack **b)
 {
 	int		e_pos[(*b)->size + 1][2];
+	t_stack	*tmp;
+	int		i;
 
-	while ((*b)->next && (*b)->size){
+	while ((*b)->next && (*b)->size)
+	{
 		b_indexing(e_pos, b);
 		a_indexing(e_pos, a, b);
 	}
 	b_indexing(e_pos, b);
 	a_indexing(e_pos, a, b);
+	tmp = *a;
+	i = 0;
+	while(tmp->x != tmp->min)
+	{
+		i++;
+		tmp = tmp->next;
+	}
+	while ((*a)->x != (*a)->min)
+	{
+		if (i > ((*a)->size) / 2)
+			rra(a, 1);
+		else
+			ra(a, 1);
+	}
 }

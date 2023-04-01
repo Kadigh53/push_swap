@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+         #
+#    By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/23 01:02:26 by aaoutem-          #+#    #+#              #
-#    Updated: 2023/03/24 21:58:44 by aaoutem-         ###   ########.fr        #
+#    Updated: 2023/03/29 14:05:20 by kadigh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,8 @@ HEADER = push_swap.h
 
 SRCS = main.c pars.c utils_fs/ft_atoi.c utils_fs/ft_split.c utils_fs/ft_strlen.c \
 		utils_fs/ft_substr.c error.c stack/ft_lstadd_front.c stack/ft_lstnew.c \
-		stack/stack_construction.c stack/ft_lstadd_back.c LIS.c src/operations.c \
-		src/ft_putstr.c sort.c three_case.c
+		stack/stack_construction.c stack/ft_lstadd_back.c LIS.c LIS2.c src/operations.c \
+		src/ft_putstr.c sort.c sort_action.c three_case.c
 
 OBJ_F = ${SRCS:.c=.o}
 
