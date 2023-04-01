@@ -6,7 +6,7 @@
 /*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 15:35:40 by kadigh            #+#    #+#             */
-/*   Updated: 2023/03/31 15:43:11 by kadigh           ###   ########.fr       */
+/*   Updated: 2023/04/01 19:08:01 by kadigh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,17 @@ void	ft_putstr_fd(char *s, int fd);
 size_t	ft_strlen(char *s);
 int		ft_atoi(char *str);
 void	errors(char *str);
+
+void	pa(t_stack **a, t_stack **b);
+void	pb(t_stack **a, t_stack **b);
+void	sa(t_stack  **a, int mode);
+void	sb(t_stack **b, int mode);
+void	ss(t_stack	**a, t_stack **b);
+void	ra(t_stack **a, int mode);
+void	rb(t_stack **b, int mode);
+void	rr(t_stack **a, t_stack **b);
+void	rra(t_stack **a, int mode);
+void	rrb(t_stack **b, int mode);
+void	rrr(t_stack **a, t_stack **b);
+
 # endif

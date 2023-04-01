@@ -6,7 +6,7 @@
 /*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 15:58:46 by kadigh            #+#    #+#             */
-/*   Updated: 2023/03/31 15:35:26 by kadigh           ###   ########.fr       */
+/*   Updated: 2023/04/01 17:06:47 by kadigh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	a_sorted(int *k, int *l)
 	}
 }
 
-int	*pars_check(int ac, char **av)
+int	*pars_check(int ac, char **av, int *l)
 {
 	int 	i;
 	int		n;
@@ -64,6 +64,7 @@ int	*pars_check(int ac, char **av)
 		p = av + 1;
 		n = ac - 1;
 	}
+	*l = n;
 	k = malloc((n + 1) * sizeof(int));
 	if (!k)
 		return (NULL);
