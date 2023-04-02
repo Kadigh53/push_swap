@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   LIS2.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 13:55:43 by aaoutem-            #+#    #+#             */
-/*   Updated: 2023/03/29 14:00:52 by aaoutem-           ###   ########.fr       */
+/*   Created: 2023/03/29 13:55:43 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/04/02 20:54:11 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_min(int a, int b)
 
 void	*ft_malloc(int size)
 {
-	void *buff;
+	void	*buff;
 
 	buff = malloc(size);
 	if (!buff)
@@ -29,15 +29,15 @@ void	*ft_malloc(int size)
 	return (buff);
 }
 
-int	is_itTher(t_vars *variables, int x, int *l, int *lmax)
+int	is_itther(t_vars *var, int x, int *l, int *lmax)
 {
 	int	i;
 
 	i = 0;
 	*l = 1;
-	while(i < *lmax)
+	while (i < *lmax)
 	{
-		if (x == variables->O_k[variables->p[i]])
+		if (x == var->o_k[var->p[i]])
 			return (1);
 		i++;
 	}
@@ -47,7 +47,7 @@ int	is_itTher(t_vars *variables, int x, int *l, int *lmax)
 
 void	a_to_b(t_stack **a, t_stack **b, int t, int i)
 {
-	int r_nbrs;
+	int	r_nbrs;
 
 	r_nbrs = i;
 	if (i > t)
@@ -60,25 +60,24 @@ void	a_to_b(t_stack **a, t_stack **b, int t, int i)
 			rra(a, 1);
 		r_nbrs--;
 	}
-	pb(a,b);
+	pb(a, b);
 }
 
-void	nqi_liya(t_stack **a, t_stack **b, t_vars *variables, int *l_max)
+void	nqi_liya(t_stack **a, t_stack **b, t_vars *var, int *l_max)
 {
 	t_stack	*tmp;
+	int		mov;
 	int		i;
 	int		t;
 	int		l;
-	int		mov;
 
 	i = 0;
 	l = 1;
 	tmp = *a;
 	while (i <= ((*a)->size) / 2)
 	{
-		if (!is_itTher(variables,tmp->x,&l,l_max) && l)
+		if (!is_itther(var, tmp->x, &l, l_max) && l)
 		{
-			// l--;
 			mov = i;
 		}
 		i++;
@@ -87,12 +86,12 @@ void	nqi_liya(t_stack **a, t_stack **b, t_vars *variables, int *l_max)
 	if (l == 1)
 		mov = ((*a)->size);
 	t = (*a)->size;
-	while(tmp)
+	while (tmp)
 	{
-		if (!is_itTher(variables,tmp->x,&l,l_max))
+		if (!is_itther(var, tmp->x, &l, l_max))
 			t = ((*a)->size) - i;
 		tmp = tmp->next;
 		i++;
 	}
-	a_to_b(a,b,t,mov);
+	a_to_b(a, b, t, mov);
 }

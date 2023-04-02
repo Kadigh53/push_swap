@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pars.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:54 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/29 15:53:25 by kadigh           ###   ########.fr       */
+/*   Updated: 2023/04/02 20:49:24 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	duplicate_check(int	*k, int n)
 	while (i < n)
 	{
 		j = i + 1;
-		while(j < n)
+		while (j < n)
 		{
 			if (k[i] == k[j])
 				errors("Error\n");
@@ -36,45 +36,43 @@ void	a_sorted(int *k, int *l)
 	int	i;
 
 	i = 0;
-	while(i < *l)
+	while (i < *l)
 	{
-		if (k[i] > k[i+1])
+		if (k[i] > k[i + 1])
 			break ;
 		i++;
 	}
 	if ((i + 1) == *l)
 	{
-		ft_putstr_fd("Error\n",1);
+		ft_putstr_fd("Error\n", 1);
 		exit(0);
 	}
 }
 
 int	*parsing_f(int ac, char **av, int *l)
 {
-	int 	i;
-	int		n;
+	int		i;
 	int		*k;
 	char	**p;
 
 	i = 0;
 	if (ac == 2)
-		p = ft_split(av[1], 32, &n);
+		p = ft_split(av[1], 32, l);
 	else
 	{
 		p = av + 1;
-		n = ac - 1;
+		*l = ac - 1;
 	}
-	*l = n;
-	k = malloc((n + 1) * sizeof(int));
+	k = malloc((*l + 1) * sizeof(int));
 	if (!k)
 		return (NULL);
-	while (i < n)
+	while (i < *l)
 	{
 		k[i] = ft_atoi(p[i]);
 		i++;
 	}
 	k[i] = 0;
 	a_sorted(k, l);
-	duplicate_check(k, n);
+	duplicate_check(k, *l);
 	return (k);
 }

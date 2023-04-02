@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 08:14:17 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/01 22:48:53 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/02 19:51:09 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	pa(t_stack **a, t_stack **b)
 {
-	int data;
-	data = pop_el(b,a);
+	int	data;
+
+	data = pop_el(b, a);
 	if (data == 0 && !((*b)->next) && ((*b)->size == 0))
 		return ;
 	push_el(a, data, (*a)->min, (*a)->max);
@@ -23,16 +24,17 @@ void	pa(t_stack **a, t_stack **b)
 
 void	pb(t_stack **a, t_stack **b)
 {
-	int data;
+	int	data;
+
 	data = pop_el(a, a);
 	if (data == 0 && !((*a)->next) && ((*b)->size) == 0)
 		return ;
 	push_el(b, data, (*b)->min, (*b)->max);
 }
 
-void	sa(t_stack  **a)
+void	sa(t_stack **a)
 {
-	t_stack *first;
+	t_stack	*first;
 	t_stack	*second;
 
 	if (!(*a)->next)
@@ -46,8 +48,8 @@ void	sa(t_stack  **a)
 
 void	sb(t_stack **b)
 {
-	t_stack *first;
-	t_stack *second;
+	t_stack	*first;
+	t_stack	*second;
 
 	if (!(*b)->next)
 		return ;
@@ -66,19 +68,20 @@ void	ss(t_stack	**a, t_stack **b)
 
 void	ra(t_stack **a)
 {
-	t_stack *first;
-	t_stack *last;
+	t_stack	*first;
+	t_stack	*last;
 
-    if (*a == NULL || (*a)->next == NULL)
-        return;
-    first = (*a)->next;
-    last = first;
-    while ((last->next) != NULL){
-        last = last->next;
+	if (*a == NULL || (*a)->next == NULL)
+		return ;
+	first = (*a)->next;
+	last = first;
+	while ((last->next) != NULL)
+	{
+		last = last->next;
 	}
 	(*a)->next = NULL;
-    last->next = *a;
-    *a = first;
+	last->next = *a;
+	*a = first;
 }
 
 void	rb(t_stack **b)
@@ -90,7 +93,7 @@ void	rb(t_stack **b)
 		return ;
 	first = (*b)->next;
 	last = *b;
-	while(last->next)
+	while (last->next)
 		last = last->next;
 	(*b)->next = NULL;
 	last->next = (*b);
@@ -105,7 +108,7 @@ void	rr(t_stack **a, t_stack **b)
 
 void	rra(t_stack **a)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 	t_stack	*head;
 
 	tmp = (*a);
@@ -138,5 +141,5 @@ void	rrb(t_stack **b)
 void	rrr(t_stack **a, t_stack **b)
 {
 	rra(a);
-	rrb(b);;
+	rrb(b);
 }

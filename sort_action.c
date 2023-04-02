@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_action.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 14:03:18 by aaoutem-            #+#    #+#             */
-/*   Updated: 2023/03/29 14:04:45 by aaoutem-           ###   ########.fr       */
+/*   Created: 2023/03/29 14:03:18 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/04/02 23:37:11 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,36 +27,40 @@ int	is_between(int *stack, int start, int next, int x)
 		return (0);
 }
 
-void	rotate(int r_nbr, int e_pos, t_stack **stack)
+void	rotate(int e_pos[2], int mr, t_stack **a, t_stack **b)
 {
-	int	i;
+	int i;
 
 	i = 0;
-	while (i < r_nbr)
+	while (i < ft_abs(e_pos[0]) - mr)
 	{
-		if (e_pos < 0) 
-			rra(stack, 1);
-		else if (e_pos > 0)
-			ra(stack, 1);
+		if (e_pos[0] < 0)
+			rra(a, 1);
+		else if (e_pos[0] > 0)
+			ra(a, 1);
 		i++;
 	}
+	i = 0;
+	while (i < ft_abs(e_pos[1]) - mr)
+	{
+		if (e_pos[1] < 0)
+			rrb(b, 1);
+		else if (e_pos[1] > 0)
+			rb(b, 1);
+		i++;
+	}
+	pa(a, b);
 }
 
 void	b_to_a(int e_pos[2], t_stack **a, t_stack **b)
 {
-	// int rot_a;
-	// int	rot_b;
-	// int	i;
 	int	k;
-	int mr;
+	int	mr;
 
-	// printf("[%d,%d]",e_pos[0],e_pos[1]);
-	// rot_a = ft_abs(e_pos[0]);
-	// rot_b = ft_abs(e_pos[1]);
-	// i = 0;
-	mr = 0;
 	k = 0;
-	if ((e_pos[1] * e_pos[0]) > 0){
+	mr = 0;
+	if ((e_pos[1] * e_pos[0]) > 0)
+	{
 		mr = ft_min(ft_abs(e_pos[0]), ft_abs(e_pos[1]));
 		k = ft_min(ft_abs(e_pos[0]), ft_abs(e_pos[1]));
 	}
@@ -65,30 +69,10 @@ void	b_to_a(int e_pos[2], t_stack **a, t_stack **b)
 		if ((e_pos[0] > 0) && (e_pos[1] > 0))
 			rr(a, b);
 		else
-			rrr(a,b);
+			rrr(a, b);
 		mr--;
 	}
-	// mr = k;
-	// while (i < rot_a - mr)
-	// {
-	// 	if (e_pos[0] < 0) 
-	// 		rra(a, 1);
-	// 	else if (e_pos[0] > 0)
-	// 		ra(a, 1);
-	// 	i++;
-	// }
-	// i = 0;
-	// while (i < rot_b - mr)
-	// {
-	// 	if (e_pos[1] < 0)
-	// 		rrb(b, 1);
-	// 	else if (e_pos[1] > 0)
-	// 		rb(b, 1);
-	// 	i++;
-	// }
-	rotate(ft_abs(e_pos[0]) - k, e_pos[0], a);
-	rotate(ft_abs(e_pos[1]) - k, e_pos[1], b);
-	pa(a,b);
+	rotate(e_pos, k, a, b);
 }
 
 void	sort_action(int e_pos[][2], t_stack **a, t_stack **b)
@@ -103,7 +87,7 @@ void	sort_action(int e_pos[][2], t_stack **a, t_stack **b)
 	tmp = *b;
 	min = ft_abs(e_pos[0][0]) + ft_abs(e_pos[0][1]);
 	index = 0;
-	while(tmp->next)
+	while (tmp->next)
 	{
 		tmp = tmp->next;
 		i++;

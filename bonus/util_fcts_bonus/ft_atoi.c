@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 18:09:01 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/01 22:32:58 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/02 18:28:55 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_isdigit(int c)
 
 static int	valid_nbr(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!str[i])

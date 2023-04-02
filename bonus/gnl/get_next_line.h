@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 20:57:56 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/02 01:16:23 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/02 19:52:17 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <string.h>
 
 char	*get_next_line(int fd);
-int	    ft_strlen(char *s);
+int		ft_strlen(char *s);
 int		a_newline(char *s);
 char	*ft_substr(char *s, unsigned int start, size_t len);
 char	*ft_strjoin(char *s1, char *s2);

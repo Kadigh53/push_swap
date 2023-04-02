@@ -6,20 +6,28 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 17:53:26 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/02 02:05:52 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/02 19:54:52 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
-int	is_a_sorted(t_stack **a);
+int	is_a_sorted(t_stack **a)
 {
-	t_stack *tmp;
-	
+	t_stack	*tmp;
+	t_stack	*tmp1;
+
 	tmp = *a;
-	while(tmp)
+	while (tmp->next)
 	{
-		
+		tmp1 = tmp->next;
+		while (tmp1)
+		{
+			if (tmp->x > tmp1->x)
+				return (0);
+			tmp1 = tmp1->next;
+		}
+		tmp = tmp->next;
 	}
 }
 
@@ -49,18 +57,20 @@ void	exec_instruct(t_stack **a, t_stack **b, char *instruct)
 		rrr(a, b);
 }
 
-void    sort_check(t_stack **a, t_stack **b)
+void	sort_check(t_stack **a, t_stack **b)
 {
 	char	*instruct;
-	t_stack *tmp;
-	int     n;
+	t_stack	*tmp;
+	int		n;
 
 	n = 1;
 	instruct = (void *)1;
-	while(instruct)
+	while (instruct)
 	{
 		instruct = get_next_line(0);
 		exec_instruct(a, b, instruct);
 	}
-	is_a_sorted(a);
+	if (!is_a_sorted(a))
+		ft_putstr_fd("KO\n", 1);
+	ft_putstr_fd("OK\n", 1);
 }

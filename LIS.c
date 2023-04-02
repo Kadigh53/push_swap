@@ -3,27 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   LIS.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 22:35:53 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/29 13:58:03 by kadigh           ###   ########.fr       */
+/*   Updated: 2023/04/02 23:50:54 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	clear_daStack(t_stack **a, t_stack **b, t_vars *variables, int *l_max)
+void	clear_dastack(t_stack **a, t_stack **b, t_vars *var, int *l_max)
 {
 	int		n;
 
 	n = (*a)->size - *l_max;
-	while(n)
+	while (n)
 	{
-		nqi_liya(a ,b , variables,l_max);
+		nqi_liya(a, b, var, l_max);
 		n--;
 	}
 }
-void	remplir(t_vars *variables, int *l_max, int *max_index, int l)
+
+void	remplir(t_vars *var, int *l_max, int *max_index, int l)
 {
 	int	i;
 	int	j;
@@ -32,94 +33,92 @@ void	remplir(t_vars *variables, int *l_max, int *max_index, int l)
 	while (i <= l)
 	{
 		j = 0;
-		while (j < i)
+		while (j++ < i)
 		{
-			if (variables->O_k[j] < variables->O_k[i])
+			if (var->o_k[j - 1] <= var->o_k[i])
 			{
-				if (variables->length[i] <= variables->length[j] + 1)
+				if (var->length[i] <= var->length[j - 1] + 1)
 				{
-					variables->length[i] = variables->length[j] + 1;
-					variables->L[i] = j;
+					var->length[i] = var->length[j - 1] + 1;
+					var->le[i] = j - 1;
 				}
 			}
-			if (variables->length[j] >= *l_max)
+			if (var->length[j - 1] >= *l_max)
 			{
-				*l_max = variables->length[j];
-				*max_index = j;
+				*l_max = var->length[j - 1];
+				*max_index = j - 1;
 			}
-			j++;
 		}
 		i++;
 	}
 }
 
-void	def_lis(t_stack **a, t_stack **b, t_vars *variables, int l)
+void	def_lis(t_stack **a, t_stack **b, t_vars *var, int l)
 {
 	int	max_index;
 	int	l_max;
 	int	i;
 
 	i = 1;
-	l_max = variables->length[0];
-	remplir(variables, &l_max, &max_index, l);
-	variables->p = ft_malloc((l_max + 1) * sizeof(int));
-	variables->p[l_max - 1] = max_index;
+	l_max = var->length[0];
+	remplir(var, &l_max, &max_index, l);
+	var->p = ft_malloc((l_max + 1) * sizeof(int));
+	var->p[l_max - 1] = max_index;
 	while (i < l_max)
 	{
-		max_index = variables->L[max_index];
-		variables->p[l_max - i - 1] = max_index;
+		max_index = var->le[max_index];
+		var->p[l_max - i - 1] = max_index;
 		i++;
 	}
-	clear_daStack(a, b, variables, &l_max);
+	clear_dastack(a, b, var, &l_max);
 }
 
-void	retrieve_lis(t_stack **a, t_stack **b, t_vars *variables)
+void	retrieve_lis(t_stack **a, t_stack **b, t_vars *var)
 {
-	// t_vars	variables;
 	t_stack	*tmp;
 	int		i;
 
 	i = 0;
 	tmp = *a;
-	variables->L = ft_malloc((tmp->size + 1) * sizeof(int));
-	variables->length = ft_malloc((tmp->size + 1) * sizeof(int));
+	var->le = ft_malloc((tmp->size + 1) * sizeof(int));
+	var->length = ft_malloc((tmp->size + 1) * sizeof(int));
 	while (tmp)
 	{
-		variables->length[i] = 1;
-		variables->L[i] = 0;
+		var->length[i] = 1;
+		var->le[i] = 0;
 		tmp = tmp->next;
 		i++;
 	}
-	def_lis(a, b, variables, i);
+	def_lis(a, b, var, i);
 }
 
 void	f(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
-	t_vars	variables;
+	t_vars	var;
 	int		i;
-	int 	j;
+	int		j;
 
 	i = 0;
 	j = 0;
 	tmp = *a;
-	variables.O_k = ft_malloc(((*a)->size + 1) * sizeof(int));
+	var.o_k = ft_malloc(((*a)->size + 1) * sizeof(int));
 	while (tmp->x != tmp->min)
 	{
 		i++;
 		tmp = tmp->next;
 	}
-	while(tmp)
+	while (tmp)
 	{
-		variables.O_k[j++] = tmp->x;
+		var.o_k[j++] = tmp->x;
 		tmp = tmp->next;
 	}
 	tmp = *a;
 	while (i--)
 	{
-		variables.O_k[j++] = tmp->x;
+		var.o_k[j++] = tmp->x;
 		tmp = tmp->next;
 	}
-	variables.O_k[j] = 0;
-	retrieve_lis(a, b, &variables);
+	var.o_k[j] = 0;
+	retrieve_lis(a, b, &var);
 }

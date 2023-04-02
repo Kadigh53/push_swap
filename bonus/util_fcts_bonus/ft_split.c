@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 18:30:23 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/01 22:33:02 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/02 18:28:26 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ char	**ft_split(char *s, char c, int *n)
 {
 	char	**p;
 	int		i;
-	// int		n;
 
 	if (!*s)
 		errors("Error\n");
@@ -96,11 +95,5 @@ char	**ft_split(char *s, char c, int *n)
 		i++;
 	}
 	p[i - 1] = NULL;
-	// i =0;
-	// printf(">>%s\n",p[i++]);
-	// while(p[i]){
-	// 	printf(">>%s\n",p[i++]);
-	// }
-	printf("\n");
 	return (p);
 }

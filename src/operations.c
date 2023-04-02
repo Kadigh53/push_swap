@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 08:14:17 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/28 22:08:41 by kadigh           ###   ########.fr       */
+/*   Updated: 2023/04/02 18:25:45 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,29 @@
 
 void	pa(t_stack **a, t_stack **b)
 {
-	// printf("pa\n");
-	int data;
-	data = pop_el(b,a);
+	int	data;
+
+	data = pop_el(b, a);
 	if (data == 0 && !((*b)->next) && ((*b)->size == 0))
 		return ;
 	push_el(a, data, (*a)->min, (*a)->max);
-	ft_putstr_fd("pa\n",1);
+	ft_putstr_fd("pa\n", 1);
 }
 
 void	pb(t_stack **a, t_stack **b)
 {
-	int data;
+	int	data;
+
 	data = pop_el(a, a);
 	if (data == 0 && !((*a)->next) && ((*b)->size) == 0)
 		return ;
 	push_el(b, data, (*b)->min, (*b)->max);
-	ft_putstr_fd("pb\n",1);
+	ft_putstr_fd("pb\n", 1);
 }
 
-void	sa(t_stack  **a, int mode)
+void	sa(t_stack	**a, int mode)
 {
-	t_stack *first;
+	t_stack	*first;
 	t_stack	*second;
 
 	if (!(*a)->next)
@@ -46,13 +47,13 @@ void	sa(t_stack  **a, int mode)
 	second->next = first;
 	*a = second;
 	if (mode == 1)
-		ft_putstr_fd("sa\n",1);
+		ft_putstr_fd("sa\n", 1);
 }
 
 void	sb(t_stack **b, int mode)
 {
-	t_stack *first;
-	t_stack *second;
+	t_stack	*first;
+	t_stack	*second;
 
 	if (!(*b)->next)
 		return ;
@@ -62,33 +63,34 @@ void	sb(t_stack **b, int mode)
 	second->next = first;
 	*b = second;
 	if (mode == 1)
-		ft_putstr_fd("sb\n",1);
+		ft_putstr_fd("sb\n", 1);
 }
 
 void	ss(t_stack	**a, t_stack **b)
 {
 	sa(a, 0);
 	sb(b, 0);
-	ft_putstr_fd("ss\n",1);
+	ft_putstr_fd("ss\n", 1);
 }
 
 void	ra(t_stack **a, int mode)
 {
-	t_stack *first;
-	t_stack *last;
+	t_stack	*first;
+	t_stack	*last;
 
-    if (*a == NULL || (*a)->next == NULL)
-        return;
-    first = (*a)->next;
-    last = first;
-    while ((last->next) != NULL){
-        last = last->next;
+	if (*a == NULL || (*a)->next == NULL)
+		return ;
+	first = (*a)->next;
+	last = first;
+	while ((last->next) != NULL)
+	{
+		last = last->next;
 	}
 	(*a)->next = NULL;
-    last->next = *a;
-    *a = first;
+	last->next = *a;
+	*a = first;
 	if (mode == 1)
-		ft_putstr_fd("ra\n",1);
+		ft_putstr_fd("ra\n", 1);
 }
 
 void	rb(t_stack **b, int mode)
@@ -100,25 +102,25 @@ void	rb(t_stack **b, int mode)
 		return ;
 	first = (*b)->next;
 	last = *b;
-	while(last->next)
+	while (last->next)
 		last = last->next;
 	(*b)->next = NULL;
 	last->next = (*b);
 	(*b) = first;
 	if (mode == 1)
-		ft_putstr_fd("rb\n",1);
+		ft_putstr_fd("rb\n", 1);
 }
 
 void	rr(t_stack **a, t_stack **b)
 {
 	ra(a, 0);
 	rb(b, 0);
-	ft_putstr_fd("rr\n",1);
+	ft_putstr_fd("rr\n", 1);
 }
 
 void	rra(t_stack **a, int mode)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 	t_stack	*head;
 
 	tmp = (*a);
@@ -131,7 +133,7 @@ void	rra(t_stack **a, int mode)
 	tmp->next = NULL;
 	(*a) = head;
 	if (mode == 1)
-		ft_putstr_fd("rra\n",1);
+		ft_putstr_fd("rra\n", 1);
 }
 
 void	rrb(t_stack **b, int mode)
@@ -149,12 +151,12 @@ void	rrb(t_stack **b, int mode)
 	tmp->next = NULL;
 	(*b) = head;
 	if (mode == 1)
-		ft_putstr_fd("rrb\n",1);
+		ft_putstr_fd("rrb\n", 1);
 }
 
 void	rrr(t_stack **a, t_stack **b)
 {
 	rra(a, 0);
 	rrb(b, 0);
-	ft_putstr_fd("rrr\n",1);
+	ft_putstr_fd("rrr\n", 1);
 }

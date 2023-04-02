@@ -6,13 +6,13 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 01:21:34 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/01 23:12:59 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/02 19:56:07 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "checker_bonus.h"
 
-void errors(char *str)
+void	errors(char *str)
 {
 	write(2, str, ft_strlen(str));
 	exit(1);

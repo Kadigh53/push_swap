@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 22:12:59 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/02/23 01:16:21 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/02 18:04:29 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@ size_t	ft_strlen(char *s)
 	size_t	i;
 
 	i = 0;
-    if (!s){
-        return (0);
+	if (!s)
+	{
+		return (0);
 	}
-	while (s[i] != '\0'){
+	while (s[i] != '\0')
+	{
 		i++;
 	}
 	return (i);
