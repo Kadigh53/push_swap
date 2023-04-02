@@ -6,7 +6,7 @@
 #    By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/23 01:02:26 by aaoutem-          #+#    #+#              #
-#    Updated: 2023/04/01 23:14:36 by aaoutem-         ###   ########.fr        #
+#    Updated: 2023/04/02 00:47:52 by aaoutem-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRCS = main.c pars.c utils_fs/ft_atoi.c utils_fs/ft_split.c utils_fs/ft_strlen.c
 		src/ft_putstr.c sort.c sort_action.c three_case.c
 
 BONUS = bonus/checker_bonus.c \
-	bonus/pars_bonus.c bonus\error.c \
+	bonus/pars_bonus.c bonus/error.c \
 	bonus/sort_check.c \
 	bonus/src/ft_putstr.c \
 	bonus/src/operations.c \
@@ -47,7 +47,7 @@ all : ${NAME}
 ${NAME} : ${OBJ_F}
 	${CC} ${FLAGS} ${OBJ_F} -o push_swap
 
-bonus : ${BONUS_OBJF}
+bonus : ${BONUS_OBJF} ${HEADER}
 	${CC} ${FLAGS} ${BONUS_OBJF} -o checker
 
 %.o : %.c ${HEADER}

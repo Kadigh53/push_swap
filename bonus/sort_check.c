@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 17:53:26 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/01 22:35:50 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/02 00:45:15 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,20 +38,20 @@ void	exec_instruct(t_stack **a, t_stack **b, char *instruct)
 
 void    sort_check(t_stack **a, t_stack **b)
 {
-	char    str[2];
 	char	*instruct;
+	char    c;
 	int     n;
-	
+
 	n = 1;
-	str[0] = '\0';
-	str[1] = '\0';
 	while(n)
 	{
-		while(str[0] != '\n')
+		while(c != '\n')
 		{
-			n = read(0, str, 1);
-			instruct = ft_strjoin(instruct, str);
+			n = read(0, &c, 1);
+			instruct = ft_strjoin(instruct, &c);
 		}
+		ft_strjoin(instruct, "\n");
+		printf(">> %s\n",instruct);
 		exec_instruct(a, b, instruct);
 	}
 }
