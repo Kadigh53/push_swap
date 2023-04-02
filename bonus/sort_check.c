@@ -6,14 +6,27 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 17:53:26 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/02 00:45:15 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/02 02:05:52 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
+int	is_a_sorted(t_stack **a);
+{
+	t_stack *tmp;
+	
+	tmp = *a;
+	while(tmp)
+	{
+		
+	}
+}
+
 void	exec_instruct(t_stack **a, t_stack **b, char *instruct)
 {
+	if (!instruct)
+		return ;
 	if (!ft_strncmp("pa\n", instruct, 3))
 		pa(a, b);
 	else if (!ft_strncmp("pb\n", instruct, 3))
@@ -39,19 +52,15 @@ void	exec_instruct(t_stack **a, t_stack **b, char *instruct)
 void    sort_check(t_stack **a, t_stack **b)
 {
 	char	*instruct;
-	char    c;
+	t_stack *tmp;
 	int     n;
 
 	n = 1;
-	while(n)
+	instruct = (void *)1;
+	while(instruct)
 	{
-		while(c != '\n')
-		{
-			n = read(0, &c, 1);
-			instruct = ft_strjoin(instruct, &c);
-		}
-		ft_strjoin(instruct, "\n");
-		printf(">> %s\n",instruct);
+		instruct = get_next_line(0);
 		exec_instruct(a, b, instruct);
 	}
+	is_a_sorted(a);
 }
