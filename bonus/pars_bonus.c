@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   pars_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 15:58:46 by kadigh            #+#    #+#             */
-/*   Updated: 2023/04/01 17:06:47 by kadigh           ###   ########.fr       */
+/*   Created: 2023/03/29 15:58:46 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/04/01 21:51:02 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker_bonus.h"
 
 void	duplicate_check(int	*k, int n)
 {

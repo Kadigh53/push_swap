@@ -6,18 +6,18 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 04:42:44 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/02/25 02:52:59 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/01 23:04:26 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../checker_bonus.h"
 
-typedef struct s_stack
-{
-	int x;
-	int	size;
-	struct s_stack  *next;
-}	t_stack;
+// typedef struct s_stack
+// {
+// 	int x;
+// 	int	size;
+// 	struct s_stack  *next;
+// }	t_stack;
 
 t_stack	*ft_lstlast(t_stack *stack)
 {

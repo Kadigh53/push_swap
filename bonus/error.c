@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_bonus.c                                    :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 15:48:14 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/01 22:50:59 by aaoutem-         ###   ########.fr       */
+/*   Created: 2023/02/22 01:21:34 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/04/01 23:12:59 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker_bonus.h"
+#include "../push_swap.h"
 
-int main(int ac, char **av)
+void errors(char *str)
 {
-	int		l;
-	int		*k;
-	t_vars	vars;
-	t_stack *tmp;
-
-	k = pars_check(ac, av, &l);
-	stack_init(k, &vars.a, &vars.b, &l);
-	tmp = vars.a;
-	while (tmp){
-		printf("a\t%d\n",tmp->x);
-		tmp = tmp->next;
-	}
-	printf("\n");
-	// sort_check(&vars.a, &vars.b);
+	write(2, str, ft_strlen(str));
+	exit(1);
 }

@@ -3,24 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 08:14:17 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/03/28 22:08:41 by kadigh           ###   ########.fr       */
+/*   Updated: 2023/04/01 22:48:53 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../checker_bonus.h"
 
 void	pa(t_stack **a, t_stack **b)
 {
-	// printf("pa\n");
 	int data;
 	data = pop_el(b,a);
 	if (data == 0 && !((*b)->next) && ((*b)->size == 0))
 		return ;
 	push_el(a, data, (*a)->min, (*a)->max);
-	ft_putstr_fd("pa\n",1);
 }
 
 void	pb(t_stack **a, t_stack **b)
@@ -30,10 +28,9 @@ void	pb(t_stack **a, t_stack **b)
 	if (data == 0 && !((*a)->next) && ((*b)->size) == 0)
 		return ;
 	push_el(b, data, (*b)->min, (*b)->max);
-	ft_putstr_fd("pb\n",1);
 }
 
-void	sa(t_stack  **a, int mode)
+void	sa(t_stack  **a)
 {
 	t_stack *first;
 	t_stack	*second;
@@ -45,11 +42,9 @@ void	sa(t_stack  **a, int mode)
 	first->next = second->next;
 	second->next = first;
 	*a = second;
-	if (mode == 1)
-		ft_putstr_fd("sa\n",1);
 }
 
-void	sb(t_stack **b, int mode)
+void	sb(t_stack **b)
 {
 	t_stack *first;
 	t_stack *second;
@@ -61,18 +56,15 @@ void	sb(t_stack **b, int mode)
 	first->next = second->next;
 	second->next = first;
 	*b = second;
-	if (mode == 1)
-		ft_putstr_fd("sb\n",1);
 }
 
 void	ss(t_stack	**a, t_stack **b)
 {
-	sa(a, 0);
-	sb(b, 0);
-	ft_putstr_fd("ss\n",1);
+	sa(a);
+	sb(b);
 }
 
-void	ra(t_stack **a, int mode)
+void	ra(t_stack **a)
 {
 	t_stack *first;
 	t_stack *last;
@@ -87,11 +79,9 @@ void	ra(t_stack **a, int mode)
 	(*a)->next = NULL;
     last->next = *a;
     *a = first;
-	if (mode == 1)
-		ft_putstr_fd("ra\n",1);
 }
 
-void	rb(t_stack **b, int mode)
+void	rb(t_stack **b)
 {
 	t_stack	*first;
 	t_stack	*last;
@@ -105,18 +95,15 @@ void	rb(t_stack **b, int mode)
 	(*b)->next = NULL;
 	last->next = (*b);
 	(*b) = first;
-	if (mode == 1)
-		ft_putstr_fd("rb\n",1);
 }
 
 void	rr(t_stack **a, t_stack **b)
 {
-	ra(a, 0);
-	rb(b, 0);
-	ft_putstr_fd("rr\n",1);
+	ra(a);
+	rb(b);
 }
 
-void	rra(t_stack **a, int mode)
+void	rra(t_stack **a)
 {
 	t_stack *tmp;
 	t_stack	*head;
@@ -130,11 +117,9 @@ void	rra(t_stack **a, int mode)
 	head->next = (*a);
 	tmp->next = NULL;
 	(*a) = head;
-	if (mode == 1)
-		ft_putstr_fd("rra\n",1);
 }
 
-void	rrb(t_stack **b, int mode)
+void	rrb(t_stack **b)
 {
 	t_stack	*tmp;
 	t_stack	*head;
@@ -148,13 +133,10 @@ void	rrb(t_stack **b, int mode)
 	head->next = (*b);
 	tmp->next = NULL;
 	(*b) = head;
-	if (mode == 1)
-		ft_putstr_fd("rrb\n",1);
 }
 
 void	rrr(t_stack **a, t_stack **b)
 {
-	rra(a, 0);
-	rrb(b, 0);
-	ft_putstr_fd("rrr\n",1);
+	rra(a);
+	rrb(b);;
 }
