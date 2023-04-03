@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:54 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/02 20:49:24 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/03 21:06:45 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ int	*parsing_f(int ac, char **av, int *l)
 		p = av + 1;
 		*l = ac - 1;
 	}
+	// if (*l == 1)
 	k = malloc((*l + 1) * sizeof(int));
 	if (!k)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:57:15 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/02 23:35:50 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/03 19:43:39 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int		ft_min(int a, int b);
 void	*ft_malloc(int size);
 void	nqi_liya(t_stack **a, t_stack **b, t_vars *variables, int *l_max);
 void	a_to_b(t_stack **a, t_stack **b, int t, int i);
-int		is_itther(t_vars *variables, int x, int *l, int *lmax);
+int		is_itther(t_vars *variables, int x, int *lmax);
 int		is_between(int *stack, int start, int next, int x);
 // void	rotate(int r_nbr, int e_pos, t_stack **stack);
 void	b_to_a(int e_pos[2], t_stack **a, t_stack **b);

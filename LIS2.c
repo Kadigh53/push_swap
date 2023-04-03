@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 13:55:43 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/02 20:54:11 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/03 19:44:24 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,17 @@ void	*ft_malloc(int size)
 	return (buff);
 }
 
-int	is_itther(t_vars *var, int x, int *l, int *lmax)
+int	is_itther(t_vars *var, int x, int *lmax)
 {
 	int	i;
 
 	i = 0;
-	*l = 1;
 	while (i < *lmax)
 	{
 		if (x == var->o_k[var->p[i]])
 			return (1);
 		i++;
 	}
-	*l = 0;
 	return (0);
 }
 
@@ -73,25 +71,31 @@ void	nqi_liya(t_stack **a, t_stack **b, t_vars *var, int *l_max)
 
 	i = 0;
 	l = 1;
+	t = (*a)->size;
 	tmp = *a;
 	while (i <= ((*a)->size) / 2)
 	{
-		if (!is_itther(var, tmp->x, &l, l_max) && l)
+		if (!is_itther(var, tmp->x, l_max) && l)
 		{
+			l--;
 			mov = i;
+			// printf("");
 		}
 		i++;
 		tmp = tmp->next;
 	}
-	if (l == 1)
+	if (l == 1){
+		// printf("hayi ghod   ");
 		mov = ((*a)->size);
-	t = (*a)->size;
+	}
+	// printf(">> ra : %d  ",mov);
 	while (tmp)
 	{
-		if (!is_itther(var, tmp->x, &l, l_max))
+		if (!is_itther(var, tmp->x, l_max))
 			t = ((*a)->size) - i;
 		tmp = tmp->next;
 		i++;
 	}
+	// printf(" rra : %d\n",t);
 	a_to_b(a, b, t, mov);
 }

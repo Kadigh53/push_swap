@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:13 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/02 20:21:43 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/03 21:05:57 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,18 @@ int	main(int ac, char **av)
 	if (ac < 2)
 		exit(0);
 	vars.k = parsing_f(ac, av, &l);
+	if (l == 1)
+		exit(EXIT_SUCCESS);
 	if (!vars.k)
 		exit(1);
 	stack_init(vars.k, &vars.a, &vars.b, &l);
 	if (l == 3)
 		three_sort(&vars.a);
 	else
-		{
+	{
 		f(&vars.a, &vars.b);
 		sort(&vars.a, &vars.b);
 	}
-}
 	// t_stack	*tmp ;
 	// int i =0;
 	// tmp = vars.a;
@@ -45,3 +46,4 @@ int	main(int ac, char **av)
 	// 	tmp = tmp->next;
 	// 	i++;
 	// }
+}
