@@ -6,14 +6,14 @@
 #    By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/23 01:02:26 by aaoutem-          #+#    #+#              #
-#    Updated: 2023/04/04 18:12:40 by aaoutem-         ###   ########.fr        #
+#    Updated: 2023/04/04 22:14:11 by aaoutem-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc
 RM = rm -rf
-FLAGS = -Wall -Wextra 
+FLAGS = -Wall -Wextra -g
 HEADER = push_swap.h
 
 SRCS = main.c \
@@ -23,6 +23,7 @@ SRCS = main.c \
 	utils_fs/ft_split.c \
 	utils_fs/ft_strlen.c \
 	utils_fs/ft_substr.c \
+	utils_fs/is_empty.c \
 	stack/ft_lstadd_front.c \
 	stack/ft_lstnew.c \
 	stack/stack_construction.c \
@@ -35,7 +36,6 @@ SRCS = main.c \
 	src/ft_putstr.c \
 	sort.c \
 	sort_action.c \
-	free_stack.c \
 	three_case.c
 
 BONUS = bonus/checker_bonus.c \
@@ -84,3 +84,4 @@ re : fclean all
 
 # . PHONY re clean fclean bonus
 # bonus/util_fcts_bonus/ft_strjoin.c \
+	# free_stack.c \

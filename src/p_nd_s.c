@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 15:53:32 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/04 18:27:23 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/04 22:13:07 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 void	pa(t_stack **a, t_stack **b)
 {
-	int	data;
+	long	data;
 
-	ft_putstr_fd("pa\n", 1);
 	data = pop_el(b, a);
+	// data = pop_el(b);
+	if (data > INT32_MAX)
+		return ;
+	ft_putstr_fd("pa\n", 1);
 	if (data == 0 && !((*b)->next) && ((*b)->size == 0))
 		return ;
 	push_el(a, data, (*a)->min, (*a)->max);
@@ -25,9 +28,10 @@ void	pa(t_stack **a, t_stack **b)
 
 void	pb(t_stack **a, t_stack **b)
 {
-	int	data;
+	long	data;
 
 	data = pop_el(a, a);
+	// data = pop_el(b);
 	if (data == 0 && !((*a)->next) && ((*b)->size) == 0)
 		return ;
 	push_el(b, data, (*b)->min, (*b)->max);
