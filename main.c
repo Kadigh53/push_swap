@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:13 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/03 21:05:57 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/04 00:36:29 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int	main(int ac, char **av)
 	if (ac < 2)
 		exit(0);
 	vars.k = parsing_f(ac, av, &l);
-	if (l == 1)
-		exit(EXIT_SUCCESS);
+	// if (l == 1)
+	// 	exit(EXIT_SUCCESS);
 	if (!vars.k)
 		exit(1);
 	stack_init(vars.k, &vars.a, &vars.b, &l);

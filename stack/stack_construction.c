@@ -6,18 +6,11 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 05:44:09 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/02 18:12:06 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/04 01:08:21 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-// int	is_empty(t_stack *stack)
-// {
-// 	if (stack->size == 0 && !stack->next)
-// 		return (1);
-// 	return (0);
-// }
 
 void	ft_lstiter(t_stack *stack, int s)
 {
@@ -106,12 +99,8 @@ void	stack_init(int *k, t_stack **A, t_stack **B, int *l)
 	int	i;
 
 	i = 0;
-	*A = malloc(sizeof(t_stack));
-	if (!*A)
-		exit(1);
-	*B = malloc(sizeof(t_stack));
-	if (!*B)
-		exit(1);
+	*A = ft_malloc(sizeof(t_stack));
+	*B = ft_malloc(sizeof(t_stack));
 	init_init(k, l, A);
 	init_init(k, l, B);
 	while (i < *l)

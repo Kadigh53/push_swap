@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:54 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/03 21:06:45 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/04 00:58:11 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void	a_sorted(int *k, int *l)
 	}
 	if ((i + 1) == *l)
 	{
-		ft_putstr_fd("Error\n", 1);
 		exit(0);
 	}
 }
@@ -63,15 +62,14 @@ int	*parsing_f(int ac, char **av, int *l)
 		p = av + 1;
 		*l = ac - 1;
 	}
-	// if (*l == 1)
-	k = malloc((*l + 1) * sizeof(int));
-	if (!k)
-		return (NULL);
+	k = ft_malloc((*l + 1) * sizeof(int));
 	while (i < *l)
 	{
 		k[i] = ft_atoi(p[i]);
 		i++;
 	}
+	if (*l == 1)
+		exit(EXIT_SUCCESS);
 	k[i] = 0;
 	a_sorted(k, l);
 	duplicate_check(k, *l);
