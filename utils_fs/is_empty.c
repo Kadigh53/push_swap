@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_stack.c                                       :+:      :+:    :+:   */
+/*   is_empty.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/04 16:58:33 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/04 18:13:27 by aaoutem-         ###   ########.fr       */
+/*   Created: 2023/04/04 17:13:39 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/04/04 17:16:42 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void    free_stack(t_stack **stack, t_stack **a)
+int is_empty(t_stack **stack)
 {
-    while (!(*stack)->next && !(*stack)->size){
-        printf("ff");
-        pop_el(stack, a);
-    }
-    free(*stack);
+	if (!(*stack)->next && !(*stack)->size)
+		return (0);
+	return (1);
 }

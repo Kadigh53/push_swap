@@ -6,7 +6,7 @@
 #    By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/23 01:02:26 by aaoutem-          #+#    #+#              #
-#    Updated: 2023/04/02 01:13:20 by aaoutem-         ###   ########.fr        #
+#    Updated: 2023/04/04 18:12:40 by aaoutem-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,17 +16,36 @@ RM = rm -rf
 FLAGS = -Wall -Wextra 
 HEADER = push_swap.h
 
-SRCS = main.c pars.c utils_fs/ft_atoi.c utils_fs/ft_split.c utils_fs/ft_strlen.c \
-		utils_fs/ft_substr.c error.c stack/ft_lstadd_front.c stack/ft_lstnew.c \
-		stack/stack_construction.c stack/ft_lstadd_back.c LIS.c LIS2.c src/operations.c \
-		src/ft_putstr.c sort.c sort_action.c three_case.c
+SRCS = main.c \
+	pars.c \
+	error.c \
+	utils_fs/ft_atoi.c \
+	utils_fs/ft_split.c \
+	utils_fs/ft_strlen.c \
+	utils_fs/ft_substr.c \
+	stack/ft_lstadd_front.c \
+	stack/ft_lstnew.c \
+	stack/stack_construction.c \
+	stack/ft_lstadd_back.c \
+	LIS.c \
+	LIS2.c \
+	src/p_nd_s.c \
+	src/r_rot.c \
+	src/rot.c \
+	src/ft_putstr.c \
+	sort.c \
+	sort_action.c \
+	free_stack.c \
+	three_case.c
 
 BONUS = bonus/checker_bonus.c \
 	bonus/error.c \
 	bonus/pars_bonus.c \
 	bonus/sort_check.c \
 	bonus/src/ft_putstr.c \
-	bonus/src/operations.c \
+	bonus/src/p_nd_s.c \
+	bonus/src/r_rot.c \
+	bonus/src/rot.c \
 	bonus/stack/ft_lstadd_back.c \
 	bonus/stack/stack_construction.c\
 	bonus/stack/ft_lstnew.c \
@@ -38,7 +57,7 @@ BONUS = bonus/checker_bonus.c \
 	bonus/util_fcts_bonus/ft_strncmp.c \
 	bonus/util_fcts_bonus/ft_substr.c \
 	bonus/gnl/get_next_line.c \
-	bonus/gnl/get_next_line_utils.c
+	bonus/gnl/get_next_line_utils.c 
 
 OBJ_F = ${SRCS:.c=.o}
 
@@ -63,5 +82,5 @@ fclean : clean
 
 re : fclean all
 
+# . PHONY re clean fclean bonus
 # bonus/util_fcts_bonus/ft_strjoin.c \
-# . PHONY re clean fclean 

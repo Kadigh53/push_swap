@@ -6,11 +6,19 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:13 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/04 00:36:29 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/04 18:14:25 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void check_leaks() {
+    pid_t pid = getpid();
+    char cmd[256];
+	sprintf(cmd, "leaks %d", pid);
+    // sprintf(cmd, "leaks --pid=%d", pid);
+    system(cmd);
+}
 
 int	main(int ac, char **av)
 {
@@ -32,6 +40,12 @@ int	main(int ac, char **av)
 		f(&vars.a, &vars.b);
 		sort(&vars.a, &vars.b);
 	}
+	// free(vars.k);
+	// free_stack(&vars.a, &vars.a);
+	// free_stack(&vars.b, &vars.a);
+	// atexit(check_leaks);
+	return (0);
+}
 	// t_stack	*tmp ;
 	// int i =0;
 	// tmp = vars.a;
@@ -40,10 +54,9 @@ int	main(int ac, char **av)
 	// while (tmp)
 	// {
 	// 	if (i <= (vars.a->size)/2)
-	// 		printf("a %d\t%d\t|| : max %d : size %d\n",i,tmp->x,tmp->max,tmp->size);
+	// 		printf("a %d\t%d\t|| : max %d\n",i,tmp->x,tmp->max);
 	// 	else
-	// 		printf("a %d\t%d\t|| : max %d : size %d\n",i - vars.a->size,tmp->x,tmp->max,tmp->size);
+	// 		printf("a %d\t%d\t||\n",i - vars.a->size,tmp->x);
 	// 	tmp = tmp->next;
 	// 	i++;
 	// }
-}
