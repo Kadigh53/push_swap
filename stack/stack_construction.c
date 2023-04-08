@@ -3,76 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   stack_construction.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 05:44:09 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/04 22:27:21 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/08 01:20:57 by kadigh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_lstiter(t_stack *stack, int s)
-{
-	t_stack	*tmp;
-	int		i;
 
-	i = 0;
-	tmp = stack;
-	while (tmp)
-	{
-		tmp->size = s;
-		tmp = tmp->next;
-		i++;
-	}
-}
 
-void	push_el(t_stack **stack, int data, int min, int max)
-{
-	t_stack	*node;
 
-	if ((!(*stack)->next && (*stack)->size == 0 && (*stack)->x == 0))
-	{
-		(*stack)->x = data;
-		(*stack)->min = min;
-		(*stack)->max = max;
-		(*stack)->size = 1;
-		(*stack)->next = NULL;
-		return ;
-	}
-	node = ft_lstnew(data, min, max);
-	stack = ft_lstadd_front(stack, node);
-	(*stack)->size = ((*stack)->next)->size + 1;
-	ft_lstiter(*stack, (*stack)->size);
-}
 
-int	pop_el(t_stack **stack, t_stack **a)
-{
-	t_stack	*tmp;
-	int		data;
 
-	if (!(*stack)->next && ((*stack)->size == 0))
-		return (0);
-	if (!(*stack)->next && ((*stack)->size == 1))
-	{
-		data = (*stack)->x;
-		(*stack)->x = 0;
-		(*stack)->size = 0;
-		if (data == 0)
-			push_el(a, data, (*a)->min, (*a)->max);
-		return (data);
-	}
-	data = (*stack)->x;
-	tmp = (*stack);
-	((*stack)->next)->size = tmp->size - 1;
-	*stack = ((*stack)->next);
-	// tmp1 = &(*stack)->next;
-	// free(*stack);
-	// stack = tmp1;
-	ft_lstiter(*stack, (*stack)->size);
-	// free(tmp);
-	return (data);
-}
 
 // long	pop_el(t_stack **stack)
 // {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 22:23:52 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/02 20:02:13 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/08 05:30:21 by kadigh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int		ft_strncmp(char *s1, char *s2, size_t n);
 char	**ft_split(char *s, char c, int *n);
 char	*ft_strjoin(char *s1, char *s2);
 void	ft_putstr_fd(char *s, int fd);
+void	*ft_malloc(int size);
 size_t	ft_strlen(char *s);
 int		ft_atoi(char *str);
 void	errors(char *str);

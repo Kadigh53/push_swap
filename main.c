@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:13 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/04 20:07:08 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/08 01:09:49 by kadigh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void check_leaks() {
     pid_t pid = getpid();
     char cmd[256];
 	sprintf(cmd, "leaks %d", pid);
-    // sprintf(cmd, "leaks --pid=%d", pid);
     system(cmd);
 }
 
@@ -28,8 +27,6 @@ int	main(int ac, char **av)
 	if (ac < 2)
 		exit(0);
 	vars.k = parsing_f(ac, av, &l);
-	// if (l == 1)
-	// 	exit(EXIT_SUCCESS);
 	if (!vars.k)
 		exit(1);
 	stack_init(vars.k, &vars.a, &vars.b, &l);
@@ -40,9 +37,9 @@ int	main(int ac, char **av)
 		f(&vars.a, &vars.b);
 		sort(&vars.a, &vars.b);
 	}
-	// free(vars.k);
-	// free_stack(&vars.a, &vars.a);
-	// free_stack(&vars.b, &vars.a);
+	free(vars.k);
+	free_stack(&vars.a);
+	free_stack(&vars.b);
 	// atexit(check_leaks);
 	return (0);
 }

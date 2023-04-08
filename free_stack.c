@@ -3,20 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   free_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 16:58:33 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/04 21:29:36 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/08 01:10:23 by kadigh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    free_stack(t_stack **stack, t_stack **a)
+void    free_stack(t_stack **a)
 {
-    while (!(*stack)->next && !(*stack)->size){
-        printf("ff");
-        pop_el(stack);
-    }
-    free(*stack);
+	t_stack	*tmp;
+
+	while((*a)->next)
+	{
+		tmp = (*a)->next;
+		free(*a);
+		(*a) = tmp;
+	}
+	free(*a);
 }

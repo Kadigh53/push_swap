@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:57:15 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/04 22:12:23 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/08 05:04:45 by kadigh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,14 @@ int		is_between(int *stack, int start, int next, int x);
 void	b_to_a(int e_pos[2], t_stack **a, t_stack **b);
 void	sort_action(int e_pos[][2], t_stack **a, t_stack **b);
 /*-------recemtly added-----------*/
-void    free_stack(t_stack **stack, t_stack **a);
+void    free_stack(t_stack **a);
 int		is_empty(t_stack **stack);
 
 /*---------stack functions--------*/
 // t_stack	*ft_lstnew(int data);
 t_stack	**ft_lstadd_front(t_stack **stack, t_stack *node);
 t_stack	*ft_lstnew(int data, int min, int max);
+void	ft_lstiter(t_stack *stack, int s);
 void	ft_lstadd_back(t_stack **stack, t_stack *node);
 void	stack_init(int *k, t_stack **A, t_stack **B, int *l);
 void	push_el(t_stack **stack, int data, int min, int max);

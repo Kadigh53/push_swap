@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   LIS.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 22:35:53 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/02 23:50:54 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/08 00:24:44 by kadigh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ void	def_lis(t_stack **a, t_stack **b, t_vars *var, int l)
 		i++;
 	}
 	clear_dastack(a, b, var, &l_max);
+	free(var->p);
 }
 
 void	retrieve_lis(t_stack **a, t_stack **b, t_vars *var)
@@ -90,6 +91,8 @@ void	retrieve_lis(t_stack **a, t_stack **b, t_vars *var)
 		i++;
 	}
 	def_lis(a, b, var, i);
+	free(var->le);
+	free(var->length);
 }
 
 void	f(t_stack **a, t_stack **b)
@@ -121,4 +124,5 @@ void	f(t_stack **a, t_stack **b)
 	}
 	var.o_k[j] = 0;
 	retrieve_lis(a, b, &var);
+	free(var.o_k);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_check.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 17:53:26 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/02 19:54:52 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/08 05:41:29 by kadigh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	is_a_sorted(t_stack **a)
 		}
 		tmp = tmp->next;
 	}
+	return (1);
 }
 
 void	exec_instruct(t_stack **a, t_stack **b, char *instruct)
@@ -60,10 +61,7 @@ void	exec_instruct(t_stack **a, t_stack **b, char *instruct)
 void	sort_check(t_stack **a, t_stack **b)
 {
 	char	*instruct;
-	t_stack	*tmp;
-	int		n;
 
-	n = 1;
 	instruct = (void *)1;
 	while (instruct)
 	{
@@ -72,5 +70,12 @@ void	sort_check(t_stack **a, t_stack **b)
 	}
 	if (!is_a_sorted(a))
 		ft_putstr_fd("KO\n", 1);
-	ft_putstr_fd("OK\n", 1);
+	else
+		ft_putstr_fd("OK\n", 1);
+	// t_stack *tmp = *a;
+	// while (tmp)
+	// {
+	// 	printf("a %d\t%d\t||\n",tmp->size,tmp->x);
+	// 	tmp = tmp->next;
+	// }
 }

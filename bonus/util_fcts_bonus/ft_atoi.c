@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 18:09:01 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/02 18:28:55 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/08 05:46:21 by kadigh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	valid_nbr(char *str)
 
 	i = 0;
 	if (!str[i])
-		errors("\033[1;31mERROR:invalid argument\n");
+		errors("Error\n");
 	if (str[i] == '-' || str[i] == '+')
 		i++;
 	while (str[i])
@@ -69,6 +69,6 @@ int	ft_atoi(char *str)
 		result = result * 10 + (str[i++] - 48);
 	result = result * sign;
 	if (result > INT32_MAX || result < INT32_MIN)
-		errors("Error");
+		errors("Error\n");
 	return (result);
 }

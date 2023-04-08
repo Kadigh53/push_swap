@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+         #
+#    By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/23 01:02:26 by aaoutem-          #+#    #+#              #
-#    Updated: 2023/04/04 22:14:11 by aaoutem-         ###   ########.fr        #
+#    Updated: 2023/04/08 05:28:00 by kadigh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ CC = cc
 RM = rm -rf
 FLAGS = -Wall -Wextra -g
 HEADER = push_swap.h
+BONUS_HEADER = bonus/checker_bonus.h
 
 SRCS = main.c \
 	pars.c \
@@ -26,8 +27,11 @@ SRCS = main.c \
 	utils_fs/is_empty.c \
 	stack/ft_lstadd_front.c \
 	stack/ft_lstnew.c \
-	stack/stack_construction.c \
+	stack/push_elem.c \
+	stack/pop_elem.c \
+	stack/ft_lstiter.c \
 	stack/ft_lstadd_back.c \
+	stack/stack_construction.c \
 	LIS.c \
 	LIS2.c \
 	src/p_nd_s.c \
@@ -35,6 +39,7 @@ SRCS = main.c \
 	src/rot.c \
 	src/ft_putstr.c \
 	sort.c \
+	free_stack.c \
 	sort_action.c \
 	three_case.c
 
@@ -56,6 +61,7 @@ BONUS = bonus/checker_bonus.c \
 	bonus/util_fcts_bonus/ft_strlen.c\
 	bonus/util_fcts_bonus/ft_strncmp.c \
 	bonus/util_fcts_bonus/ft_substr.c \
+	bonus/util_fcts_bonus/ft_malloc.c \
 	bonus/gnl/get_next_line.c \
 	bonus/gnl/get_next_line_utils.c 
 
@@ -68,7 +74,7 @@ all : ${NAME}
 ${NAME} : ${OBJ_F}
 	${CC} ${FLAGS} ${OBJ_F} -o push_swap
 
-bonus : ${BONUS_OBJF} ${HEADER} ${NAME}
+bonus : ${BONUS_OBJF} ${BONUS_HEADER} ${NAME}
 	${CC} ${FLAGS} ${BONUS_OBJF} -o checker
 
 %.o : %.c ${HEADER}
@@ -78,10 +84,10 @@ clean :
 	${RM} ${OBJ_F} ${BONUS_OBJF}
 
 fclean : clean
-	${RM} ${NAME}
+	${RM} ${NAME} 
 
 re : fclean all
 
 # . PHONY re clean fclean bonus
 # bonus/util_fcts_bonus/ft_strjoin.c \
-	# free_stack.c \
+	bonus/util_fcts_bonus/ft_lstiter.c\
