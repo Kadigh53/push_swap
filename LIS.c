@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   LIS.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 22:35:53 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/08 00:24:44 by kadigh           ###   ########.fr       */
+/*   Updated: 2023/04/09 06:14:34 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,4 +125,21 @@ void	f(t_stack **a, t_stack **b)
 	var.o_k[j] = 0;
 	retrieve_lis(a, b, &var);
 	free(var.o_k);
+
+	//to delete
+	
+	tmp = *a;
+	while (tmp)
+	{
+		printf("a\t%d\n",tmp->x);
+		tmp = tmp->next;
+	}
+	printf("\n");
+	tmp = *b;
+	while (tmp)
+	{
+		printf("b\t%d\n",tmp->x);
+		tmp = tmp->next;
+	}
+	printf("\nafter LIS\n\n");
 }

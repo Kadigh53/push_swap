@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 13:55:43 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/04 16:06:51 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/09 05:06:25 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	a_to_b(t_stack **a, t_stack **b, int t, int i)
 			rra(a, 1);
 		r_nbrs--;
 	}
+	// printf("%d\n",(*a)->x);
 	pb(a, b);
 }
 

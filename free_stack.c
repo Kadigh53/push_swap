@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 16:58:33 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/08 01:10:23 by kadigh           ###   ########.fr       */
+/*   Updated: 2023/04/09 00:44:38 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void    free_stack(t_stack **a)
 {
 	t_stack	*tmp;
 
-	while((*a)->next)
+	while((*a))
 	{
 		tmp = (*a)->next;
 		free(*a);

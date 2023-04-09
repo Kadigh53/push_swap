@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:54 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/04 00:58:11 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/09 04:44:18 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,19 @@ void	a_sorted(int *k, int *l)
 	}
 }
 
+void	split_free(char **p)
+{
+	int	i;
+
+	i = 0;
+	while(p[i])
+	{
+		free(p[i]);
+		i++;
+	}
+	free(p);
+}
+
 int	*parsing_f(int ac, char **av, int *l)
 {
 	int		i;
@@ -70,8 +83,9 @@ int	*parsing_f(int ac, char **av, int *l)
 	}
 	if (*l == 1)
 		exit(EXIT_SUCCESS);
-	k[i] = 0;
 	a_sorted(k, l);
 	duplicate_check(k, *l);
+	if (ac == 2)
+		split_free(p);
 	return (k);
 }

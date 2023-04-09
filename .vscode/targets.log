@@ -6,9 +6,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
- 
 
-# Make data base, printed on Sat Mar 25 19:34:33 2023
+# Make data base, printed on Sun Apr  9 04:33:15 2023
 
 # Variables
 
@@ -25,39 +24,39 @@ VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/aaoutem-/Desktop/ps_op
+CURDIR := /Users/aaoutem-/Desktop/psk
 # makefile
 SHELL = /bin/sh
 # makefile (from `Makefile', line 15)
 RM = rm -rf
 # environment
-VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{},"_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"en-us","osLocale":"en","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
+# makefile (from `Makefile', line 70)
+BONUS_OBJF = ${BONUS:.c=.o}
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
+# makefile (from `Makefile', line 46)
+BONUS = bonus/checker_bonus.c bonus/error.c bonus/pars_bonus.c bonus/sort_check.c bonus/src/ft_putstr.c bonus/src/p_nd_s.c bonus/src/r_rot.c bonus/src/rot.c bonus/stack/ft_lstadd_back.c bonus/stack/stack_construction.c bonus/stack/ft_lstnew.c bonus/stack/ft_lstlast.c bonus/stack/ft_lstadd_front.c bonus/util_fcts_bonus/ft_atoi.c bonus/util_fcts_bonus/ft_split.c bonus/util_fcts_bonus/ft_strlen.c bonus/util_fcts_bonus/ft_strncmp.c bonus/util_fcts_bonus/ft_substr.c bonus/util_fcts_bonus/ft_malloc.c bonus/gnl/get_next_line.c bonus/gnl/get_next_line_utils.c 
 # environment
 VSCODE_CWD = /
 # environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.5RxiEiG7sY/Render
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.IYAaY6MvsE/Render
 # environment
-PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
-# environment
-LSCOLORS = Gxfxcxdxbxegedabagacad
-# makefile (from `Makefile', line 24)
+PATH = /usr/bin:/bin:/usr/sbin:/sbin
+# makefile (from `Makefile', line 68)
 OBJ_F = ${SRCS:.c=.o}
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-LS_COLORS = di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43
-# environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.sV9QT96XwN/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.lqGnoFFzZ7/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-PWD = /Users/aaoutem-/Desktop/ps_op
+PWD = /Users/aaoutem-/Desktop/psk
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
@@ -67,13 +66,11 @@ HOME = /Users/aaoutem-
 # default
 MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/aaoutem-/Library/Application Support/Code/CachedData/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884
+VSCODE_CODE_CACHE_PATH = /Users/aaoutem-/Library/Application Support/Code/CachedData/b7886d7461186a5eac768481578c1d7ca80e2d21
 # environment
 LOGNAME = aaoutem-
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
-# environment
-ZSH = /Users/aaoutem-/.oh-my-zsh
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -84,8 +81,8 @@ XPC_FLAGS = 0x0
 MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
-# makefile (from `Makefile', line 19)
-SRCS = main.c pars.c utils_fs/ft_atoi.c utils_fs/ft_split.c utils_fs/ft_strlen.c utils_fs/ft_substr.c error.c stack/ft_lstadd_front.c stack/ft_lstnew.c stack/stack_construction.c stack/ft_lstadd_back.c LIS.c src/operations.c src/ft_putstr.c sort.c three_case.c
+# makefile (from `Makefile', line 20)
+SRCS = main.c pars.c error.c utils_fs/ft_atoi.c utils_fs/ft_split.c utils_fs/ft_strlen.c utils_fs/ft_substr.c utils_fs/is_empty.c stack/ft_lstadd_front.c stack/ft_lstnew.c stack/push_elem.c stack/pop_elem.c stack/ft_lstiter.c stack/ft_lstadd_back.c stack/stack_construction.c LIS.c LIS2.c src/p_nd_s.c src/r_rot.c src/rot.c src/ft_putstr.c sort.c free_stack.c sort_action.c three_case.c
 # environment
 SHLVL = 1
 # makefile (from `Makefile', line 14)
@@ -98,8 +95,6 @@ USER = aaoutem-
 .DEFAULT_GOAL := all
 # makefile (from `Makefile', line 13)
 NAME = push_swap
-# environment
-LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
@@ -111,7 +106,7 @@ TMPDIR = /var/folders/zz/zyxvpxvq6csfxvn_n000cgx00033z8/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/aaoutem-/Library/Application Support/Code/1.76-main.sock
+VSCODE_IPC_HOOK = /Users/aaoutem-/Library/Application Support/Code/1.77-main.sock
 # environment
 MallocNanoZone = 0
 # makefile
@@ -120,8 +115,10 @@ MAKEFLAGS = Rrqp
 MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
+# makefile (from `Makefile', line 18)
+BONUS_HEADER = bonus/checker_bonus.h
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000001.Electron
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000003.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -135,8 +132,6 @@ MAKEFILES :=
 # automatic
 <F = $(notdir $<)
 # environment
-PAGER = less
-# environment
 LC_ALL = C
 # makefile (from `Makefile', line 17)
 HEADER = push_swap.h
@@ -147,7 +142,7 @@ SECURITYSESSIONID = 186a8
 # default
 SUFFIXES := 
 # makefile (from `Makefile', line 16)
-FLAGS = -Wall -Wextra 
+FLAGS = -Wall -Wextra -g
 # default
 .INCLUDE_DIRS = /usr/local/include
 # environment
@@ -155,9 +150,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 6861
+VSCODE_PID = 5734
 # variable set hash-table stats:
-# Load=72/1024=7%, Rehash=0, Collisions=1/105=1%
+# Load=70/1024=7%, Rehash=0, Collisions=1/107=1%
 
 # Pattern-specific Variable Values
 
@@ -165,14 +160,14 @@ VSCODE_PID = 6861
 
 # Directories
 
-# . (device 16777227, inode 5087330): 20 files, no impossibilities.
+# . (device 16777227, inode 5463273): 24 files, no impossibilities.
 
-# 20 files, no impossibilities in 1 directories.
+# 24 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
 %.o: %.c push_swap.h
-#  commands to execute (from `Makefile', line 32):
+#  commands to execute (from `Makefile', line 81):
 	${CC} ${FLAGS} $< -c -o $@
 	
 
@@ -181,7 +176,25 @@ VSCODE_PID = 6861
 # Files
 
 # Not a target:
-src/operations.o:
+LIS2.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+bonus/util_fcts_bonus/ft_substr.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+bonus/checker_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+bonus/src/rot.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -202,18 +215,36 @@ stack/ft_lstnew.o:
 #  File has not been updated.
 
 # Not a target:
+bonus/stack/ft_lstadd_front.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+bonus/util_fcts_bonus/ft_strncmp.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 main.c:
 #  Implicit rule search has been done.
-#  Last modified 2023-03-24 22:02:23
+#  Last modified 2023-04-09 02:12:03
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
+bonus/error.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 push_swap.h:
 #  Implicit rule search has been done.
-#  Last modified 2023-03-23 16:50:58
+#  Last modified 2023-04-09 02:29:15
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -232,14 +263,25 @@ utils_fs/ft_atoi.o:
 #  File has not been updated.
 
 # Not a target:
+bonus/src/ft_putstr.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+bonus/util_fcts_bonus/ft_malloc.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2023-03-24 21:58:44
+#  Last modified 2023-04-08 16:58:44
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
- 
 
 # Not a target:
 sort.o:
@@ -248,7 +290,38 @@ sort.o:
 #  File has not been updated.
 
 # Not a target:
+bonus/gnl/get_next_line.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ 
+src/rot.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 error.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+stack/pop_elem.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+bonus/util_fcts_bonus/ft_atoi.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+bonus/stack/ft_lstadd_back.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -265,12 +338,32 @@ stack/ft_lstadd_front.o:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+stack/push_elem.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+bonus/src/r_rot.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+bonus: bonus/checker_bonus.o bonus/error.o bonus/pars_bonus.o bonus/sort_check.o bonus/src/ft_putstr.o bonus/src/p_nd_s.o bonus/src/r_rot.o bonus/src/rot.o bonus/stack/ft_lstadd_back.o bonus/stack/stack_construction.o bonus/stack/ft_lstnew.o bonus/stack/ft_lstlast.o bonus/stack/ft_lstadd_front.o bonus/util_fcts_bonus/ft_atoi.o bonus/util_fcts_bonus/ft_split.o bonus/util_fcts_bonus/ft_strlen.o bonus/util_fcts_bonus/ft_strncmp.o bonus/util_fcts_bonus/ft_substr.o bonus/util_fcts_bonus/ft_malloc.o bonus/gnl/get_next_line.o bonus/gnl/get_next_line_utils.o bonus/checker_bonus.h push_swap
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 78):
+	${CC} ${FLAGS} ${BONUS_OBJF} -o checker
+	
+
 fclean: clean
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 38):
-	${RM} ${NAME}
+#  commands to execute (from `Makefile', line 87):
+	${RM} ${NAME} 
 	
 
 # Not a target:
@@ -286,7 +379,31 @@ utils_fs/ft_split.o:
 #  File has not been updated.
 
 # Not a target:
+bonus/stack/ft_lstlast.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 src/ft_putstr.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+bonus/util_fcts_bonus/ft_strlen.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+bonus/checker_bonus.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+bonus/sort_check.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -303,7 +420,31 @@ pars.o:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+bonus/stack/stack_construction.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+bonus/gnl/get_next_line_utils.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+utils_fs/is_empty.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 re: fclean all
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+bonus/src/p_nd_s.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -318,8 +459,8 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 35):
-	${RM} ${OBJ_F}
+#  commands to execute (from `Makefile', line 84):
+	${RM} ${OBJ_F} ${BONUS_OBJF}
 	
 
 # Not a target:
@@ -328,16 +469,52 @@ stack/ft_lstadd_back.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-push_swap: main.o pars.o utils_fs/ft_atoi.o utils_fs/ft_split.o utils_fs/ft_strlen.o utils_fs/ft_substr.o error.o stack/ft_lstadd_front.o stack/ft_lstnew.o stack/stack_construction.o stack/ft_lstadd_back.o LIS.o src/operations.o src/ft_putstr.o sort.o three_case.o
+# Not a target:
+bonus/util_fcts_bonus/ft_split.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+bonus/pars_bonus.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+push_swap: main.o pars.o error.o utils_fs/ft_atoi.o utils_fs/ft_split.o utils_fs/ft_strlen.o utils_fs/ft_substr.o utils_fs/is_empty.o stack/ft_lstadd_front.o stack/ft_lstnew.o stack/push_elem.o stack/pop_elem.o stack/ft_lstiter.o stack/ft_lstadd_back.o stack/stack_construction.o LIS.o LIS2.o src/p_nd_s.o src/r_rot.o src/rot.o src/ft_putstr.o sort.o free_stack.o sort_action.o three_case.o
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/4=0%
-#  commands to execute (from `Makefile', line 29):
+#  commands to execute (from `Makefile', line 75):
 	${CC} ${FLAGS} ${OBJ_F} -o push_swap
 	
+
+# Not a target:
+stack/ft_lstiter.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/r_rot.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+free_stack.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+sort_action.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 main.o: main.c push_swap.h
 #  Implicit rule search has been done.
@@ -363,9 +540,15 @@ main.o: main.c push_swap.h
 # ? := main.c push_swap.h
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/14=7%
-#  commands to execute (from `Makefile', line 32):
+#  commands to execute (from `Makefile', line 81):
 	${CC} ${FLAGS} $< -c -o $@
 	
+
+# Not a target:
+bonus/stack/ft_lstnew.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 utils_fs/ft_substr.o:
@@ -379,8 +562,14 @@ stack/stack_construction.o:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+src/p_nd_s.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # files hash-table stats:
-# Load=26/1024=3%, Rehash=0, Collisions=0/64=0%
+# Load=58/1024=6%, Rehash=0, Collisions=2/128=2%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -392,6 +581,6 @@ stack/stack_construction.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sat Mar 25 19:34:33 2023
+# Finished Make data base on Sun Apr  9 04:33:15 2023
 
  

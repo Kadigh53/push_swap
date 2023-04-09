@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 02:27:28 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/02 20:14:33 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/09 06:19:28 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void	a_indexing(int e_pos[][2], t_stack **a, t_stack **b)
 	while (tmp)
 	{
 		e_pos[i][0] = locate(stack, tmp->x, a);
+		printf(" \t%d\t[%d,%d]\n",tmp->x,e_pos[i][0],e_pos[i][1]);
 		tmp = tmp->next;
 		i++;
 	}
