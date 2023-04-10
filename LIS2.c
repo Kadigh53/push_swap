@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 13:55:43 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/09 05:06:25 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/09 21:19:09 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void	nqi_liya(t_stack **a, t_stack **b, t_vars *var, int *l_max)
 	l = 1;
 	t = (*a)->size;
 	tmp = *a;
+	// printf("%d\n",*l_max);
 	while (i <= ((*a)->size) / 2)
 	{
 		if (!is_itther(var, tmp->x, l_max) && l)

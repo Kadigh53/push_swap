@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 02:27:28 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/09 06:19:28 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/10 00:37:51 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	locate_damax(t_stack **a)
 		i++;
 		tmp = tmp->next;
 	}
+	printf("mn hna lMAX");
 	return ((*a)->size);
 }
 
@@ -40,15 +41,23 @@ int	locate(int *stack_arr, int x, t_stack **a)
 	tmp = *a;
 	while (tmp)
 	{
+		// printf("i : %d    ",i);
 		if (is_between(stack_arr, i, i + 1, x) && (i <= ((*a)->size / 2)))
+		{
+			// printf("1 %d\n", (*a)->size);
 			return (i + 1);
+		}
 		else if (is_between(stack_arr, i, i + 1, x) && (i > ((*a)->size / 2)))
+		{
+			// printf("2 dif:%d (i : %d)size:%d strt:%d (x:%d) nxt:%d\n", i - (*a)->size + 1,i,(*a)->size,stack_arr[i],x,stack_arr[i+1]);
 			return (i - (*a)->size + 1);
+		}
 		i++;
 		tmp = tmp->next;
 	}
 	if (is_between(stack_arr, (*a)->size - 1, 0, x))
 	{
+		// printf("hy ghid");
 		return (0);
 	}
 	return (locate_damax(a));
@@ -61,7 +70,7 @@ void	a_indexing(int e_pos[][2], t_stack **a, t_stack **b)
 	int		i;
 
 	i = 0;
-	stack = ft_malloc(((*a)->size + 1) * sizeof(int));
+	stack = ft_malloc(((*a)->size) * sizeof(int));
 	tmp = *a;
 	while (tmp)
 	{
@@ -73,7 +82,7 @@ void	a_indexing(int e_pos[][2], t_stack **a, t_stack **b)
 	while (tmp)
 	{
 		e_pos[i][0] = locate(stack, tmp->x, a);
-		printf(" \t%d\t[%d,%d]\n",tmp->x,e_pos[i][0],e_pos[i][1]);
+		// printf(" \t%d\t[%d,%d]\n",tmp->x,e_pos[i][0],e_pos[i][1]);
 		tmp = tmp->next;
 		i++;
 	}
@@ -99,11 +108,9 @@ void	b_indexing(int e_pos[][2], t_stack **b)
 	}
 }
 
-void	sort(t_stack **a, t_stack **b)
+void	r(t_stack **a, t_stack **b)
 {
 	int		e_pos[(*b)->size + 1][2];
-	t_stack	*tmp;
-	int		i;
 
 	while ((*b)->next && (*b)->size)
 	{
@@ -112,6 +119,23 @@ void	sort(t_stack **a, t_stack **b)
 	}
 	b_indexing(e_pos, b);
 	a_indexing(e_pos, a, b);
+}
+
+void	sort(t_stack **a, t_stack **b)
+{
+	t_stack	*tmp;
+	int		i;
+	// int		e_pos[(*b)->size + 1][2];
+
+	// while ((*b)->next && (*b)->size)
+	// {
+	// 	b_indexing(e_pos, b);
+	// 	a_indexing(e_pos, a, b);
+	// }
+	// b_indexing(e_pos, b);
+	// a_indexing(e_pos, a, b);
+	if (*b)
+		r(a, b);
 	tmp = *a;
 	i = 0;
 	while (tmp->x != tmp->min)

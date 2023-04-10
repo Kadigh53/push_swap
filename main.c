@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:13 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/09 06:10:43 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/10 00:39:12 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void check_leaks() {
 
 int	main(int ac, char **av)
 {
+	// atexit(check_leaks);
 	t_vars	vars;
 	int		l;
 
@@ -40,7 +41,6 @@ int	main(int ac, char **av)
 	// free(vars.k);
 	// free_stack(&vars.a);
 	// free_stack(&vars.b);
-	// atexit(check_leaks);
 
 	//TODO - sdlfs;fsd
 	

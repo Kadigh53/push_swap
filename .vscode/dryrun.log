@@ -1,8 +1,8 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/aaoutem-/Desktop/psk'
 cc -Wall -Wextra -g main.c -c -o main.o
- 
 cc -Wall -Wextra -g pars.c -c -o pars.o
+ 
 cc -Wall -Wextra -g error.c -c -o error.o
 cc -Wall -Wextra -g utils_fs/ft_atoi.c -c -o utils_fs/ft_atoi.o
 cc -Wall -Wextra -g utils_fs/ft_split.c -c -o utils_fs/ft_split.o
@@ -15,19 +15,18 @@ cc -Wall -Wextra -g stack/ft_lstnew.c -c -o stack/ft_lstnew.o
 cc -Wall -Wextra -g stack/push_elem.c -c -o stack/push_elem.o
 cc -Wall -Wextra -g stack/pop_elem.c -c -o stack/pop_elem.o
 cc -Wall -Wextra -g stack/ft_lstiter.c -c -o stack/ft_lstiter.o
- 
 cc -Wall -Wextra -g stack/ft_lstadd_back.c -c -o stack/ft_lstadd_back.o
 cc -Wall -Wextra -g stack/stack_construction.c -c -o stack/stack_construction.o
 cc -Wall -Wextra -g LIS.c -c -o LIS.o
-cc -Wall -Wextra -g LIS2.c -c -o LIS2.o
  
+cc -Wall -Wextra -g LIS2.c -c -o LIS2.o
 cc -Wall -Wextra -g src/p_nd_s.c -c -o src/p_nd_s.o
 cc -Wall -Wextra -g src/r_rot.c -c -o src/r_rot.o
 cc -Wall -Wextra -g src/rot.c -c -o src/rot.o
 cc -Wall -Wextra -g src/ft_putstr.c -c -o src/ft_putstr.o
+ 
 cc -Wall -Wextra -g sort.c -c -o sort.o
 cc -Wall -Wextra -g free_stack.c -c -o free_stack.o
- 
 cc -Wall -Wextra -g sort_action.c -c -o sort_action.o
 cc -Wall -Wextra -g three_case.c -c -o three_case.o
 cc -Wall -Wextra -g main.o pars.o error.o utils_fs/ft_atoi.o utils_fs/ft_split.o utils_fs/ft_strlen.o utils_fs/ft_substr.o utils_fs/is_empty.o stack/ft_lstadd_front.o stack/ft_lstnew.o stack/push_elem.o stack/pop_elem.o stack/ft_lstiter.o stack/ft_lstadd_back.o stack/stack_construction.o LIS.o LIS2.o src/p_nd_s.o src/r_rot.o src/rot.o src/ft_putstr.o sort.o free_stack.o sort_action.o three_case.o -o push_swap
