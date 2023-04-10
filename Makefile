@@ -6,12 +6,12 @@
 #    By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/23 01:02:26 by aaoutem-          #+#    #+#              #
-#    Updated: 2023/04/10 01:01:12 by aaoutem-         ###   ########.fr        #
+#    Updated: 2023/04/10 05:10:47 by aaoutem-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-CC = cc
+CC = gcc
 RM = rm -rf
 FLAGS = -Wall -Wextra -g
 HEADER = push_swap.h

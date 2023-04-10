@@ -1,6 +1,5 @@
 make --dry-run --keep-going --print-directory
-make: Entering directory `/Users/aaoutem-/Desktop/psk'
-cc -Wall -Wextra -g free_mem.c -c -o free_mem.o
-cc -Wall -Wextra -g main.o pars.o error.o utils_fs/ft_atoi.o utils_fs/ft_split.o utils_fs/ft_strlen.o utils_fs/ft_substr.o utils_fs/is_empty.o stack/ft_lstadd_front.o stack/ft_lstnew.o stack/push_elem.o stack/pop_elem.o stack/ft_lstiter.o stack/ft_lstadd_back.o stack/stack_construction.o LIS.o LIS2.o src/p_nd_s.o src/r_rot.o src/rot.o src/ft_putstr.o sort.o free_mem.o sort_action.o three_case.o -o push_swap
-make: Leaving directory `/Users/aaoutem-/Desktop/psk'
+make: Entering directory `/Users/aaoutem-/Desktop/nn'
+make: Nothing to be done for `all'.
+make: Leaving directory `/Users/aaoutem-/Desktop/nn'
  

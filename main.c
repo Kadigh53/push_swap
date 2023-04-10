@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:13 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/10 01:13:10 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/10 06:19:25 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void check_leaks() {
 	sprintf(cmd, "leaks %d", pid);
     system(cmd);
 }
-	// atexit(check_leaks);
 
 int	main(int ac, char **av)
 {
+	// atexit(check_leaks);
 	t_vars	vars;
 	int		l;
 
@@ -38,12 +38,6 @@ int	main(int ac, char **av)
 		f(&vars.a, &vars.b, &vars);
 		sort(&vars.a, &vars.b);
 	}
-	free_mem(&vars);
-	return (0);
-}
-
-	//TODO - sdlfs;fsd
-	
 	// t_stack	*tmp ;
 	// int i =0;
 	// tmp = vars.a;
@@ -51,10 +45,10 @@ int	main(int ac, char **av)
 	// i =0;
 	// while (tmp)
 	// {
-	// 	if (i <= (vars.a->size)/2)
-	// 		printf("a \t%d\t|| : max %d\n",tmp->x,tmp->max);
-	// 	else
-	// 		printf("a \t%d\t||\n",tmp->x);
+	// 	printf("a \t%d\t|| : max %d|| : min %d|| : size %d\n",tmp->x,tmp->max,tmp->min,tmp->size);
 	// 	tmp = tmp->next;
 	// 	i++;
 	// }
+	free_mem(&vars);
+	return (0);
+}

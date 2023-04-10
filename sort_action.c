@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 14:03:18 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/02 23:37:11 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/10 04:55:19 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	ft_abs(int a)
 	return (a);
 }
 
-int	is_between(int *stack, int start, int next, int x)
+int	is_between(int start, int next, int x)
 {
-	if (stack[start] < x && x < stack[next])
+	if (start < x && x < next)
 		return (1);
 	else
 		return (0);

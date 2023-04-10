@@ -4,13 +4,12 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-
         {
             "name": "(lldb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "/Users/aaoutem-/Desktop/psk/push_swap",
-            "args": [ "9487" ,"2147483647" ,"-2147483648", "-2147483647" ,"0" ],
+            "program": "${workspaceFolder}/push_swap",
+            "args": ["-3" ,"2", "1", "-2", "0"],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
