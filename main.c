@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:13 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/10 00:39:12 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/10 01:13:10 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void check_leaks() {
 	sprintf(cmd, "leaks %d", pid);
     system(cmd);
 }
+	// atexit(check_leaks);
 
 int	main(int ac, char **av)
 {
-	// atexit(check_leaks);
 	t_vars	vars;
 	int		l;
 
@@ -35,12 +35,12 @@ int	main(int ac, char **av)
 		three_sort(&vars.a);
 	else
 	{
-		f(&vars.a, &vars.b);
+		f(&vars.a, &vars.b, &vars);
 		sort(&vars.a, &vars.b);
 	}
-	// free(vars.k);
-	// free_stack(&vars.a);
-	// free_stack(&vars.b);
+	free_mem(&vars);
+	return (0);
+}
 
 	//TODO - sdlfs;fsd
 	
@@ -58,5 +58,3 @@ int	main(int ac, char **av)
 	// 	tmp = tmp->next;
 	// 	i++;
 	// }
-	return (0);
-}

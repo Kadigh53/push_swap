@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:57:15 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/09 04:47:57 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/10 01:04:33 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ typedef struct s_vars
 	int		l_max;
 }	t_vars;
 
-int		*parsing_f(int ac, char **av, int *l);
 void	three_sort(t_stack **a);
 void	sort(t_stack **a, t_stack **b);
-void	f(t_stack **a, t_stack **b);
+int		*parsing_f(int ac, char **av, int *l);
+void	f(t_stack **a, t_stack **b, t_vars *var);
 int		ft_abs(int a);
 int		ft_min(int a, int b);
 void	*ft_malloc(int size);
@@ -61,7 +61,8 @@ int		is_between(int *stack, int start, int next, int x);
 void	b_to_a(int e_pos[2], t_stack **a, t_stack **b);
 void	sort_action(int e_pos[][2], t_stack **a, t_stack **b);
 /*-------recemtly added-----------*/
-void    free_stack(t_stack **a);
+// void    free_stack(t_stack **a);
+void	free_mem(t_vars *vars);
 int		is_empty(t_stack **stack);
 
 /*---------stack functions--------*/

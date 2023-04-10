@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 22:35:53 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/09 21:18:59 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/10 00:57:03 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,17 +96,17 @@ void	retrieve_lis(t_stack **a, t_stack **b, t_vars *var)
 	// free(var->length);
 }
 
-void	f(t_stack **a, t_stack **b)
+void	f(t_stack **a, t_stack **b, t_vars *var)
 {
 	t_stack	*tmp;
-	t_vars	var;
+	// t_vars	var;
 	int		i;
 	int		j;
 
 	i = 0;
 	j = 0;
 	tmp = *a;
-	var.o_k = ft_malloc(((*a)->size + 1) * sizeof(int));
+	var->o_k = ft_malloc(((*a)->size + 1) * sizeof(int));
 	while (tmp->x != tmp->min)
 	{
 		i++;
@@ -114,19 +114,24 @@ void	f(t_stack **a, t_stack **b)
 	}
 	while (tmp)
 	{
-		var.o_k[j++] = tmp->x;
+		var->o_k[j++] = tmp->x;
 		tmp = tmp->next;
 	}
 	tmp = *a;
 	while (i--)
 	{
-		var.o_k[j++] = tmp->x;
+		var->o_k[j++] = tmp->x;
 		tmp = tmp->next;
 	}
-	var.o_k[j] = 0;
-	retrieve_lis(a, b, &var);
+	var->o_k[j] = 0;
+	retrieve_lis(a, b, var);
 	// free(var.o_k);
+	// free(var->le);
+	// free(var->length);
+	// free(var->p);
 
+
+	
 	//to delete
 	
 	// tmp = *a;

@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:54 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/09 04:44:18 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/10 00:46:54 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	*parsing_f(int ac, char **av, int *l)
 		p = av + 1;
 		*l = ac - 1;
 	}
-	k = ft_malloc((*l + 1) * sizeof(int));
+	k = ft_malloc((*l) * sizeof(int));
 	while (i < *l)
 	{
 		k[i] = ft_atoi(p[i]);

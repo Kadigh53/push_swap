@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+         #
+#    By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/23 01:02:26 by aaoutem-          #+#    #+#              #
-#    Updated: 2023/04/08 05:28:00 by kadigh           ###   ########.fr        #
+#    Updated: 2023/04/10 01:01:12 by aaoutem-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ SRCS = main.c \
 	src/rot.c \
 	src/ft_putstr.c \
 	sort.c \
-	free_stack.c \
+	free_mem.c \
 	sort_action.c \
 	three_case.c
 

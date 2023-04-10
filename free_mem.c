@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_stack.c                                       :+:      :+:    :+:   */
+/*   free_mem.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 16:58:33 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/09 00:44:38 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/10 01:07:12 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,15 @@ void    free_stack(t_stack **a)
 		(*a) = tmp;
 	}
 	free(*a);
+}
+
+void	free_mem(t_vars *vars)
+{
+	free(vars->k);
+	free(vars->o_k);
+	free(vars->le);
+	free(vars->length);
+	free(vars->p);
+	free_stack(&vars->a);
+	free_stack(&vars->b);
 }
