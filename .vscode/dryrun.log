@@ -1,5 +1,34 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/aaoutem-/Desktop/nn'
-make: Nothing to be done for `all'.
+gcc -Wall -Wextra -g main.c -c -o main.o
+gcc -Wall -Wextra -g pars.c -c -o pars.o
+ 
+gcc -Wall -Wextra -g error.c -c -o error.o
+gcc -Wall -Wextra -g utils_fs/ft_atoi.c -c -o utils_fs/ft_atoi.o
+gcc -Wall -Wextra -g utils_fs/ft_split.c -c -o utils_fs/ft_split.o
+gcc -Wall -Wextra -g utils_fs/ft_strlen.c -c -o utils_fs/ft_strlen.o
+gcc -Wall -Wextra -g utils_fs/ft_substr.c -c -o utils_fs/ft_substr.o
+gcc -Wall -Wextra -g utils_fs/is_empty.c -c -o utils_fs/is_empty.o
+ 
+gcc -Wall -Wextra -g stack/ft_lstadd_front.c -c -o stack/ft_lstadd_front.o
+gcc -Wall -Wextra -g stack/ft_lstnew.c -c -o stack/ft_lstnew.o
+gcc -Wall -Wextra -g stack/push_elem.c -c -o stack/push_elem.o
+gcc -Wall -Wextra -g stack/pop_elem.c -c -o stack/pop_elem.o
+gcc -Wall -Wextra -g stack/ft_lstiter.c -c -o stack/ft_lstiter.o
+gcc -Wall -Wextra -g stack/ft_lstadd_back.c -c -o stack/ft_lstadd_back.o
+gcc -Wall -Wextra -g stack/stack_construction.c -c -o stack/stack_construction.o
+gcc -Wall -Wextra -g LIS.c -c -o LIS.o
+gcc -Wall -Wextra -g LIS2.c -c -o LIS2.o
+ 
+gcc -Wall -Wextra -g src/p_nd_s.c -c -o src/p_nd_s.o
+gcc -Wall -Wextra -g src/r_rot.c -c -o src/r_rot.o
+gcc -Wall -Wextra -g src/rot.c -c -o src/rot.o
+gcc -Wall -Wextra -g src/ft_putstr.c -c -o src/ft_putstr.o
+ 
+gcc -Wall -Wextra -g sort.c -c -o sort.o
+gcc -Wall -Wextra -g free_mem.c -c -o free_mem.o
+gcc -Wall -Wextra -g sort_action.c -c -o sort_action.o
+gcc -Wall -Wextra -g three_case.c -c -o three_case.o
+gcc -Wall -Wextra -g main.o pars.o error.o utils_fs/ft_atoi.o utils_fs/ft_split.o utils_fs/ft_strlen.o utils_fs/ft_substr.o utils_fs/is_empty.o stack/ft_lstadd_front.o stack/ft_lstnew.o stack/push_elem.o stack/pop_elem.o stack/ft_lstiter.o stack/ft_lstadd_back.o stack/stack_construction.o LIS.o LIS2.o src/p_nd_s.o src/r_rot.o src/rot.o src/ft_putstr.o sort.o free_mem.o sort_action.o three_case.o -o push_swap
 make: Leaving directory `/Users/aaoutem-/Desktop/nn'
  
