@@ -6,28 +6,11 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 13:55:43 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/11 02:20:10 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/11 04:33:46 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	ft_min(int a, int b)
-{
-	if (a < b)
-		return (a);
-	return (b);
-}
-
-void	*ft_malloc(int size)
-{
-	void	*buff;
-
-	buff = malloc(size);
-	if (!buff)
-		errors("Malloc failed");
-	return (buff);
-}
 
 int	is_itther(t_vars *var, int x, int *lmax)
 {
@@ -61,38 +44,60 @@ void	a_to_b(t_stack **a, t_stack **b, int t, int i)
 	pb(a, b);
 }
 
-void	nqi_liya(t_stack **a, t_stack **b, t_vars *var, int *l_max)
+int	upper_moves(t_stack **tmp, t_stack **a, t_vars *var, int *l_max)
 {
-	t_stack	*tmp;
-	int		mov;
-	int		i;
-	int		t;
-	int		l;
+	int	i;
+	int	l;
+	int	r_mov;
 
 	i = 0;
 	l = 1;
-	t = (*a)->size;
-	tmp = *a;
 	while (i <= ((*a)->size) / 2)
 	{
-		if (!is_itther(var, tmp->x, l_max) && l)
+		if (!is_itther(var, (*tmp)->x, l_max) && l)
 		{
 			l--;
-			mov = i;
+			r_mov = i;
 		}
 		i++;
-		tmp = tmp->next;
+		*tmp = (*tmp)->next;
 	}
 	if (l == 1)
-	{
-		mov = ((*a)->size);
-	}
+		r_mov = ((*a)->size);
+	return (r_mov);
+}
+
+void	nqi_liya(t_stack **a, t_stack **b, t_vars *var, int *l_max)
+{
+	t_stack	*tmp;
+	int		r_mov;
+	int		i;
+	int		rr_mov;
+
+	i = 0;
+	rr_mov = (*a)->size;
+	tmp = *a;
+	i = (((*a)->size) / 2) + 1;
+	r_mov = upper_moves(&tmp, a, var, l_max);
 	while (tmp)
 	{
 		if (!is_itther(var, tmp->x, l_max))
-			t = ((*a)->size) - i;
+			rr_mov = ((*a)->size) - i;
 		tmp = tmp->next;
 		i++;
 	}
-	a_to_b(a, b, t, mov);
+	a_to_b(a, b, rr_mov, r_mov);
 }
+
+	// while (i <= ((*a)->size) / 2)
+	// {
+	// 	if (!is_itther(var, tmp->x, l_max) && l)
+	// 	{
+	// 		l--;
+	// 		r_mov = i;
+	// 	}
+	// 	i++;
+	// 	tmp = tmp->next;
+	// }
+	// if (l == 1)
+	// 	r_mov = ((*a)->size);

@@ -6,30 +6,11 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 02:27:28 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/11 02:56:53 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/11 03:27:20 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	locate_damax(t_stack **a)
-{
-	int		i;
-	t_stack	*tmp;
-
-	i = 0;
-	tmp = *a;
-	while (tmp)
-	{
-		if ((tmp->x == (*a)->min) && i <= ((*a)->size / 2))
-			return (i);
-		else if ((tmp->x == (*a)->min) && i > ((*a)->size / 2))
-			return (i - (*a)->size);
-		i++;
-		tmp = tmp->next;
-	}
-	return ((*a)->size);
-}
 
 int	locate(int x, t_stack **a)
 {
@@ -41,25 +22,17 @@ int	locate(int x, t_stack **a)
 	while (tm->next)
 	{
 		if (is_between(tm->x, (tm->next)->x, x) && (i <= ((*a)->size / 2)))
-		{
 			return (i + 1);
-		}
 		else if (is_between(tm->x, (tm->next)->x, x) && (i > ((*a)->size / 2)))
-		{
 			return (i - (*a)->size + 1);
-		}
 		i++;
 		tm = tm->next;
 	}
 	tm = *a;
 	while (tm->next)
-	{
 		tm = tm->next;
-	}
 	if (is_between(tm->x, (*a)->x, x))
-	{
 		return (0);
-	}
 	return (locate_damax(a));
 }
 
@@ -104,14 +77,14 @@ void	indexin(t_stack **a, t_stack **b)
 	e_pos = NULL;
 	while ((*b)->next)
 	{
-		e_pos = malloc(((*b)->size) * sizeof (int[2]));
+		e_pos = malloc(((*b)->size) * sizeof(int [2]));
 		if (!e_pos)
 			exit(EXIT_FAILURE);
 		b_indexing(e_pos, b);
 		a_indexing(e_pos, a, b);
 		free(e_pos);
 	}
-	e_pos = malloc(((*b)->size) * sizeof(int[2]));
+	e_pos = malloc(((*b)->size) * sizeof(int [2]));
 	if (!e_pos)
 		exit(EXIT_FAILURE);
 	b_indexing(e_pos, b);

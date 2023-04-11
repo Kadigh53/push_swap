@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:57:15 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/11 02:18:52 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/11 05:57:38 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,12 @@
 # include <stdint.h>
 # include <limits.h>
 
-typedef struct s_gc
+typedef struct s_s_vars
 {
-	void		*ptr;
-	struct s_gc	*next;
-}	t_gc;
+	int		min;
+	int		mvs;
+	int		index;
+}	t_s_vars;
 
 typedef struct s_stack
 {
@@ -46,6 +47,7 @@ typedef struct s_vars
 	int		l_max;
 }	t_vars;
 
+int		locate_damax(t_stack **a);
 void	three_sort(t_stack **a);
 void	sort(t_stack **a, t_stack **b);
 int		*parsing_f(int ac, char **av, int *l);
@@ -57,24 +59,19 @@ void	nqi_liya(t_stack **a, t_stack **b, t_vars *variables, int *l_max);
 void	a_to_b(t_stack **a, t_stack **b, int t, int i);
 int		is_itther(t_vars *variables, int x, int *lmax);
 int		is_between(int start, int next, int x);
-// int		is_between(int *stack, int start, int next, int x);
-// void	rotate(int r_nbr, int e_pos, t_stack **stack);
 void	b_to_a(int e_pos[2], t_stack **a, t_stack **b);
 void	sort_action(int e_pos[][2], t_stack **a, t_stack **b);
 /*-------recemtly added-----------*/
-// void    free_stack(t_stack **a);
 void	free_mem(t_vars *vars);
 int		is_empty(t_stack **stack);
 
 /*---------stack functions--------*/
-// t_stack	*ft_lstnew(int data);
 t_stack	**ft_lstadd_front(t_stack **stack, t_stack *node);
 t_stack	*ft_lstnew(int data, int min, int max);
 void	ft_lstiter(t_stack *stack, int s);
 void	ft_lstadd_back(t_stack **stack, t_stack *node);
 void	stack_init(int *k, t_stack **A, t_stack **B, int *l);
 void	push_el(t_stack **stack, int data, int min, int max);
-// int		pop_el(t_stack **stack, t_stack **a);
 t_stack	*pop_el(t_stack **stack);
 /*---------utils functions--------*/
 char	*ft_substr(char *s, unsigned int start, size_t len);

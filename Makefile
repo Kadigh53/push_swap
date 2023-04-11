@@ -6,7 +6,7 @@
 #    By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/23 01:02:26 by aaoutem-          #+#    #+#              #
-#    Updated: 2023/04/11 01:28:17 by aaoutem-         ###   ########.fr        #
+#    Updated: 2023/04/11 03:42:53 by aaoutem-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,10 @@ SRCS = main.c \
 	stack/ft_lstiter.c \
 	stack/ft_lstadd_back.c \
 	stack/stack_construction.c \
+	ft_abs.c \
+	ft_malloc.c \
+	ft_min.c \
+	is_between.c \
 	LIS.c \
 	LIS2.c \
 	src/p_nd_s.c \

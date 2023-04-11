@@ -6,26 +6,11 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 14:03:18 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/11 02:15:36 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/11 06:40:36 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	ft_abs(int a)
-{
-	if (a < 0)
-		a = a * (-1);
-	return (a);
-}
-
-int	is_between(int start, int next, int x)
-{
-	if (start < x && x < next)
-		return (1);
-	else
-		return (0);
-}
 
 void	rotate(int e_pos[2], int mr, t_stack **a, t_stack **b)
 {
@@ -77,34 +62,48 @@ void	b_to_a(int e_pos[2], t_stack **a, t_stack **b)
 
 void	sort_action(int e_pos[][2], t_stack **a, t_stack **b)
 {
-	int		i;
-	int		min;
-	int		mvs;
-	int		index;
-	t_stack	*tmp;
+	int			i;
+	t_s_vars	vars;
+	t_stack		*tmp;
 
 	i = 0;
 	tmp = *b;
-	min = ft_abs(e_pos[0][0]) + ft_abs(e_pos[0][1]);
-	index = 0;
+	vars.min = ft_abs(e_pos[0][0]) + ft_abs(e_pos[0][1]);
+	vars.index = 0;
 	while (tmp->next)
 	{
 		tmp = tmp->next;
 		i++;
-		mvs = ft_abs(e_pos[i][0]) + ft_abs(e_pos[i][1]);
-		if (mvs < min && i <= ((*b)->size / 2))
+		vars.mvs = ft_abs(e_pos[i][0]) + ft_abs(e_pos[i][1]);
+		if (vars.mvs < vars.min && i <= ((*b)->size / 2))
 		{
-			min = mvs;
-			index = i;
+			vars.min = vars.mvs;
+			vars.index = i;
 		}
-		else if (mvs <= min && i > ((*b)->size / 2))
+		else if (vars.mvs <= vars.min && i > ((*b)->size / 2))
 		{
-			min = mvs;
-			index = i;
+			vars.min = vars.mvs;
+			vars.index = i;
 		}
 	}
-	mvs = ft_abs(e_pos[i][0]) + ft_abs(e_pos[i][1]);
-	if (mvs <= min)
-		index = i;
-	b_to_a(e_pos[index], a, b);
+	b_to_a(e_pos[vars.index], a, b);
+}
+
+int	locate_damax(t_stack **a)
+{
+	int		i;
+	t_stack	*tmp;
+
+	i = 0;
+	tmp = *a;
+	while (tmp)
+	{
+		if ((tmp->x == (*a)->min) && i <= ((*a)->size / 2))
+			return (i);
+		else if ((tmp->x == (*a)->min) && i > ((*a)->size / 2))
+			return (i - (*a)->size);
+		i++;
+		tmp = tmp->next;
+	}
+	return ((*a)->size);
 }
