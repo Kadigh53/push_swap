@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 15:48:14 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/08 05:43:44 by kadigh           ###   ########.fr       */
+/*   Updated: 2023/04/10 22:00:34 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,4 @@ int	main(int ac, char **av)
 	k = pars_check(ac, av, &l);
 	stack_init(k, &vars.a, &vars.b, &l);
 	sort_check(&vars.a, &vars.b);
-	//sjdcnsk
-	//qsckqdcqjjqkfljouriasqliqduqfcc,ei
 }

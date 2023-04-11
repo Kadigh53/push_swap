@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/04 16:08:35 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/04 16:08:41 by aaoutem-         ###   ########.fr       */
+/*   Created: 2023/04/04 15:53:32 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/04/11 00:18:49 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,40 @@
 
 void	pa(t_stack **a, t_stack **b)
 {
-	int	data;
+	t_stack	*tmp;
 
-	data = pop_el(b, a);
-	if (data == 0 && !((*b)->next) && ((*b)->size == 0))
+	tmp = pop_el(b);
+	if (!tmp)
 		return ;
-	push_el(a, data, (*a)->min, (*a)->max);
+	if (!*a)
+		tmp->size = 1;
+	else
+		tmp->size = (*a)->size + 1;
+	ft_lstadd_front(a, tmp);
+	ft_lstiter(*a, tmp->size);
+	if (*b)
+		ft_lstiter(*b, (*b)->size - 1);
 }
 
 void	pb(t_stack **a, t_stack **b)
 {
-	int	data;
+	t_stack	*tmp;
 
-	data = pop_el(a, a);
-	if (data == 0 && !((*a)->next) && ((*b)->size) == 0)
+	tmp = (pop_el(a));
+	if (!tmp)
 		return ;
-	push_el(b, data, (*b)->min, (*b)->max);
+	if (!(*b)){
+		tmp->size = 1;
+	}
+	else
+		tmp->size = (*b)->size + 1;
+	ft_lstadd_front(b, tmp);
+	ft_lstiter(*b, tmp->size);
+	if (*a)
+		ft_lstiter(*a, (*a)->size - 1);
 }
 
-void	sa(t_stack **a)
+void	sa(t_stack	**a)
 {
 	t_stack	*first;
 	t_stack	*second;
@@ -44,6 +59,7 @@ void	sa(t_stack **a)
 	first->next = second->next;
 	second->next = first;
 	*a = second;
+
 }
 
 void	sb(t_stack **b)
@@ -58,6 +74,7 @@ void	sb(t_stack **b)
 	first->next = second->next;
 	second->next = first;
 	*b = second;
+
 }
 
 void	ss(t_stack	**a, t_stack **b)

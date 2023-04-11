@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 13:55:43 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/09 21:19:09 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/11 02:00:16 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void	a_to_b(t_stack **a, t_stack **b, int t, int i)
 			rra(a, 1);
 		r_nbrs--;
 	}
-	// printf("%d\n",(*a)->x);
 	pb(a, b);
 }
 
@@ -74,7 +73,6 @@ void	nqi_liya(t_stack **a, t_stack **b, t_vars *var, int *l_max)
 	l = 1;
 	t = (*a)->size;
 	tmp = *a;
-	// printf("%d\n",*l_max);
 	while (i <= ((*a)->size) / 2)
 	{
 		if (!is_itther(var, tmp->x, l_max) && l)

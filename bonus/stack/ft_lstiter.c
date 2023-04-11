@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 01:20:42 by kadigh            #+#    #+#             */
-/*   Updated: 2023/04/08 01:21:24 by kadigh           ###   ########.fr       */
+/*   Updated: 2023/04/10 23:32:56 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../checker_bonus.h"
 
 void	ft_lstiter(t_stack *stack, int s)
 {

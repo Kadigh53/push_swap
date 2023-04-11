@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 02:27:28 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/10 05:36:52 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/11 02:01:44 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ int	locate_damax(t_stack **a)
 			return (i - (*a)->size);
 		i++;
 		tmp = tmp->next;
-	}
-	// printf("mn hna lMAX");
+	}\
 	return ((*a)->size);
 }
 
@@ -43,15 +42,12 @@ int	locate(int x, t_stack **a)
 	tmp = *a;
 	while (tmp->next)
 	{
-		// printf("i : %d    ",i);
 		if (is_between(tmp->x, (tmp->next)->x, x) && (i <= ((*a)->size / 2)))
 		{
-			// printf("1 %d\n", (*a)->size);
 			return (i + 1);
 		}
 		else if (is_between(tmp->x, (tmp->next)->x, x) && (i > ((*a)->size / 2)))
 		{
-			// printf("2 dif:%d (i : %d)size:%d strt:%d (x:%d) nxt:%d\n", i - (*a)->size + 1,i,(*a)->size,stack_arr[i],x,stack_arr[i+1]);
 			return (i - (*a)->size + 1);
 		}
 		i++;
@@ -60,12 +56,10 @@ int	locate(int x, t_stack **a)
 	tmp = *a;
 	while (tmp->next)
 	{
-		// printf("%d\n",tmp->x);
 		tmp = tmp->next;
 	}
 	if (is_between(tmp->x, (*a)->x, x))
 	{
-		// printf("hy ghid");
 		return (0);
 	}
 	return (locate_damax(a));
@@ -81,7 +75,6 @@ void	a_indexing(int e_pos[][2], t_stack **a, t_stack **b)
 	while (tmp)
 	{
 		e_pos[i][0] = locate(tmp->x, a);
-		// printf(" \t%d\t[%d,%d]\n",tmp->x,e_pos[i][0],e_pos[i][1]);
 		tmp = tmp->next;
 		i++;
 	}

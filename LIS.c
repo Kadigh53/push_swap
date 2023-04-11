@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 22:35:53 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/10 00:57:03 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/11 01:59:58 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	clear_dastack(t_stack **a, t_stack **b, t_vars *var, int *l_max)
 	int		n;
 
 	n = (*a)->size - *l_max;
-	// printf(">> %d\n\n", n);
 	while (n)
 	{
 		nqi_liya(a, b, var, l_max);
@@ -92,14 +91,11 @@ void	retrieve_lis(t_stack **a, t_stack **b, t_vars *var)
 		i++;
 	}
 	def_lis(a, b, var, i);
-	// free(var->le);
-	// free(var->length);
 }
 
 void	f(t_stack **a, t_stack **b, t_vars *var)
 {
 	t_stack	*tmp;
-	// t_vars	var;
 	int		i;
 	int		j;
 
@@ -123,29 +119,5 @@ void	f(t_stack **a, t_stack **b, t_vars *var)
 		var->o_k[j++] = tmp->x;
 		tmp = tmp->next;
 	}
-	var->o_k[j] = 0;
 	retrieve_lis(a, b, var);
-	// free(var.o_k);
-	// free(var->le);
-	// free(var->length);
-	// free(var->p);
-
-
-	
-	//to delete
-	
-	// tmp = *a;
-	// while (tmp)
-	// {
-	// 	printf("a\t%d\n",tmp->x);
-	// 	tmp = tmp->next;
-	// }
-	// printf("\n");
-	// tmp = *b;
-	// while (tmp)
-	// {
-	// 	printf("b\t%d\n",tmp->x);
-	// 	tmp = tmp->next;
-	// }
-	// printf("\nafter LIS\n\n");
 }

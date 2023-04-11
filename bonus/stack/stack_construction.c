@@ -6,82 +6,42 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 05:44:09 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/02 18:33:14 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/10 23:33:19 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker_bonus.h"
 
-// int	is_empty(t_stack *stack)
+// void	init_init(int *k, int *l, t_stack **stack)
 // {
-// 	if (stack->size == 0 && !stack->next)
-// 		return (1);
-// 	return (0);
+// 	int	i;
+
+// 	int	min;
+// 	int	max;
+
+// 	i = 0;
+// 	min = k[0];
+// 	max = k[0];
+// 	while (i < *l)
+// 	{
+// 		if (k[i] < min)
+// 			min = k[i];
+// 		if (k[i] > max)
+// 			max = k[i];
+// 		i++;
+// 	}
+// 	(*stack)->min = min;
+// 	(*stack)->max = max;
+// 	(*stack)->next = NULL;
+// 	(*stack)->size = 0;
+// 	(*stack)->x = 0;
 // }
 
-void	ft_lstiter(t_stack *stack, int s)
+void	stack_init(int *k, t_stack **A, t_stack **B, int *l)
 {
-	t_stack	*tmp;
-	int		i;
-
-	i = 0;
-	tmp = stack;
-	while (tmp)
-	{
-		tmp->size = s;
-		tmp = tmp->next;
-		i++;
-	}
-}
-
-void	push_el(t_stack **stack, int data, int min, int max)
-{
-	t_stack	*node;
-
-	if ((!(*stack)->next && (*stack)->size == 0 && (*stack)->x == 0))
-	{
-		(*stack)->x = data;
-		(*stack)->min = min;
-		(*stack)->max = max;
-		(*stack)->size = 1;
-		(*stack)->next = NULL;
-		return ;
-	}
-	node = ft_lstnew(data, min, max);
-	stack = ft_lstadd_front(stack, node);
-	(*stack)->size = ((*stack)->next)->size + 1;
-	ft_lstiter(*stack, (*stack)->size);
-}
-
-int	pop_el(t_stack **stack, t_stack **a)
-{
-	int		data;
-	t_stack	*tmp;
-
-	if (!(*stack)->next && ((*stack)->size == 0))
-		return (0);
-	if (!(*stack)->next && ((*stack)->size == 1))
-	{
-		data = (*stack)->x;
-		(*stack)->x = 0;
-		(*stack)->size = 0;
-		if (data == 0)
-			push_el(a, data, (*a)->min, (*a)->max);
-		return (data);
-	}
-	data = (*stack)->x;
-	tmp = (*stack);
-	((*stack)->next)->size = tmp->size - 1;
-	*stack = ((*stack)->next);
-	ft_lstiter(*stack, (*stack)->size);
-	return (data);
-}
-
-void	init_init(int *k, int *l, t_stack **stack)
-{
+	int	i;
 	int	min;
 	int	max;
-	int	i;
 
 	i = 0;
 	min = k[0];
@@ -94,29 +54,47 @@ void	init_init(int *k, int *l, t_stack **stack)
 			max = k[i];
 		i++;
 	}
-	(*stack)->min = min;
-	(*stack)->max = max;
-	(*stack)->next = NULL;
-	(*stack)->size = 0;
-	(*stack)->x = 0;
-}
-
-void	stack_init(int *k, t_stack **A, t_stack **B, int *l)
-{
-	int	i;
-
 	i = 0;
-	*A = malloc(sizeof(t_stack));
-	if (!*A)
-		exit(1);
-	*B = malloc(sizeof(t_stack));
-	if (!*B)
-		exit(1);
-	init_init(k, l, A);
-	init_init(k, l, B);
+	*A = NULL;
+	*B = NULL;
 	while (i < *l)
 	{
-		push_el(A, k[*l - i - 1], (*A)->min, (*A)->max);
+		push_el(A, k[*l - i - 1], min, max);
 		i++;
 	}
 }
+
+
+
+
+
+
+// 	t_stack	*tmp ;
+// 	i =0;
+// 	tmp = *A;
+// 	printf("\n===========\n\n");
+// 	while (tmp)
+// 	{
+// 			printf("a %d\t|| : max %d || size : %d\n",tmp->x,tmp->max,tmp->size);
+// 		tmp = tmp->next;
+// 	}
+// 	t_stack *pop;
+// 	pop = pop_el(A);
+// 	int t = pop->x;
+// 	push_el(B, t, min, max);
+// 	pop = pop_el(A);
+// 	push_el(B, pop->x, min, max);
+// 	tmp = *B;
+// 	printf("\n===========\n\n");
+// 	while (tmp)
+// 	{
+// 			printf("b \t%d\t|| : max %d || size : %d\n",tmp->x,tmp->max,tmp->size);
+// 		tmp = tmp->next;
+// 	}
+// 	tmp = *A;
+// 	printf("\n===========\n\n");
+// 	while (tmp)
+// 	{
+// 			printf("a %d\t|| : max %d || size : %d\n",tmp->x,tmp->max,tmp->size);
+// 		tmp = tmp->next;
+// 	}

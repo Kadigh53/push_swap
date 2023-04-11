@@ -3,6 +3,7 @@
         "push_swap.h": "c",
         "limits.h": "c",
         "unistd.h": "c",
-        "stdint.h": "c"
+        "stdint.h": "c",
+        "checker_bonus.h": "c"
     }
 }

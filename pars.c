@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:54 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/10 00:46:54 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/10 23:17:08 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	duplicate_check(int	*k, int n)
 	int	j;
 
 	i = 0;
-	while (i < n)
+	while (i < n - 1)
 	{
 		j = i + 1;
 		while (j < n)
@@ -36,7 +36,7 @@ void	a_sorted(int *k, int *l)
 	int	i;
 
 	i = 0;
-	while (i < *l)
+	while (i + 1 < *l)
 	{
 		if (k[i] > k[i + 1])
 			break ;
@@ -83,8 +83,8 @@ int	*parsing_f(int ac, char **av, int *l)
 	}
 	if (*l == 1)
 		exit(EXIT_SUCCESS);
-	a_sorted(k, l);
 	duplicate_check(k, *l);
+	a_sorted(k, l);
 	if (ac == 2)
 		split_free(p);
 	return (k);

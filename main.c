@@ -6,22 +6,14 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:13 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/10 06:19:25 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/11 02:01:04 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void check_leaks() {
-    pid_t pid = getpid();
-    char cmd[256];
-	sprintf(cmd, "leaks %d", pid);
-    system(cmd);
-}
-
 int	main(int ac, char **av)
 {
-	// atexit(check_leaks);
 	t_vars	vars;
 	int		l;
 
@@ -38,6 +30,10 @@ int	main(int ac, char **av)
 		f(&vars.a, &vars.b, &vars);
 		sort(&vars.a, &vars.b);
 	}
+	free_mem(&vars);
+	return (0);
+}
+
 	// t_stack	*tmp ;
 	// int i =0;
 	// tmp = vars.a;
@@ -49,6 +45,10 @@ int	main(int ac, char **av)
 	// 	tmp = tmp->next;
 	// 	i++;
 	// }
-	free_mem(&vars);
-	return (0);
-}
+// void check_leaks() {
+//     pid_t pid = getpid();
+//     char cmd[256];
+// 	sprintf(cmd, "leaks %d", pid);
+//     system(cmd);
+// 	// atexit(check_leaks);
+// }

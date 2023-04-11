@@ -6,14 +6,14 @@
 #    By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/23 01:02:26 by aaoutem-          #+#    #+#              #
-#    Updated: 2023/04/10 21:57:28 by aaoutem-         ###   ########.fr        #
+#    Updated: 2023/04/11 01:28:17 by aaoutem-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = gcc
 RM = rm -rf
-FLAGS = -Wall -Wextra -fsanitize=address
+FLAGS = -Wall -Wextra -Werror  -g -fsanitize=address
 HEADER = push_swap.h
 BONUS_HEADER = bonus/checker_bonus.h
 
@@ -55,6 +55,9 @@ BONUS = bonus/checker_bonus.c \
 	bonus/stack/stack_construction.c\
 	bonus/stack/ft_lstnew.c \
 	bonus/stack/ft_lstlast.c \
+	bonus/stack/ft_lstiter.c \
+	bonus/stack/pop_elem.c \
+	bonus/stack/push_elem.c \
 	bonus/stack/ft_lstadd_front.c \
 	bonus/util_fcts_bonus/ft_atoi.c \
 	bonus/util_fcts_bonus/ft_split.c \

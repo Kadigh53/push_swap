@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 22:23:52 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/08 05:30:21 by kadigh           ###   ########.fr       */
+/*   Updated: 2023/04/11 01:26:48 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,12 @@ char	*get_next_line(int fd);
 // t_stack	*ft_lstnew(int data);m
 t_stack	**ft_lstadd_front(t_stack **stack, t_stack *node);
 t_stack	*ft_lstnew(int data, int min, int max);
+void	ft_lstiter(t_stack *stack, int s);
 void	ft_lstadd_back(t_stack	**stack, t_stack *node);
 void	stack_init(int *k, t_stack **A, t_stack **B, int *l);
 void	push_el(t_stack **stack, int data, int min, int max);
-int		pop_el(t_stack **stack, t_stack **a);
+t_stack	*pop_el(t_stack **stack);
+// int		pop_el(t_stack **stack, t_stack **a);
 /*---------utils functions--------*/
 char	*ft_substr(char *s, unsigned int start, size_t len);
 int		ft_strncmp(char *s1, char *s2, size_t n);
@@ -59,7 +61,7 @@ void	errors(char *str);
 /*-----------operations----------*/
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);
-void	sa(t_stack	**a);
+void	sa(t_stack **a);
 void	sb(t_stack **b);
 void	ss(t_stack	**a, t_stack **b);
 void	ra(t_stack **a);
@@ -68,5 +70,6 @@ void	rr(t_stack **a, t_stack **b);
 void	rra(t_stack **a);
 void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
+
 
 #endif
