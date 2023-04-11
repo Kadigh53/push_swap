@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 02:27:28 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/11 02:15:55 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/11 02:56:53 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,29 +34,29 @@ int	locate_damax(t_stack **a)
 int	locate(int x, t_stack **a)
 {
 	int		i;
-	t_stack	*tmp;
+	t_stack	*tm;
 
 	i = 0;
-	tmp = *a;
-	while (tmp->next)
+	tm = *a;
+	while (tm->next)
 	{
-		if (is_between(tmp->x, (tmp->next)->x, x) && (i <= ((*a)->size / 2)))
+		if (is_between(tm->x, (tm->next)->x, x) && (i <= ((*a)->size / 2)))
 		{
 			return (i + 1);
 		}
-		else if (is_between(tmp->x, (tmp->next)->x, x) && (i > ((*a)->size / 2)))
+		else if (is_between(tm->x, (tm->next)->x, x) && (i > ((*a)->size / 2)))
 		{
 			return (i - (*a)->size + 1);
 		}
 		i++;
-		tmp = tmp->next;
+		tm = tm->next;
 	}
-	tmp = *a;
-	while (tmp->next)
+	tm = *a;
+	while (tm->next)
 	{
-		tmp = tmp->next;
+		tm = tm->next;
 	}
-	if (is_between(tmp->x, (*a)->x, x))
+	if (is_between(tm->x, (*a)->x, x))
 	{
 		return (0);
 	}
@@ -97,17 +97,26 @@ void	b_indexing(int e_pos[][2], t_stack **b)
 	}
 }
 
-void	r(t_stack **a, t_stack **b)
+void	indexin(t_stack **a, t_stack **b)
 {
-	int		e_pos[(*b)->size + 1][2];
+	int		(*e_pos)[2];
 
+	e_pos = NULL;
 	while ((*b)->next)
 	{
+		e_pos = malloc(((*b)->size) * sizeof (int[2]));
+		if (!e_pos)
+			exit(EXIT_FAILURE);
 		b_indexing(e_pos, b);
 		a_indexing(e_pos, a, b);
+		free(e_pos);
 	}
+	e_pos = malloc(((*b)->size) * sizeof(int[2]));
+	if (!e_pos)
+		exit(EXIT_FAILURE);
 	b_indexing(e_pos, b);
 	a_indexing(e_pos, a, b);
+	free(e_pos);
 }
 
 void	sort(t_stack **a, t_stack **b)
@@ -116,7 +125,7 @@ void	sort(t_stack **a, t_stack **b)
 	int		i;
 
 	if (*b)
-		r(a, b);
+		indexin(a, b);
 	tmp = *a;
 	i = 0;
 	while (tmp->x != tmp->min)
