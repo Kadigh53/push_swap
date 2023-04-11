@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:13 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/11 02:01:04 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/11 02:19:43 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(int ac, char **av)
 	// i =0;
 	// while (tmp)
 	// {
-	// 	printf("a \t%d\t|| : max %d|| : min %d|| : size %d\n",tmp->x,tmp->max,tmp->min,tmp->size);
+	// 	printf("a \t%d\t|| : size %d\n",tmp->x,tmp->size);
 	// 	tmp = tmp->next;
 	// 	i++;
 	// }

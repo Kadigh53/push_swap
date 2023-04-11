@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 15:53:32 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/11 02:03:21 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/11 02:08:53 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,13 @@ void	pa(t_stack **a, t_stack **b)
 void	pb(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
-	
-	// if (*b){
-	// 	printf("b : %d\t", (*b)->size);
-	// }
-	// printf("a : %d\n", (*a)->size);
+
 	tmp = (pop_el(a));
 	if (!tmp)
 		return ;
 	ft_putstr_fd("pb\n", 1);
-	if (!(*b)){
+	if (!(*b))
+	{
 		tmp->size = 1;
 	}
 	else

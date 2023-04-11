@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 02:27:28 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/11 02:01:44 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/11 02:15:55 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,9 @@ int	locate_damax(t_stack **a)
 			return (i - (*a)->size);
 		i++;
 		tmp = tmp->next;
-	}\
+	}
 	return ((*a)->size);
 }
-
-
 
 int	locate(int x, t_stack **a)
 {

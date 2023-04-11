@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 15:48:14 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/10 22:00:34 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/11 02:15:02 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	main(int ac, char **av)
 	int		*k;
 	t_vars	vars;
 
-	
 	if (ac < 2)
 		exit(0);
 	k = pars_check(ac, av, &l);

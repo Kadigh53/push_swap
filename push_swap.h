@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:57:15 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/10 04:55:41 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/11 02:18:52 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 
 typedef struct s_gc
 {
-	void	*ptr;
-	struct s_gc *next;
+	void		*ptr;
+	struct s_gc	*next;
 }	t_gc;
 
 typedef struct s_stack

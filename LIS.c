@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 22:35:53 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/11 01:59:58 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/11 02:20:28 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ void	def_lis(t_stack **a, t_stack **b, t_vars *var, int l)
 		i++;
 	}
 	clear_dastack(a, b, var, &l_max);
-	// free(var->p);
 }
 
 void	retrieve_lis(t_stack **a, t_stack **b, t_vars *var)

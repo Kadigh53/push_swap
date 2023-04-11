@@ -6,17 +6,17 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 16:58:33 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/10 01:07:12 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/11 02:21:03 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    free_stack(t_stack **a)
+void	free_stack(t_stack **a)
 {
 	t_stack	*tmp;
 
-	while((*a))
+	while ((*a))
 	{
 		tmp = (*a)->next;
 		free(*a);

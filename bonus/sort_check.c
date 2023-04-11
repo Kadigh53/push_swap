@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_check.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kadigh <kadigh@student.42.fr>              +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 17:53:26 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/08 05:41:29 by kadigh           ###   ########.fr       */
+/*   Updated: 2023/04/11 02:14:04 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,4 @@ void	sort_check(t_stack **a, t_stack **b)
 		ft_putstr_fd("KO\n", 1);
 	else
 		ft_putstr_fd("OK\n", 1);
-	// t_stack *tmp = *a;
-	// while (tmp)
-	// {
-	// 	printf("a %d\t%d\t||\n",tmp->size,tmp->x);
-	// 	tmp = tmp->next;
-	// }
 }

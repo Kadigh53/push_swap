@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 13:55:43 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/11 02:00:16 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/11 02:20:10 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,8 @@ void	nqi_liya(t_stack **a, t_stack **b, t_vars *var, int *l_max)
 		i++;
 		tmp = tmp->next;
 	}
-	if (l == 1){
+	if (l == 1)
+	{
 		mov = ((*a)->size);
 	}
 	while (tmp)

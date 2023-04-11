@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 17:56:54 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/10 23:17:08 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/11 02:19:08 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	split_free(char **p)
 	int	i;
 
 	i = 0;
-	while(p[i])
+	while (p[i])
 	{
 		free(p[i]);
 		i++;

@@ -6,36 +6,11 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 05:44:09 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/10 23:33:19 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/11 02:09:54 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker_bonus.h"
-
-// void	init_init(int *k, int *l, t_stack **stack)
-// {
-// 	int	i;
-
-// 	int	min;
-// 	int	max;
-
-// 	i = 0;
-// 	min = k[0];
-// 	max = k[0];
-// 	while (i < *l)
-// 	{
-// 		if (k[i] < min)
-// 			min = k[i];
-// 		if (k[i] > max)
-// 			max = k[i];
-// 		i++;
-// 	}
-// 	(*stack)->min = min;
-// 	(*stack)->max = max;
-// 	(*stack)->next = NULL;
-// 	(*stack)->size = 0;
-// 	(*stack)->x = 0;
-// }
 
 void	stack_init(int *k, t_stack **A, t_stack **B, int *l)
 {
@@ -63,11 +38,6 @@ void	stack_init(int *k, t_stack **A, t_stack **B, int *l)
 		i++;
 	}
 }
-
-
-
-
-
 
 // 	t_stack	*tmp ;
 // 	i =0;

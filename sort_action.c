@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 14:03:18 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/10 04:55:19 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/11 02:15:36 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	is_between(int start, int next, int x)
 
 void	rotate(int e_pos[2], int mr, t_stack **a, t_stack **b)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < ft_abs(e_pos[0]) - mr)

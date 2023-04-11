@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 15:53:32 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/04/11 00:18:49 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/04/11 02:13:34 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ void	pb(t_stack **a, t_stack **b)
 	tmp = (pop_el(a));
 	if (!tmp)
 		return ;
-	if (!(*b)){
+	if (!(*b))
+	{
 		tmp->size = 1;
 	}
 	else
@@ -59,7 +60,6 @@ void	sa(t_stack	**a)
 	first->next = second->next;
 	second->next = first;
 	*a = second;
-
 }
 
 void	sb(t_stack **b)
@@ -74,7 +74,6 @@ void	sb(t_stack **b)
 	first->next = second->next;
 	second->next = first;
 	*b = second;
-
 }
 
 void	ss(t_stack	**a, t_stack **b)
